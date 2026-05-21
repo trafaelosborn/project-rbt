@@ -1,0 +1,28 @@
+{
+  "language": "anglo_norman",
+  "branch_language": "french",
+  "historical_period": "Anglo-Norman",
+  "source": "local_text_files",
+  "ingest_date": "2026-05-04",
+  "input_dir": "C:\\Code\\Project RBT\\project_rbt\\data\\raw\\historical\\anglo_norman",
+  "file_count": 11,
+  "input_files": [
+    "C:\\Code\\Project RBT\\project_rbt\\data\\raw\\historical\\anglo_norman\\bisclavret.txt",
+    "C:\\Code\\Project RBT\\project_rbt\\data\\raw\\historical\\anglo_norman\\chaitivel.txt",
+    "C:\\Code\\Project RBT\\project_rbt\\data\\raw\\historical\\anglo_norman\\eliduc.txt",
+    "C:\\Code\\Project RBT\\project_rbt\\data\\raw\\historical\\anglo_norman\\equitan.txt",
+    "C:\\Code\\Project RBT\\project_rbt\\data\\raw\\historical\\anglo_norman\\fraisne.txt",
+    "C:\\Code\\Project RBT\\project_rbt\\data\\raw\\historical\\anglo_norman\\guigemar.txt",
+    "C:\\Code\\Project RBT\\project_rbt\\data\\raw\\historical\\anglo_norman\\lanval.txt",
+    "C:\\Code\\Project RBT\\project_rbt\\data\\raw\\historical\\anglo_norman\\laustic.txt",
+    "C:\\Code\\Project RBT\\project_rbt\\data\\raw\\historical\\anglo_norman\\marie_de_france_prolog.txt",
+    "C:\\Code\\Project RBT\\project_rbt\\data\\raw\\historical\\anglo_norman\\milun.txt",
+    "C:\\Code\\Project RBT\\project_rbt\\data\\raw\\historical\\anglo_norman\\yonec.txt"
+  ],
+  "total_tokens": 27612,
+  "sequence_count": 5440,
+  "unique_types": 4000,
+  "type_token_ratio": 0.14486455164421266,
+  "mean_seq_length": 5.0757352941176475,
+  "notes": ""
+}

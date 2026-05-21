@@ -1,0 +1,28 @@
+{
+  "expected": {
+    "validator_structural_cosine": 0.9992140862166782,
+    "validator_structural_distance": 2.024154993404628,
+    "validator_form_score": 0.38375984210715847,
+    "validator_char_bigram_cosine": 0.5788081845561647,
+    "validator_char_trigram_cosine": 0.30216729257656105,
+    "validator_suffix_cosine": 0.15684825627034088
+  },
+  "computed": {
+    "validator_structural_cosine": 0.9992140862166782,
+    "validator_structural_distance": 2.024154993404628,
+    "validator_form_score": 0.38375984210715847,
+    "validator_char_bigram_cosine": 0.5788081845561647,
+    "validator_char_trigram_cosine": 0.30216729257656105,
+    "validator_suffix_cosine": 0.15684825627034088
+  },
+  "max_abs_delta": 0.0,
+  "deltas": {
+    "validator_structural_cosine": 0.0,
+    "validator_structural_distance": 0.0,
+    "validator_form_score": 0.0,
+    "validator_char_bigram_cosine": 0.0,
+    "validator_char_trigram_cosine": 0.0,
+    "validator_suffix_cosine": 0.0
+  },
+  "passes": true
+}

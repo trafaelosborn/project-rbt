@@ -1,0 +1,185 @@
+# =============================================================================
+# Project RBT — .gitignore
+# =============================================================================
+# This repo holds the v5 paper-run code, the manuscript, and the lightweight
+# outputs cited in the paper. Larger artifacts (per-block corpus dumps,
+# v1-v4 development data, reference matrices) live separately at Zenodo or
+# are not published.
+# =============================================================================
+
+
+# -----------------------------------------------------------------------------
+# Python / pytest / build artifacts
+# -----------------------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.pyd
+.pytest_cache/
+pytest-cache-files-*/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+*.egg-info/
+.eggs/
+build/
+dist/
+
+# -----------------------------------------------------------------------------
+# Editor / OS
+# -----------------------------------------------------------------------------
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# -----------------------------------------------------------------------------
+# LaTeX intermediate artifacts (sources are tracked; aux/log/etc are not)
+# -----------------------------------------------------------------------------
+*.aux
+*.log
+*.out
+*.toc
+*.bbl
+*.blg
+*.lof
+*.lot
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.nav
+*.snm
+*.vrb
+
+# -----------------------------------------------------------------------------
+# Project scratch directories
+# -----------------------------------------------------------------------------
+# pytest-style hash-named tmp dirs and ad-hoc dev sandboxes.
+# NOTE: tmp_dimcheck/ and tmp_self_similarity/ are INTENTIONALLY tracked --
+# they hold the analysis scripts cited in the paper (Section 3.7,
+# Limitations item 9, and Use of AI Tools).
+/tmp/
+/tmp[0-9]*/
+/tmp[a-z][0-9]*/
+/rbt_v2_test_*/
+/data/tmp/
+/.pytest_tmp/
+/.pytest_tmp_*/
+/.tmp_pytest/
+
+# -----------------------------------------------------------------------------
+# Historical run data: v1-v4 development (not cited in the paper)
+# -----------------------------------------------------------------------------
+/data/retrodiction/french/_tmp_*/
+/data/retrodiction/french/_v4_phase*/
+/data/retrodiction/french/gradient/
+/data/retrodiction/french/stochastic/
+/data/retrodiction/french/v2/
+/data/retrodiction/french/v2_convergence/
+/data/retrodiction/french/v2_meso_probe_from_061/
+/data/retrodiction/french/v2_meso_probe_short/
+/data/retrodiction/french/v3/
+/data/retrodiction/french/v3_from_v2_endpoint/
+/data/retrodiction/french/v4/
+/data/retrodiction/french/v4_1500_proposal_continuation/
+/data/retrodiction/french/v4_control_long_from_post_plateau/
+/data/retrodiction/french/v4_until_plateau_from_30k/
+/data/retrodiction/french/v4_*/
+
+# Other-language exploration runs (not cited in the paper)
+/data/retrodiction/italian/
+/data/retrodiction/romanian/
+/data/retrodiction/spanish/
+/data/retrodiction/_seed_audit_replay/
+
+# Top-level v1-v4 era artifacts directly under retrodiction/french/
+# (the v5 paper run is self-contained in its own subdirectory)
+/data/retrodiction/french/matrices/
+/data/retrodiction/french/records/
+/data/retrodiction/french/run_summary.json
+
+# -----------------------------------------------------------------------------
+# Non-paper v5 runs (only v5_fortran_c16_seed45_paper_run is cited)
+# -----------------------------------------------------------------------------
+/data/retrodiction/french/v5_culture_bomb_from_post_plateau/
+/data/retrodiction/french/v5_fortran_c16_10block_baseline/
+/data/retrodiction/french/v5_fortran_c16_clean_restart/
+/data/retrodiction/french/v5_full_fortran_c32/
+/data/retrodiction/french/v5_full_fortran_c32_rerun/
+/data/retrodiction/french/v5_full_fortran_c32_rerun2/
+/data/retrodiction/french/v5_production_from_french/
+/data/retrodiction/french/v5_production_from_v4/
+
+# -----------------------------------------------------------------------------
+# v5 paper-run per-block bulk data (~6.7 GB; archived separately to Zenodo)
+# -----------------------------------------------------------------------------
+# KEEP at the run root: manifest.json, seed_audit.json, stop_requested
+# KEEP per block: run_summary.json (the lightweight scoring summary)
+# EXCLUDE per block: corpora/, matrices/, previews/, records/, live_events.jsonl
+# These are the heavy intermediate artifacts (614 blocks * ~10 MB each).
+/data/retrodiction/french/v5_fortran_c16_seed45_paper_run/blocks/*/corpora/
+/data/retrodiction/french/v5_fortran_c16_seed45_paper_run/blocks/*/matrices/
+/data/retrodiction/french/v5_fortran_c16_seed45_paper_run/blocks/*/previews/
+/data/retrodiction/french/v5_fortran_c16_seed45_paper_run/blocks/*/records/
+/data/retrodiction/french/v5_fortran_c16_seed45_paper_run/blocks/*/live_events.jsonl
+
+# -----------------------------------------------------------------------------
+# Validation outputs
+# -----------------------------------------------------------------------------
+# KEEP: v5 paper-run validator-bank + control-bank outputs,
+#       dimensional robustness check, self-similarity calibration
+# EXCLUDE: v2/v3/v4 validator pilots, Fortran-acceleration benchmarks,
+#          debugging scratch -- none of these are cited in the paper.
+/data/validation/_debug_*
+/data/validation/fortran_*_benchmark*
+/data/validation/incremental_*_benchmark*
+/data/validation/french_v2_*
+/data/validation/french_v3_*
+/data/validation/french_v4_*
+
+# Probes not cited in the paper (referenced only as Limitations gestures)
+/data/validation/french_v5_seed_replication_probe_*
+/data/validation/french_v5_suffix_ablation_probe_*
+
+# Stale-named pre-rename duplicates of the paper-cited validator-bank files.
+# The canonical path is french_v5_fortran_c16_seed45_paper_run_validator_bank_*.
+/data/validation/v5_paper_run_full_validators_*
+/data/validation/v5_paper_run_expanded_validators_*
+
+# -----------------------------------------------------------------------------
+# Oversized bulk files (>100 MB, GitHub-rejected; shipped via Zenodo instead).
+# The corresponding *_manifest.json pointer files remain tracked.
+# -----------------------------------------------------------------------------
+/data/sequestered/latin/latin_tokens.json
+
+# -----------------------------------------------------------------------------
+# Stale handoff bundles (duplicate copies of manuscript/code/reports)
+# -----------------------------------------------------------------------------
+/docs/manuscript/paper_supporting_material_*/
+/docs/manuscript/paper_supporting_material_*.zip
+
+# -----------------------------------------------------------------------------
+# Reference matrices and benchmarks (large; derivable from inputs)
+# -----------------------------------------------------------------------------
+# data/matrices/ holds the precomputed n-gram profiles consumed by the engine.
+# data/benchmarks/ holds Fortran-acceleration performance traces.
+# Both are derivable from src/ + data/processed/; excluded to keep the repo
+# under GitHub's recommended size.
+/data/matrices/
+/data/benchmarks/
+
+# -----------------------------------------------------------------------------
+# Environment / local config (never publish)
+# -----------------------------------------------------------------------------
+.env
+.env.local
+*.local
+.venv/
+venv/
+env/
+ENV/

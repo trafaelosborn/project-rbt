@@ -1,0 +1,14 @@
+{
+  "language": "french",
+  "wiki_code": "fr",
+  "source": "wikipedia_api",
+  "api_date": "2026-04-07",
+  "article_count": 500,
+  "articles_skipped": 9685,
+  "total_tokens": 224016,
+  "sequence_count": 17276,
+  "unique_types": 28910,
+  "type_token_ratio": 0.12905328190843512,
+  "mean_seq_length": 12.966890483908312,
+  "sequestered": false
+}

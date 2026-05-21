@@ -1,0 +1,7 @@
+corpus_id,branch_language,historical_period,region,status,attested_only,input_dir,notes,date_start,date_end,order_hint
+old_french,french,Old French,France,active,yes,data/raw/historical/old_french,"Attested packet spanning early through high medieval French witnesses",842,1270,1
+middle_french,french,Middle French,France,active,yes,data/raw/historical/middle_french,"Current packet centered on Villon-era Middle French",1450,1489,5
+anglo_norman,french,Anglo-Norman,England/Normandy,active,yes,data/raw/historical/anglo_norman,"Marie de France packet; keep separate from continental d'oïl",1160,1200,3
+langue_d_oil,french,Other langue d'oil varieties,Northern France,active,yes,data/raw/historical/langue_d_oil,"Attested continental d'oïl witnesses kept separate from Anglo-Norman",1150,1225,2
+old_spanish,spanish,Old Spanish / early Iberian,Iberia,active,yes,data/raw/historical/old_spanish,"Attested only; avoid reconstructed Vulgar bundles",1140,1270,4
+old_occitan,occitan,Old Occitan,Occitania,active,yes,data/raw/historical/old_occitan,"Independent validator layer",1200,1229,4

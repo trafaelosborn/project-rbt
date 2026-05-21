@@ -1,0 +1,14 @@
+{
+  "language": "romanian",
+  "wiki_code": "ro",
+  "source": "wikipedia_api",
+  "api_date": "2026-04-07",
+  "article_count": 500,
+  "articles_skipped": 11799,
+  "total_tokens": 136608,
+  "sequence_count": 11966,
+  "unique_types": 27829,
+  "type_token_ratio": 0.20371427734832515,
+  "mean_seq_length": 11.416346314557915,
+  "sequestered": false
+}

@@ -1,0 +1,21 @@
+{
+  "language": "langue_d_oil",
+  "branch_language": "french",
+  "historical_period": "Langue d'oil",
+  "source": "local_text_files",
+  "ingest_date": "2026-04-10",
+  "input_dir": "C:\\Code\\Project RBT\\project_rbt\\data\\raw\\historical\\langue_d_oil",
+  "file_count": 4,
+  "input_files": [
+    "C:\\Code\\Project RBT\\project_rbt\\data\\raw\\historical\\langue_d_oil\\de_la_mort_de_nostre_dame.txt",
+    "C:\\Code\\Project RBT\\project_rbt\\data\\raw\\historical\\langue_d_oil\\le_couronnement_de_louis.txt",
+    "C:\\Code\\Project RBT\\project_rbt\\data\\raw\\historical\\langue_d_oil\\le_jeu_de_saint_nicolas.txt",
+    "C:\\Code\\Project RBT\\project_rbt\\data\\raw\\historical\\langue_d_oil\\vie_de_saint_george.txt"
+  ],
+  "total_tokens": 33873,
+  "sequence_count": 6008,
+  "unique_types": 5773,
+  "type_token_ratio": 0.17043072653736013,
+  "mean_seq_length": 5.637982689747004,
+  "notes": ""
+}

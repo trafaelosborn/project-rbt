@@ -1,0 +1,27 @@
+{
+  "language": "middle_french",
+  "branch_language": "french",
+  "historical_period": "Middle French",
+  "source": "local_text_files",
+  "ingest_date": "2026-05-04",
+  "input_dir": "C:\\Code\\Project RBT\\project_rbt\\data\\raw\\historical\\middle_french",
+  "file_count": 10,
+  "input_files": [
+    "C:\\Code\\Project RBT\\project_rbt\\data\\raw\\historical\\middle_french\\le_grand_testament.txt",
+    "C:\\Code\\Project RBT\\project_rbt\\data\\raw\\historical\\middle_french\\le_lais.txt",
+    "C:\\Code\\Project RBT\\project_rbt\\data\\raw\\historical\\middle_french\\villon_debat.txt",
+    "C:\\Code\\Project RBT\\project_rbt\\data\\raw\\historical\\middle_french\\villon_franc_archier.txt",
+    "C:\\Code\\Project RBT\\project_rbt\\data\\raw\\historical\\middle_french\\villon_jargon.txt",
+    "C:\\Code\\Project RBT\\project_rbt\\data\\raw\\historical\\middle_french\\villon_mallepaye.txt",
+    "C:\\Code\\Project RBT\\project_rbt\\data\\raw\\historical\\middle_french\\villon_poesies_attribuees.txt",
+    "C:\\Code\\Project RBT\\project_rbt\\data\\raw\\historical\\middle_french\\villon_poesies_diverses.txt",
+    "C:\\Code\\Project RBT\\project_rbt\\data\\raw\\historical\\middle_french\\villon_repeues_franches.txt",
+    "C:\\Code\\Project RBT\\project_rbt\\data\\raw\\historical\\middle_french\\villon_requeste.txt"
+  ],
+  "total_tokens": 31818,
+  "sequence_count": 6217,
+  "unique_types": 6878,
+  "type_token_ratio": 0.21616694952542587,
+  "mean_seq_length": 5.117902525333762,
+  "notes": ""
+}

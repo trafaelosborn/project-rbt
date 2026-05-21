@@ -1,0 +1,14 @@
+{
+  "language": "occitan",
+  "wiki_code": "oc",
+  "source": "wikipedia_api",
+  "api_date": "2026-04-07",
+  "article_count": 500,
+  "articles_skipped": 11282,
+  "total_tokens": 105768,
+  "sequence_count": 10857,
+  "unique_types": 20530,
+  "type_token_ratio": 0.1941040768474397,
+  "mean_seq_length": 9.741917656811275,
+  "sequestered": false
+}

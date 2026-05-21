@@ -1,0 +1,14 @@
+{
+  "language": "spanish",
+  "wiki_code": "es",
+  "source": "wikipedia_api",
+  "api_date": "2026-04-07",
+  "article_count": 500,
+  "articles_skipped": 9891,
+  "total_tokens": 234349,
+  "sequence_count": 14952,
+  "unique_types": 31314,
+  "type_token_ratio": 0.13362122304767676,
+  "mean_seq_length": 15.673421615837347,
+  "sequestered": false
+}

@@ -1,0 +1,195 @@
+{
+  "run_id": "v5_fortran_c16_seed45_paper_run",
+  "audited_utc": "2026-04-24T22:32:53.279895+00:00",
+  "manifest_requested_seed": 45,
+  "block_summary_serialized_seed": 42,
+  "audit_method": "Exact replay of block_0001 under current code with candidate seeds 42 and 45; compare accepted-stage history and final metrics to historical block_0001 artifact.",
+  "conclusion": {
+    "inferred_engine_seed": 42,
+    "requested_seed_matches_engine_seed": false,
+    "confidence": "high"
+  },
+  "evidence": {
+    "actual_matches_seed42_exactly": true,
+    "actual_matches_seed45_exactly": false,
+    "historical_block_0001": "c:\\Code\\Project RBT\\project_rbt\\data\\retrodiction\\french\\v5_fortran_c16_seed45_paper_run\\blocks\\block_0001\\run_summary.json",
+    "replay_seed_42_summary": "c:\\Code\\Project RBT\\project_rbt\\data\\retrodiction\\_seed_audit_replay\\seed_42\\run_summary.json",
+    "replay_seed_45_summary": "c:\\Code\\Project RBT\\project_rbt\\data\\retrodiction\\_seed_audit_replay\\seed_45\\run_summary.json"
+  },
+  "actual_block_0001_signature": {
+    "final_struct": -1.3435869472793973,
+    "final_form": 0.7181036472320557,
+    "final_align": 0.4392205108144682,
+    "accepted_mutation_stages": 5,
+    "stage_signature": [
+      {
+        "stage_id": "FR_v5_000",
+        "proposal_index": 0,
+        "mutation_operator": "seed",
+        "mutation_details": "initial sampled source baseline",
+        "latin_structural_score": -1.378939,
+        "latin_form_score": 0.566157
+      },
+      {
+        "stage_id": "FR_v5_001",
+        "proposal_index": 1,
+        "mutation_operator": "macro_bundle_rewrite",
+        "mutation_details": "paradigm_family_rewrite:prefix comp across 24 types: compagnie->compagque, compagnon->compagque, compagny->compagque, comparée->comparque; paradigm_family_rewrite:prefix fra across 12 types: fracture->fractuque, frais->fratum, france->frantum, franche->francque; paradigm_family_rewrite:prefix com across 29 types: combat->combtum, combats->combatum, combattant->combatttum, comiclopedia->comicloptum; sequence_span_rewrite:span[430:433] token_char_edit:chevrolet -> chaevrolet (1 occurrences); split_token:produite -> pro + duite (1 occurrences)",
+        "latin_structural_score": -1.372266,
+        "latin_form_score": 0.593992
+      },
+      {
+        "stage_id": "FR_v5_002",
+        "proposal_index": 11,
+        "mutation_operator": "macro_bundle_rewrite",
+        "mutation_details": "paradigm_family_rewrite:prefix con across 74 types: concentrée->concentque, conception->conceptque, concernant->concernque, concerne->concerque; suffix_family_rewrite:ion -> tum across 136 token types, 223 occurrences",
+        "latin_structural_score": -1.366242,
+        "latin_form_score": 0.631862
+      },
+      {
+        "stage_id": "FR_v5_003",
+        "proposal_index": 73,
+        "mutation_operator": "macro_bundle_rewrite",
+        "mutation_details": "function_word_burst:2 short tokens: ses->es, de->is; suffix_family_rewrite:ns -> que across 90 token types, 225 occurrences; sequence_span_rewrite:span[614:619] sequence_order:rotated span by 2; token_char_edit:sur -> stur (1 occurrences); token_char_edit:teller -> tellerm (1 occurrences); function_word_burst:3 short tokens: un->en, le->ee, en->er",
+        "latin_structural_score": -1.36633,
+        "latin_form_score": 0.683223
+      },
+      {
+        "stage_id": "FR_v5_004",
+        "proposal_index": 139,
+        "mutation_operator": "macro_bundle_rewrite",
+        "mutation_details": "paradigm_family_rewrite:prefix organ across 4 types: organisattum->organisaque, organisé->organique, organisée->organique, organisés->organique; token_char_edit:les -> es (142 occurrences); split_token:portail -> porta + il (40 occurrences)",
+        "latin_structural_score": -1.348062,
+        "latin_form_score": 0.687764
+      },
+      {
+        "stage_id": "FR_v5_005",
+        "proposal_index": 959,
+        "mutation_operator": "macro_bundle_rewrite",
+        "mutation_details": "function_word_burst:3 short tokens: la->qeo, nom->nos, des->dem; paradigm_family_rewrite:prefix par across 32 types: paradis->paradrum, parallèlement->parallèlerum, paralympiques->paralympirum, paramètres->paramètrum",
+        "latin_structural_score": -1.343587,
+        "latin_form_score": 0.718104
+      }
+    ]
+  },
+  "replay_seed_42_signature": {
+    "final_struct": -1.3435869472793973,
+    "final_form": 0.7181036472320557,
+    "final_align": 0.4392205108144682,
+    "accepted_mutation_stages": 5,
+    "stage_signature": [
+      {
+        "stage_id": "FR_v5_000",
+        "proposal_index": 0,
+        "mutation_operator": "seed",
+        "mutation_details": "initial sampled source baseline",
+        "latin_structural_score": -1.378939,
+        "latin_form_score": 0.566157
+      },
+      {
+        "stage_id": "FR_v5_001",
+        "proposal_index": 1,
+        "mutation_operator": "macro_bundle_rewrite",
+        "mutation_details": "paradigm_family_rewrite:prefix comp across 24 types: compagnie->compagque, compagnon->compagque, compagny->compagque, comparée->comparque; paradigm_family_rewrite:prefix fra across 12 types: fracture->fractuque, frais->fratum, france->frantum, franche->francque; paradigm_family_rewrite:prefix com across 29 types: combat->combtum, combats->combatum, combattant->combatttum, comiclopedia->comicloptum; sequence_span_rewrite:span[430:433] token_char_edit:chevrolet -> chaevrolet (1 occurrences); split_token:produite -> pro + duite (1 occurrences)",
+        "latin_structural_score": -1.372266,
+        "latin_form_score": 0.593992
+      },
+      {
+        "stage_id": "FR_v5_002",
+        "proposal_index": 11,
+        "mutation_operator": "macro_bundle_rewrite",
+        "mutation_details": "paradigm_family_rewrite:prefix con across 74 types: concentrée->concentque, conception->conceptque, concernant->concernque, concerne->concerque; suffix_family_rewrite:ion -> tum across 136 token types, 223 occurrences",
+        "latin_structural_score": -1.366242,
+        "latin_form_score": 0.631862
+      },
+      {
+        "stage_id": "FR_v5_003",
+        "proposal_index": 73,
+        "mutation_operator": "macro_bundle_rewrite",
+        "mutation_details": "function_word_burst:2 short tokens: ses->es, de->is; suffix_family_rewrite:ns -> que across 90 token types, 225 occurrences; sequence_span_rewrite:span[614:619] sequence_order:rotated span by 2; token_char_edit:sur -> stur (1 occurrences); token_char_edit:teller -> tellerm (1 occurrences); function_word_burst:3 short tokens: un->en, le->ee, en->er",
+        "latin_structural_score": -1.36633,
+        "latin_form_score": 0.683223
+      },
+      {
+        "stage_id": "FR_v5_004",
+        "proposal_index": 139,
+        "mutation_operator": "macro_bundle_rewrite",
+        "mutation_details": "paradigm_family_rewrite:prefix organ across 4 types: organisattum->organisaque, organisé->organique, organisée->organique, organisés->organique; token_char_edit:les -> es (142 occurrences); split_token:portail -> porta + il (40 occurrences)",
+        "latin_structural_score": -1.348062,
+        "latin_form_score": 0.687764
+      },
+      {
+        "stage_id": "FR_v5_005",
+        "proposal_index": 959,
+        "mutation_operator": "macro_bundle_rewrite",
+        "mutation_details": "function_word_burst:3 short tokens: la->qeo, nom->nos, des->dem; paradigm_family_rewrite:prefix par across 32 types: paradis->paradrum, parallèlement->parallèlerum, paralympiques->paralympirum, paramètres->paramètrum",
+        "latin_structural_score": -1.343587,
+        "latin_form_score": 0.718104
+      }
+    ]
+  },
+  "replay_seed_45_signature": {
+    "final_struct": -1.3062274172668467,
+    "final_form": 0.6928220391273499,
+    "final_align": 0.4252034121913133,
+    "accepted_mutation_stages": 6,
+    "stage_signature": [
+      {
+        "stage_id": "FR_v5_000",
+        "proposal_index": 0,
+        "mutation_operator": "seed",
+        "mutation_details": "initial sampled source baseline",
+        "latin_structural_score": -1.33737,
+        "latin_form_score": 0.568098
+      },
+      {
+        "stage_id": "FR_v5_001",
+        "proposal_index": 1,
+        "mutation_operator": "macro_bundle_rewrite",
+        "mutation_details": "split_token:enregistrements -> enregistrem + ents (1 occurrences); split_token:entreprises -> entrepris + es (2 occurrences); function_word_burst:1 short tokens: le->ae",
+        "latin_structural_score": -1.336847,
+        "latin_form_score": 0.588145
+      },
+      {
+        "stage_id": "FR_v5_002",
+        "proposal_index": 2,
+        "mutation_operator": "paradigm_family_rewrite",
+        "mutation_details": "prefix con across 75 types: concentre->concenium, concentrée->concentium, conception->conceptium, conceptuel->conceptium",
+        "latin_structural_score": -1.332715,
+        "latin_form_score": 0.601384
+      },
+      {
+        "stage_id": "FR_v5_003",
+        "proposal_index": 3,
+        "mutation_operator": "paradigm_family_rewrite",
+        "mutation_details": "prefix com across 51 types: combat->combtum, combe->comtum, combinée->combintum, combler->combltum",
+        "latin_structural_score": -1.330364,
+        "latin_form_score": 0.616655
+      },
+      {
+        "stage_id": "FR_v5_004",
+        "proposal_index": 5,
+        "mutation_operator": "suffix_family_rewrite",
+        "mutation_details": "on -> tum across 171 token types, 316 occurrences",
+        "latin_structural_score": -1.330364,
+        "latin_form_score": 0.646366
+      },
+      {
+        "stage_id": "FR_v5_005",
+        "proposal_index": 12,
+        "mutation_operator": "macro_bundle_rewrite",
+        "mutation_details": "sequence_span_rewrite:span[298:302] split_token:colonel -> co + lonel (1 occurrences); sequence_order:swapped sequence 0 with 1; split_token:portail -> porta + il (58 occurrences); paradigm_family_rewrite:prefix car across 15 types: caractère->caractere, caractéristiques->caractéristiere, caravanes->caravaere, caricature->caricatere",
+        "latin_structural_score": -1.306688,
+        "latin_form_score": 0.64837
+      },
+      {
+        "stage_id": "FR_v5_006",
+        "proposal_index": 455,
+        "mutation_operator": "macro_bundle_rewrite",
+        "mutation_details": "function_word_burst:3 short tokens: en->is, la->ia, de->em; function_word_burst:3 short tokens: em->am, pour->pomur, ae->aes",
+        "latin_structural_score": -1.306227,
+        "latin_form_score": 0.692822
+      }
+    ]
+  }
+}

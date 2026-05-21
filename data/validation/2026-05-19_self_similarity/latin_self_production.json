@@ -1,0 +1,80 @@
+{
+  "latin_total_sequences": 897076,
+  "reference_slice_size": 50000,
+  "structural": {
+    "production_formula": "-REWARD_SCORE_SCALE * ||cand[:3] - latin_reward[:3]||",
+    "paper_formula": "cosine_similarity(cand_vec, latin_vec) - 1",
+    "candidate_eq_matched_slice": {
+      "production_score": -0.177892708263517,
+      "cosine_minus_1": -0.00012555709115946723,
+      "candidate_vec": [
+        0.128981026647912,
+        0.1324335456071983,
+        0.10465116279069768,
+        2.2258185129491337
+      ],
+      "reference_vec": [
+        0.128981026647912,
+        0.16201031548110556,
+        0.12442607897153352,
+        2.2258185129491337
+      ]
+    },
+    "candidate_eq_full_latin": {
+      "production_score": -0.3710656178021672,
+      "cosine_minus_1": -0.0005361111598509716,
+      "candidate_vec": [
+        0.05476790308747856,
+        0.16201031548110556,
+        0.12442607897153352,
+        2.1863492793041033
+      ],
+      "reference_vec": [
+        0.128981026647912,
+        0.16201031548110556,
+        0.12442607897153352,
+        2.2258185129491337
+      ]
+    },
+    "reward_score_scale": 5.0
+  },
+  "form": {
+    "candidate_eq_matched_slice": {
+      "latin_form_score": 1.0,
+      "latin_char_bigram_cosine": 0.9999999999999998,
+      "latin_char_trigram_cosine": 1.0,
+      "latin_suffix_cosine": 1.0
+    },
+    "candidate_eq_full_latin": {
+      "latin_form_score": 0.9825554427110775,
+      "latin_char_bigram_cosine": 0.9928407126420997,
+      "latin_char_trigram_cosine": 0.9784265837815127,
+      "latin_suffix_cosine": 0.9702426207081625
+    },
+    "weights": {
+      "char_bigram": 0.4,
+      "char_trigram": 0.4,
+      "suffix": 0.2
+    }
+  },
+  "family": {
+    "candidate_eq_matched_slice": {
+      "family_alignment_score": 0.9583333333333333,
+      "family_alignment_cost": 0.04166666666666669,
+      "matched_family_count": 36,
+      "unmatched_bridge_families": 0,
+      "unmatched_reference_families": 0,
+      "bridge_family_count": 36,
+      "reference_family_count": 36
+    },
+    "candidate_eq_full_latin": {
+      "family_alignment_score": 0.8202925561351859,
+      "family_alignment_cost": 0.17970744386481405,
+      "matched_family_count": 36,
+      "unmatched_bridge_families": 0,
+      "unmatched_reference_families": 0,
+      "bridge_family_count": 36,
+      "reference_family_count": 36
+    }
+  }
+}

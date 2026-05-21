@@ -1,0 +1,15 @@
+{
+  "language": "latin",
+  "source": "perseus_canonical",
+  "github_repo": "PerseusDL/canonical-latinLit",
+  "fetch_date": "2026-04-07",
+  "file_count": 428,
+  "files_processed": 428,
+  "files_errored": 0,
+  "sequence_count": 897076,
+  "total_tokens": 7089280,
+  "unique_types": 388265,
+  "type_token_ratio": 0.05476790308747856,
+  "mean_seq_length": 7.902652618061346,
+  "sequestered": true
+}

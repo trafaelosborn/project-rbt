@@ -1,0 +1,17 @@
+{
+  "language": "sumerian",
+  "source": "oracc_dcclt",
+  "oracc_url": "https://oracc.museum.upenn.edu/json/dcclt.zip",
+  "oracc_project": "dcclt",
+  "genre": "lexical",
+  "texts_processed": 1510,
+  "texts_skipped": 1747,
+  "limitation": "DCCLT contains lexical texts (vocabulary lists), not administrative or literary running prose. Sequences are shorter and less grammatically structured than CDLI administrative texts. This is a known limitation of the fallback source. See docs/decisions/009_sumerian_source.md.",
+  "fetch_date": "2026-04-07",
+  "sequence_count": 1510,
+  "total_tokens": 79113,
+  "unique_types": 17607,
+  "type_token_ratio": 0.2225550794433279,
+  "mean_seq_length": 52.39271523178808,
+  "null_model_role": "structured_non_ie_ceiling"
+}

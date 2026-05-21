@@ -1,0 +1,191 @@
+{
+  "pt_norm": 2.9201340665079907,
+  "lat_norm": 2.9301516916728714,
+  "cosine_similarity_15D": 0.6663848258016566,
+  "all_features": [
+    {
+      "feature": "f01_ttr",
+      "z_portuguese": -0.21976375943985235,
+      "z_latin": -1.363960186427645,
+      "dot_product_term": 0.2997490182956211,
+      "normalized_term": 0.03503199535199874
+    },
+    {
+      "feature": "f02_top100_bigram_coverage",
+      "z_portuguese": 0.2422113627278357,
+      "z_latin": -0.12190198918256713,
+      "dot_product_term": -0.02952604691914347,
+      "normalized_term": -0.0034507413712835536
+    },
+    {
+      "feature": "f03_top100_trigram_coverage",
+      "z_portuguese": 1.35605694933371,
+      "z_latin": 0.19327719835760115,
+      "dot_product_term": 0.26209488798057495,
+      "normalized_term": 0.030631315991376716
+    },
+    {
+      "feature": "f04_log_mean_seq_len",
+      "z_portuguese": 0.2184735681078438,
+      "z_latin": -0.6124732691710104,
+      "dot_product_term": -0.13380922048646648,
+      "normalized_term": -0.015638429833032572
+    },
+    {
+      "feature": "f05_top500_bigram_coverage",
+      "z_portuguese": 0.07829578814119768,
+      "z_latin": -0.04306579161660141,
+      "dot_product_term": -0.003371870096546391,
+      "normalized_term": -0.0003940741431662007
+    },
+    {
+      "feature": "f06_top500_trigram_coverage",
+      "z_portuguese": 1.3178849166001214,
+      "z_latin": 0.5230151283091469,
+      "dot_product_term": 0.6892737487523019,
+      "normalized_term": 0.08055617629656847
+    },
+    {
+      "feature": "f07_top1000_unigram_coverage",
+      "z_portuguese": -1.2859622342135895,
+      "z_latin": -1.9914693677574766,
+      "dot_product_term": 2.560954397529329,
+      "normalized_term": 0.29930153920453656
+    },
+    {
+      "feature": "f08_seq_length_variance",
+      "z_portuguese": -0.24232427068331883,
+      "z_latin": -0.2808838160978297,
+      "dot_product_term": 0.06806496588265402,
+      "normalized_term": 0.007954826948201958
+    },
+    {
+      "feature": "f09_word_length_mean",
+      "z_portuguese": 0.7397217085857487,
+      "z_latin": 1.0232356681670387,
+      "dot_product_term": 0.7569096367424021,
+      "normalized_term": 0.08846085644254549
+    },
+    {
+      "feature": "f10_word_length_variance",
+      "z_portuguese": 0.648261439500991,
+      "z_latin": 0.4239497035448999,
+      "dot_product_term": 0.2748302450960352,
+      "normalized_term": 0.03211971109542622
+    },
+    {
+      "feature": "f11_hapax_ratio",
+      "z_portuguese": -0.3289331506389927,
+      "z_latin": -0.36592772057569334,
+      "dot_product_term": 0.12036575803510777,
+      "normalized_term": 0.014067277684516436
+    },
+    {
+      "feature": "f12_zipf_slope_10_1000",
+      "z_portuguese": 0.4726585424251097,
+      "z_latin": 0.20719871142933746,
+      "dot_product_term": 0.09793424093655156,
+      "normalized_term": 0.011445681766694606
+    },
+    {
+      "feature": "f13_bigram_entropy",
+      "z_portuguese": 0.0782816335777112,
+      "z_latin": 0.2886075602671567,
+      "dot_product_term": 0.022592671280590764,
+      "normalized_term": 0.002640430183195209
+    },
+    {
+      "feature": "f14_trigram_entropy",
+      "z_portuguese": -1.10315935513258,
+      "z_latin": -0.19368626260701705,
+      "dot_product_term": 0.21366681255559647,
+      "normalized_term": 0.024971473891340475
+    },
+    {
+      "feature": "f15_suffix_entropy",
+      "z_portuguese": 0.7457249936608854,
+      "z_latin": 0.6733711784063593,
+      "dot_product_term": 0.5021497177485053,
+      "normalized_term": 0.05868678629273795
+    }
+  ],
+  "new_features_only": [
+    {
+      "feature": "f05_top500_bigram_coverage",
+      "z_portuguese": 0.07829578814119768,
+      "z_latin": -0.04306579161660141,
+      "dot_product_term": -0.003371870096546391,
+      "normalized_term": -0.0003940741431662007
+    },
+    {
+      "feature": "f06_top500_trigram_coverage",
+      "z_portuguese": 1.3178849166001214,
+      "z_latin": 0.5230151283091469,
+      "dot_product_term": 0.6892737487523019,
+      "normalized_term": 0.08055617629656847
+    },
+    {
+      "feature": "f07_top1000_unigram_coverage",
+      "z_portuguese": -1.2859622342135895,
+      "z_latin": -1.9914693677574766,
+      "dot_product_term": 2.560954397529329,
+      "normalized_term": 0.29930153920453656
+    },
+    {
+      "feature": "f08_seq_length_variance",
+      "z_portuguese": -0.24232427068331883,
+      "z_latin": -0.2808838160978297,
+      "dot_product_term": 0.06806496588265402,
+      "normalized_term": 0.007954826948201958
+    },
+    {
+      "feature": "f09_word_length_mean",
+      "z_portuguese": 0.7397217085857487,
+      "z_latin": 1.0232356681670387,
+      "dot_product_term": 0.7569096367424021,
+      "normalized_term": 0.08846085644254549
+    },
+    {
+      "feature": "f10_word_length_variance",
+      "z_portuguese": 0.648261439500991,
+      "z_latin": 0.4239497035448999,
+      "dot_product_term": 0.2748302450960352,
+      "normalized_term": 0.03211971109542622
+    },
+    {
+      "feature": "f11_hapax_ratio",
+      "z_portuguese": -0.3289331506389927,
+      "z_latin": -0.36592772057569334,
+      "dot_product_term": 0.12036575803510777,
+      "normalized_term": 0.014067277684516436
+    },
+    {
+      "feature": "f12_zipf_slope_10_1000",
+      "z_portuguese": 0.4726585424251097,
+      "z_latin": 0.20719871142933746,
+      "dot_product_term": 0.09793424093655156,
+      "normalized_term": 0.011445681766694606
+    },
+    {
+      "feature": "f13_bigram_entropy",
+      "z_portuguese": 0.0782816335777112,
+      "z_latin": 0.2886075602671567,
+      "dot_product_term": 0.022592671280590764,
+      "normalized_term": 0.002640430183195209
+    },
+    {
+      "feature": "f14_trigram_entropy",
+      "z_portuguese": -1.10315935513258,
+      "z_latin": -0.19368626260701705,
+      "dot_product_term": 0.21366681255559647,
+      "normalized_term": 0.024971473891340475
+    },
+    {
+      "feature": "f15_suffix_entropy",
+      "z_portuguese": 0.7457249936608854,
+      "z_latin": 0.6733711784063593,
+      "dot_product_term": 0.5021497177485053,
+      "normalized_term": 0.05868678629273795
+    }
+  ]
+}

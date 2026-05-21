@@ -1,0 +1,14 @@
+{
+  "language": "genoese",
+  "wiki_code": "lij",
+  "source": "wikipedia_api",
+  "api_date": "2026-04-07",
+  "article_count": 500,
+  "articles_skipped": 10150,
+  "total_tokens": 67347,
+  "sequence_count": 8439,
+  "unique_types": 18257,
+  "type_token_ratio": 0.2710885414346593,
+  "mean_seq_length": 7.980447920369712,
+  "sequestered": false
+}

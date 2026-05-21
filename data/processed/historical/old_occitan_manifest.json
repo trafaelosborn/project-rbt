@@ -1,0 +1,18 @@
+{
+  "language": "old_occitan",
+  "branch_language": "occitan",
+  "historical_period": "Old Occitan",
+  "source": "local_text_files",
+  "ingest_date": "2026-04-10",
+  "input_dir": "C:\\Code\\Project RBT\\project_rbt\\data\\raw\\historical\\old_occitan",
+  "file_count": 1,
+  "input_files": [
+    "C:\\Code\\Project RBT\\project_rbt\\data\\raw\\historical\\old_occitan\\chanson_croisade_chanson.txt"
+  ],
+  "total_tokens": 70826,
+  "sequence_count": 9899,
+  "unique_types": 10588,
+  "type_token_ratio": 0.1494931239940135,
+  "mean_seq_length": 7.154864127689666,
+  "notes": ""
+}

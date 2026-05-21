@@ -1,0 +1,14 @@
+{
+  "language": "italian",
+  "wiki_code": "it",
+  "source": "wikipedia_api",
+  "api_date": "2026-04-07",
+  "article_count": 500,
+  "articles_skipped": 9601,
+  "total_tokens": 450393,
+  "sequence_count": 30576,
+  "unique_types": 49811,
+  "type_token_ratio": 0.1105945252257473,
+  "mean_seq_length": 14.730278649921507,
+  "sequestered": false
+}

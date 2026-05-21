@@ -1,0 +1,342 @@
+{
+  "rows": [
+    {
+      "label": "latin",
+      "n_sequences": 897076,
+      "n_tokens": 7089280,
+      "structural_cos_minus_1": 2.220446049250313e-16,
+      "structural_production_analogue": -0.0,
+      "form_score": 1.0,
+      "form_char_bigram_cosine": 1.0,
+      "form_char_trigram_cosine": 1.0,
+      "form_suffix_cosine": 0.9999999999999999,
+      "family_alignment_score": 0.9652777777777778,
+      "family_matched_count": 36,
+      "family_unmatched_bridge": 0,
+      "family_unmatched_ref": 0,
+      "family_bridge_count": 36,
+      "family_ref_count": 36,
+      "structural_vec": [
+        0.05476790308747856,
+        0.16201031548110556,
+        0.12442607897153352,
+        2.1863492793041033
+      ]
+    },
+    {
+      "label": "old_french",
+      "n_sequences": 12756,
+      "n_tokens": 80049,
+      "structural_cos_minus_1": 2.220446049250313e-16,
+      "structural_production_analogue": -0.0,
+      "form_score": 1.0,
+      "form_char_bigram_cosine": 0.9999999999999999,
+      "form_char_trigram_cosine": 1.0,
+      "form_suffix_cosine": 1.0,
+      "family_alignment_score": 0.9375,
+      "family_matched_count": 36,
+      "family_unmatched_bridge": 0,
+      "family_unmatched_ref": 0,
+      "family_bridge_count": 36,
+      "family_ref_count": 36,
+      "structural_vec": [
+        0.1333433272120826,
+        0.16341159360066487,
+        0.1018641810918775,
+        1.9844987685032507
+      ]
+    },
+    {
+      "label": "middle_french",
+      "n_sequences": 6217,
+      "n_tokens": 31818,
+      "structural_cos_minus_1": -1.1102230246251565e-16,
+      "structural_production_analogue": -0.0,
+      "form_score": 1.0,
+      "form_char_bigram_cosine": 1.0,
+      "form_char_trigram_cosine": 1.0,
+      "form_suffix_cosine": 1.0,
+      "family_alignment_score": 0.9375,
+      "family_matched_count": 36,
+      "family_unmatched_bridge": 0,
+      "family_unmatched_ref": 0,
+      "family_bridge_count": 36,
+      "family_ref_count": 36,
+      "structural_vec": [
+        0.21616694952542587,
+        0.16116195781933942,
+        0.07855471035693389,
+        1.811219313162064
+      ]
+    },
+    {
+      "label": "anglo_norman",
+      "n_sequences": 5440,
+      "n_tokens": 27612,
+      "structural_cos_minus_1": 0.0,
+      "structural_production_analogue": -0.0,
+      "form_score": 1.0,
+      "form_char_bigram_cosine": 1.0,
+      "form_char_trigram_cosine": 1.0,
+      "form_suffix_cosine": 1.0,
+      "family_alignment_score": 0.9444444444444444,
+      "family_matched_count": 36,
+      "family_unmatched_bridge": 0,
+      "family_unmatched_ref": 0,
+      "family_bridge_count": 36,
+      "family_ref_count": 36,
+      "structural_vec": [
+        0.14486455164421266,
+        0.19136558481322719,
+        0.09004448535051388,
+        1.8043030179710868
+      ]
+    },
+    {
+      "label": "langue_d_oil",
+      "n_sequences": 6008,
+      "n_tokens": 33873,
+      "structural_cos_minus_1": -1.1102230246251565e-16,
+      "structural_production_analogue": -0.0,
+      "form_score": 1.0000000000000002,
+      "form_char_bigram_cosine": 1.0000000000000002,
+      "form_char_trigram_cosine": 1.0,
+      "form_suffix_cosine": 1.0,
+      "family_alignment_score": 0.9375,
+      "family_matched_count": 36,
+      "family_unmatched_bridge": 0,
+      "family_unmatched_ref": 0,
+      "family_bridge_count": 36,
+      "family_ref_count": 36,
+      "structural_vec": [
+        0.17043072653736013,
+        0.14256005736823235,
+        0.08751038493492107,
+        1.8928081055431027
+      ]
+    },
+    {
+      "label": "old_spanish",
+      "n_sequences": 4174,
+      "n_tokens": 29651,
+      "structural_cos_minus_1": -2.220446049250313e-16,
+      "structural_production_analogue": -0.0,
+      "form_score": 1.0,
+      "form_char_bigram_cosine": 1.0,
+      "form_char_trigram_cosine": 1.0,
+      "form_suffix_cosine": 1.0,
+      "family_alignment_score": 0.9583333333333333,
+      "family_matched_count": 36,
+      "family_unmatched_bridge": 0,
+      "family_unmatched_ref": 0,
+      "family_bridge_count": 36,
+      "family_ref_count": 36,
+      "structural_vec": [
+        0.21199959529189571,
+        0.24437224414017172,
+        0.2114469633361321,
+        2.0923253654018428
+      ]
+    },
+    {
+      "label": "old_occitan",
+      "n_sequences": 9899,
+      "n_tokens": 70826,
+      "structural_cos_minus_1": 2.220446049250313e-16,
+      "structural_production_analogue": -0.0,
+      "form_score": 1.0,
+      "form_char_bigram_cosine": 0.9999999999999999,
+      "form_char_trigram_cosine": 1.0,
+      "form_suffix_cosine": 0.9999999999999998,
+      "family_alignment_score": 0.9444444444444444,
+      "family_matched_count": 36,
+      "family_unmatched_bridge": 0,
+      "family_unmatched_ref": 0,
+      "family_bridge_count": 36,
+      "family_ref_count": 36,
+      "structural_vec": [
+        0.1494931239940135,
+        0.20978552278820375,
+        0.15013380086739872,
+        2.098614574706669
+      ]
+    },
+    {
+      "label": "markov",
+      "n_sequences": 10000,
+      "n_tokens": 100000,
+      "structural_cos_minus_1": 0.0,
+      "structural_production_analogue": -0.0,
+      "form_score": 1.0,
+      "form_char_bigram_cosine": 1.0,
+      "form_char_trigram_cosine": 1.0,
+      "form_suffix_cosine": 1.0,
+      "family_alignment_score": 0.9375,
+      "family_matched_count": 12,
+      "family_unmatched_bridge": 0,
+      "family_unmatched_ref": 0,
+      "family_bridge_count": 12,
+      "family_ref_count": 12,
+      "structural_vec": [
+        0.005,
+        0.035157259801809566,
+        0.02584493041749503,
+        2.3978952727983707
+      ]
+    },
+    {
+      "label": "sumerian",
+      "n_sequences": 1510,
+      "n_tokens": 79113,
+      "structural_cos_minus_1": 0.0,
+      "structural_production_analogue": -0.0,
+      "form_score": 0.9999999999999998,
+      "form_char_bigram_cosine": 0.9999999999999998,
+      "form_char_trigram_cosine": 0.9999999999999999,
+      "form_suffix_cosine": 1.0,
+      "family_alignment_score": 0.9722222222222222,
+      "family_matched_count": 36,
+      "family_unmatched_bridge": 0,
+      "family_unmatched_ref": 0,
+      "family_bridge_count": 36,
+      "family_ref_count": 36,
+      "structural_vec": [
+        0.2225550794433279,
+        0.11113317447709822,
+        0.09271758436944938,
+        3.9776743177798743
+      ]
+    },
+    {
+      "label": "portuguese_withheld",
+      "n_sequences": 15282,
+      "n_tokens": 202211,
+      "structural_cos_minus_1": 0.0,
+      "structural_production_analogue": -0.0,
+      "form_score": 1.0,
+      "form_char_bigram_cosine": 1.0,
+      "form_char_trigram_cosine": 0.9999999999999998,
+      "form_suffix_cosine": 1.0,
+      "family_alignment_score": 0.9444444444444444,
+      "family_matched_count": 36,
+      "family_unmatched_bridge": 0,
+      "family_unmatched_ref": 0,
+      "family_bridge_count": 36,
+      "family_ref_count": 36,
+      "structural_vec": [
+        0.15007591080603924,
+        0.17895080581647746,
+        0.17355581477912463,
+        2.655491000877405
+      ]
+    }
+  ],
+  "latin_self_production": {
+    "latin_total_sequences": 897076,
+    "reference_slice_size": 50000,
+    "structural": {
+      "production_formula": "-REWARD_SCORE_SCALE * ||cand[:3] - latin_reward[:3]||",
+      "paper_formula": "cosine_similarity(cand_vec, latin_vec) - 1",
+      "candidate_eq_matched_slice": {
+        "production_score": -0.177892708263517,
+        "cosine_minus_1": -0.00012555709115946723,
+        "candidate_vec": [
+          0.128981026647912,
+          0.1324335456071983,
+          0.10465116279069768,
+          2.2258185129491337
+        ],
+        "reference_vec": [
+          0.128981026647912,
+          0.16201031548110556,
+          0.12442607897153352,
+          2.2258185129491337
+        ]
+      },
+      "candidate_eq_full_latin": {
+        "production_score": -0.3710656178021672,
+        "cosine_minus_1": -0.0005361111598509716,
+        "candidate_vec": [
+          0.05476790308747856,
+          0.16201031548110556,
+          0.12442607897153352,
+          2.1863492793041033
+        ],
+        "reference_vec": [
+          0.128981026647912,
+          0.16201031548110556,
+          0.12442607897153352,
+          2.2258185129491337
+        ]
+      },
+      "reward_score_scale": 5.0
+    },
+    "form": {
+      "candidate_eq_matched_slice": {
+        "latin_form_score": 1.0,
+        "latin_char_bigram_cosine": 0.9999999999999998,
+        "latin_char_trigram_cosine": 1.0,
+        "latin_suffix_cosine": 1.0
+      },
+      "candidate_eq_full_latin": {
+        "latin_form_score": 0.9825554427110775,
+        "latin_char_bigram_cosine": 0.9928407126420997,
+        "latin_char_trigram_cosine": 0.9784265837815127,
+        "latin_suffix_cosine": 0.9702426207081625
+      },
+      "weights": {
+        "char_bigram": 0.4,
+        "char_trigram": 0.4,
+        "suffix": 0.2
+      }
+    },
+    "family": {
+      "candidate_eq_matched_slice": {
+        "family_alignment_score": 0.9583333333333333,
+        "family_alignment_cost": 0.04166666666666669,
+        "matched_family_count": 36,
+        "unmatched_bridge_families": 0,
+        "unmatched_reference_families": 0,
+        "bridge_family_count": 36,
+        "reference_family_count": 36
+      },
+      "candidate_eq_full_latin": {
+        "family_alignment_score": 0.8202925561351859,
+        "family_alignment_cost": 0.17970744386481405,
+        "matched_family_count": 36,
+        "unmatched_bridge_families": 0,
+        "unmatched_reference_families": 0,
+        "bridge_family_count": 36,
+        "reference_family_count": 36
+      }
+    }
+  },
+  "smoke_test": {
+    "expected": {
+      "validator_structural_cosine": 0.9992140862166782,
+      "validator_structural_distance": 2.024154993404628,
+      "validator_form_score": 0.38375984210715847,
+      "validator_char_bigram_cosine": 0.5788081845561647,
+      "validator_char_trigram_cosine": 0.30216729257656105,
+      "validator_suffix_cosine": 0.15684825627034088
+    },
+    "computed": {
+      "validator_structural_cosine": 0.9992140862166782,
+      "validator_structural_distance": 2.024154993404628,
+      "validator_form_score": 0.38375984210715847,
+      "validator_char_bigram_cosine": 0.5788081845561647,
+      "validator_char_trigram_cosine": 0.30216729257656105,
+      "validator_suffix_cosine": 0.15684825627034088
+    },
+    "max_abs_delta": 0.0,
+    "deltas": {
+      "validator_structural_cosine": 0.0,
+      "validator_structural_distance": 0.0,
+      "validator_form_score": 0.0,
+      "validator_char_bigram_cosine": 0.0,
+      "validator_char_trigram_cosine": 0.0,
+      "validator_suffix_cosine": 0.0
+    },
+    "passes": true
+  }
+}
