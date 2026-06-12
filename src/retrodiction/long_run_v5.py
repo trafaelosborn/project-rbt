@@ -104,6 +104,9 @@ def _parse_args() -> LongRunConfig:
     parser.add_argument("--enable-culture-bombs", action="store_true")
     parser.add_argument("--validator-set", nargs="*", default=[])
     parser.add_argument("--validator-snapshot-every-blocks", type=int, default=0)
+    parser.add_argument("--features-freeze-commit", default="")
+    parser.add_argument("--features-freeze-sha256", default="")
+    parser.add_argument("--corpus-budget", type=int, default=20_000)
     parser.add_argument("--live-event-mode", default="all", choices=["all", "selected", "accepted_only", "off"])
     parser.add_argument("--live-event-buffer-size", type=int, default=64)
     parser.add_argument("--plateau-window-blocks", type=int, default=10)
@@ -133,6 +136,9 @@ def _parse_args() -> LongRunConfig:
         enable_culture_bombs=args.enable_culture_bombs,
         validator_set=list(args.validator_set),
         validator_snapshot_every_blocks=args.validator_snapshot_every_blocks,
+        features_freeze_commit=args.features_freeze_commit,
+        features_freeze_sha256=args.features_freeze_sha256,
+        corpus_budget=args.corpus_budget,
         live_event_mode=args.live_event_mode,
         live_event_buffer_size=args.live_event_buffer_size,
         plateau_window_blocks=args.plateau_window_blocks,

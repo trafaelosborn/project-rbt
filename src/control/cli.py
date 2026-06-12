@@ -93,6 +93,22 @@ def _add_run_args(parser: argparse.ArgumentParser) -> None:
         help="If > 0, write validator-bank snapshots every N completed blocks",
     )
     parser.add_argument(
+        "--features-freeze-commit",
+        default="",
+        help="Git commit for the frozen H1 preregistration materials",
+    )
+    parser.add_argument(
+        "--features-freeze-sha256",
+        default="",
+        help="SHA-256 digest of docs/features_v2.md at freeze",
+    )
+    parser.add_argument(
+        "--corpus-budget",
+        type=int,
+        default=20_000,
+        help="Static corpus token budget registered for this run",
+    )
+    parser.add_argument(
         "--live-event-mode",
         default="all",
         choices=list(LIVE_EVENT_MODES),
@@ -122,6 +138,9 @@ def _config_from_args(args: argparse.Namespace) -> RunConfig:
         transparency_weight=args.transparency_weight,
         validator_set=list(args.validator_set),
         validator_snapshot_every_blocks=args.validator_snapshot_every_blocks,
+        features_freeze_commit=args.features_freeze_commit,
+        features_freeze_sha256=args.features_freeze_sha256,
+        corpus_budget=args.corpus_budget,
         live_event_mode=args.live_event_mode,
         live_event_buffer_size=args.live_event_buffer_size,
     )

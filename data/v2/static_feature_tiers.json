@@ -1,0 +1,224 @@
+{
+  "schema": "project_rbt_v2_static_feature_tiers_v1",
+  "generated_utc": "2026-06-12T22:11:51.628270+00:00",
+  "corpus_budget": 20000,
+  "sample_seed": 1729,
+  "corpus_count": 22,
+  "matrix_path": "C:\\Code\\Project RBT\\project_rbt\\data\\v2\\static_feature_matrix.csv",
+  "spearman_path": "C:\\Code\\Project RBT\\project_rbt\\data\\v2\\static_feature_spearman.csv",
+  "collinearity_threshold_abs_spearman": 0.85,
+  "f21_resolution": "F21 is registered as sentence-length skewness. Sentence-length excess kurtosis is emitted only as auxiliary diagnostic AUX01.",
+  "in_loop_selection_policy": "Evaluate proposed in-loop features in preregistered priority order; retain a candidate only if its absolute Spearman rho is below the threshold against every already-retained in-loop feature. The order favours direct, trainable typological axes when size-robust but more indirect diagnostics are collinear with them.",
+  "feature_specs": [
+    {
+      "feature_id": "F01",
+      "column": "f01_ttr",
+      "label": "Type-token ratio",
+      "prereg_tier": "diagnostic"
+    },
+    {
+      "feature_id": "F02",
+      "column": "f02_top100_bigram_coverage",
+      "label": "Top-100 bigram coverage",
+      "prereg_tier": "in_loop_candidate"
+    },
+    {
+      "feature_id": "F03",
+      "column": "f03_top100_trigram_coverage",
+      "label": "Top-100 trigram coverage",
+      "prereg_tier": "diagnostic"
+    },
+    {
+      "feature_id": "F04",
+      "column": "f04_log_mean_seq_len",
+      "label": "Log mean sequence length",
+      "prereg_tier": "excluded_unless_length_ops"
+    },
+    {
+      "feature_id": "F05",
+      "column": "f05_top500_bigram_coverage",
+      "label": "Top-500 bigram coverage",
+      "prereg_tier": "diagnostic"
+    },
+    {
+      "feature_id": "F06",
+      "column": "f06_top500_trigram_coverage",
+      "label": "Top-500 trigram coverage",
+      "prereg_tier": "diagnostic"
+    },
+    {
+      "feature_id": "F07",
+      "column": "f07_top1000_unigram_coverage",
+      "label": "Top-1000 unigram coverage",
+      "prereg_tier": "diagnostic"
+    },
+    {
+      "feature_id": "F08",
+      "column": "f08_seq_length_variance",
+      "label": "Sequence-length variance",
+      "prereg_tier": "diagnostic"
+    },
+    {
+      "feature_id": "F09",
+      "column": "f09_word_length_mean",
+      "label": "Mean word length",
+      "prereg_tier": "in_loop_candidate"
+    },
+    {
+      "feature_id": "F10",
+      "column": "f10_word_length_variance",
+      "label": "Word-length variance",
+      "prereg_tier": "diagnostic"
+    },
+    {
+      "feature_id": "F11",
+      "column": "f11_hapax_ratio",
+      "label": "Hapax ratio",
+      "prereg_tier": "diagnostic"
+    },
+    {
+      "feature_id": "F12",
+      "column": "f12_zipf_slope_10_1000",
+      "label": "Zipf slope ranks 10-1000",
+      "prereg_tier": "diagnostic"
+    },
+    {
+      "feature_id": "F13",
+      "column": "f13_bigram_entropy",
+      "label": "Bigram entropy",
+      "prereg_tier": "diagnostic_or_f02_alternative"
+    },
+    {
+      "feature_id": "F14",
+      "column": "f14_trigram_entropy",
+      "label": "Trigram entropy",
+      "prereg_tier": "diagnostic"
+    },
+    {
+      "feature_id": "F15",
+      "column": "f15_suffix_entropy",
+      "label": "Suffix entropy",
+      "prereg_tier": "in_loop_candidate"
+    },
+    {
+      "feature_id": "F16",
+      "column": "f16_heaps_beta",
+      "label": "Heaps' law exponent",
+      "prereg_tier": "in_loop_candidate"
+    },
+    {
+      "feature_id": "F17",
+      "column": "f17_conditional_char_entropy",
+      "label": "Conditional character entropy",
+      "prereg_tier": "in_loop_candidate"
+    },
+    {
+      "feature_id": "F18",
+      "column": "f18_dislegomena_to_hapax",
+      "label": "Dis-legomena to hapax ratio",
+      "prereg_tier": "in_loop_candidate"
+    },
+    {
+      "feature_id": "F19",
+      "column": "f19_word_edge_entropy_asymmetry",
+      "label": "Word-edge character asymmetry",
+      "prereg_tier": "in_loop_candidate"
+    },
+    {
+      "feature_id": "F20",
+      "column": "f20_consonant_vowel_ratio",
+      "label": "Consonant-vowel ratio",
+      "prereg_tier": "diagnostic"
+    },
+    {
+      "feature_id": "F21",
+      "column": "f21_sentence_length_skewness",
+      "label": "Sentence-length skewness",
+      "prereg_tier": "diagnostic"
+    }
+  ],
+  "auxiliary_diagnostics": [
+    {
+      "feature_id": "AUX01",
+      "column": "aux_sentence_length_excess_kurtosis",
+      "label": "Sentence-length excess kurtosis",
+      "prereg_tier": "auxiliary_diagnostic"
+    }
+  ],
+  "proposed_in_loop": [
+    "f02_top100_bigram_coverage",
+    "f09_word_length_mean",
+    "f15_suffix_entropy",
+    "f16_heaps_beta",
+    "f17_conditional_char_entropy",
+    "f18_dislegomena_to_hapax",
+    "f19_word_edge_entropy_asymmetry"
+  ],
+  "retained_in_loop": [
+    "f02_top100_bigram_coverage",
+    "f09_word_length_mean",
+    "f15_suffix_entropy",
+    "f17_conditional_char_entropy",
+    "f18_dislegomena_to_hapax",
+    "f19_word_edge_entropy_asymmetry"
+  ],
+  "demoted_from_in_loop": [
+    {
+      "feature": "f16_heaps_beta",
+      "reason": "collinear_with_retained_in_loop_feature",
+      "strongest_conflict": {
+        "retained_feature": "f09_word_length_mean",
+        "spearman_rho": 0.8690005646527386
+      }
+    }
+  ],
+  "diagnostic_or_excluded": [
+    "f01_ttr",
+    "f03_top100_trigram_coverage",
+    "f04_log_mean_seq_len",
+    "f05_top500_bigram_coverage",
+    "f06_top500_trigram_coverage",
+    "f07_top1000_unigram_coverage",
+    "f08_seq_length_variance",
+    "f10_word_length_variance",
+    "f11_hapax_ratio",
+    "f12_zipf_slope_10_1000",
+    "f13_bigram_entropy",
+    "f14_trigram_entropy",
+    "f16_heaps_beta",
+    "f20_consonant_vowel_ratio",
+    "f21_sentence_length_skewness"
+  ],
+  "retained_in_loop_labels": [
+    {
+      "feature_id": "F02",
+      "column": "f02_top100_bigram_coverage",
+      "label": "Top-100 bigram coverage"
+    },
+    {
+      "feature_id": "F09",
+      "column": "f09_word_length_mean",
+      "label": "Mean word length"
+    },
+    {
+      "feature_id": "F15",
+      "column": "f15_suffix_entropy",
+      "label": "Suffix entropy"
+    },
+    {
+      "feature_id": "F17",
+      "column": "f17_conditional_char_entropy",
+      "label": "Conditional character entropy"
+    },
+    {
+      "feature_id": "F18",
+      "column": "f18_dislegomena_to_hapax",
+      "label": "Dis-legomena to hapax ratio"
+    },
+    {
+      "feature_id": "F19",
+      "column": "f19_word_edge_entropy_asymmetry",
+      "label": "Word-edge character asymmetry"
+    }
+  ]
+}

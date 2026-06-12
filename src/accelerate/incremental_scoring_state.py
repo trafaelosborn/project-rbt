@@ -229,18 +229,28 @@ class IncrementalScoringState:
         self._references = references
         self._suffix_len = suffix_len
         self._sequences: list[list[str]] = [list(s) for s in sequences]
+        self._char_bigram_weight = float(getattr(latin_form_ref, "char_bigram_weight", 0.40))
+        self._char_trigram_weight = float(getattr(latin_form_ref, "char_trigram_weight", 0.40))
+        self._suffix_weight = float(getattr(latin_form_ref, "suffix_weight", 0.20))
         # Optional Fortran cosine scorer — replaces Python dict-intersection
         # cosines in _score_from_counters when available.
         self._fortran_cosine_scorer = fortran_cosine_scorer
-        self._latin_reward_vec = np.asarray(
-            getattr(latin_structural_ref, "reward_vec", np.asarray(latin_structural_ref.vec)[:3]),
-            dtype=np.float64,
-        )
+        latin_reward_vec = getattr(latin_structural_ref, "reward_vec", None)
+        if latin_reward_vec is None:
+            latin_vec = getattr(latin_structural_ref, "vec", None)
+            latin_reward_vec = np.asarray(latin_vec, dtype=np.float64)[:3] if latin_vec is not None else np.zeros(3)
+        self._latin_reward_vec = np.asarray(latin_reward_vec, dtype=np.float64)
         self._latin_score_scale = float(getattr(latin_structural_ref, "score_scale", 5.0))
         self._markov_vec = np.asarray(self._references.markov, dtype=np.float64)
         self._sumerian_vec = np.asarray(self._references.sumerian, dtype=np.float64)
-        self._real_language_centroid = np.asarray(self._references.real_language_centroid, dtype=np.float64)
-        self._real_language_scale = np.asarray(self._references.real_language_scale, dtype=np.float64)
+        self._real_language_centroid = np.asarray(
+            getattr(self._references, "real_language_centroid", np.zeros_like(self._markov_vec)),
+            dtype=np.float64,
+        )
+        self._real_language_scale = np.asarray(
+            getattr(self._references, "real_language_scale", np.ones_like(self._markov_vec)),
+            dtype=np.float64,
+        )
         self._build(sequences)
         log.debug(
             "IncrementalScoringState built: %d seqs, %d tokens, %d types (fortran_cosine=%s)",
@@ -847,9 +857,9 @@ class IncrementalScoringState:
             char_tg_cos = _sparse_profile_cosine(tg_profile, self._latin_form_ref.char_trigram_profile)
             sfx_cos = _sparse_profile_cosine(sfx_profile, self._latin_form_ref.suffix_profile)
             form_score = (
-                self._latin_form_ref.char_bigram_weight * char_bg_cos
-                + self._latin_form_ref.char_trigram_weight * char_tg_cos
-                + self._latin_form_ref.suffix_weight * sfx_cos
+                self._char_bigram_weight * char_bg_cos
+                + self._char_trigram_weight * char_tg_cos
+                + self._suffix_weight * sfx_cos
             )
 
             form_details = {

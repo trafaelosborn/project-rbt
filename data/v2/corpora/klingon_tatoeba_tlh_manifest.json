@@ -1,0 +1,31 @@
+{
+  "corpus_id": "klingon_tatoeba_tlh",
+  "language": "klingon",
+  "family": "constructed",
+  "role": "typological_control_optional",
+  "source": "tatoeba",
+  "source_provider": "Tatoeba",
+  "source_url": "https://downloads.tatoeba.org/exports/per_language/tlh/tlh_sentences.tsv.bz2",
+  "download_page": "https://tatoeba.org/en/downloads",
+  "license_note": "Tatoeba sentence exports are listed as CC BY 2.0 FR.",
+  "ingest_date": "2026-06-11",
+  "archive_path": "C:\\Code\\Project RBT\\project_rbt\\data\\v2\\raw\\tatoeba\\tlh_sentences.tsv.bz2",
+  "archive_sha256": "fe2f6d4cd7d5d799b66f48854223fb21ad91b645a8dcef61f8e1666edd39cda6",
+  "archive_size_bytes": 396550,
+  "iso_code": "tlh",
+  "tokenization": {
+    "mode": "klingon_latin_case_sensitive",
+    "basis": "Tatoeba sentence rows",
+    "status": "ready"
+  },
+  "notes": "Optional constructed-language control. Klingon Latin orthography uses uppercase letters and apostrophe phonemically, so this corpus uses a case-sensitive tokenizer instead of the default lowercasing tokenizer.",
+  "pre_cleaning_sentence_count": 42262,
+  "pre_cleaning_whitespace_token_count": 141431,
+  "pre_cleaning_character_count": 962312,
+  "skipped_empty_after_tokenization": 0,
+  "sequence_count": 42262,
+  "total_tokens": 141318,
+  "unique_types": 25804,
+  "type_token_ratio": 0.18259528156356586,
+  "mean_seq_length": 3.343854999763381
+}

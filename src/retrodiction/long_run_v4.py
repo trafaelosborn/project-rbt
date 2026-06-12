@@ -58,6 +58,9 @@ class LongRunConfig:
     enable_culture_bombs: bool = False
     validator_set: list[str] = field(default_factory=list)
     validator_snapshot_every_blocks: int = 0
+    features_freeze_commit: str = ""
+    features_freeze_sha256: str = ""
+    corpus_budget: int = 20_000
     live_event_mode: str = "all"
     live_event_buffer_size: int = 64
     plateau_window_blocks: int = 10
@@ -89,6 +92,9 @@ class LongRunConfig:
             "enable_culture_bombs": self.enable_culture_bombs,
             "validator_set": list(self.validator_set),
             "validator_snapshot_every_blocks": self.validator_snapshot_every_blocks,
+            "features_freeze_commit": self.features_freeze_commit,
+            "features_freeze_sha256": self.features_freeze_sha256,
+            "corpus_budget": self.corpus_budget,
             "live_event_mode": self.live_event_mode,
             "live_event_buffer_size": self.live_event_buffer_size,
             "plateau_window_blocks": self.plateau_window_blocks,
@@ -351,6 +357,13 @@ def run_long_continuation(
 
     try:
         while True:
+            if (cfg.output_dir / "stop_requested").exists():
+                manifest["status"] = "stopped_manual"
+                manifest["last_error"] = None
+                manifest["updated_utc"] = _utc_now_iso()
+                _save_manifest(manifest_path, manifest)
+                break
+
             next_size = _next_block_size(
                 cfg.total_target_proposals,
                 cfg.block_proposals,
@@ -477,6 +490,9 @@ def _parse_args() -> LongRunConfig:
     parser.add_argument("--family-target", type=float, default=1.0)
     parser.add_argument("--validator-set", nargs="*", default=[])
     parser.add_argument("--validator-snapshot-every-blocks", type=int, default=0)
+    parser.add_argument("--features-freeze-commit", default="")
+    parser.add_argument("--features-freeze-sha256", default="")
+    parser.add_argument("--corpus-budget", type=int, default=20_000)
     parser.add_argument("--live-event-mode", default="all", choices=["all", "selected", "accepted_only", "off"])
     parser.add_argument("--live-event-buffer-size", type=int, default=64)
     parser.add_argument("--plateau-window-blocks", type=int, default=10)
@@ -501,6 +517,9 @@ def _parse_args() -> LongRunConfig:
         family_target=args.family_target,
         validator_set=list(args.validator_set),
         validator_snapshot_every_blocks=args.validator_snapshot_every_blocks,
+        features_freeze_commit=args.features_freeze_commit,
+        features_freeze_sha256=args.features_freeze_sha256,
+        corpus_budget=args.corpus_budget,
         live_event_mode=args.live_event_mode,
         live_event_buffer_size=args.live_event_buffer_size,
         plateau_window_blocks=args.plateau_window_blocks,

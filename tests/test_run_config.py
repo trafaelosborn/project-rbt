@@ -169,6 +169,36 @@ class TestValidatorSnapshots:
         assert any("validator-bank snapshots" in w for w in warns)
 
 
+class TestFreezeProvenance:
+    def test_freeze_fields_roundtrip(self, tmp_path):
+        cfg = _valid_config(tmp_path)
+        cfg.features_freeze_commit = "abc123"
+        cfg.features_freeze_sha256 = "a" * 64
+        cfg.corpus_budget = 20_000
+
+        restored = RunConfig.from_dict(cfg.to_dict())
+
+        assert restored.features_freeze_commit == "abc123"
+        assert restored.features_freeze_sha256 == "a" * 64
+        assert restored.corpus_budget == 20_000
+
+    def test_freeze_sha_must_be_sha256_length(self, tmp_path):
+        cfg = _valid_config(tmp_path)
+        cfg.features_freeze_sha256 = "short"
+
+        errors = cfg.validate()
+
+        assert any("features_freeze_sha256" in e for e in errors)
+
+    def test_corpus_budget_must_be_positive(self, tmp_path):
+        cfg = _valid_config(tmp_path)
+        cfg.corpus_budget = 0
+
+        errors = cfg.validate()
+
+        assert any("corpus_budget" in e for e in errors)
+
+
 # ---------------------------------------------------------------------------
 # Corpus path validation
 # ---------------------------------------------------------------------------

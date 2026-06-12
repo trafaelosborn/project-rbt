@@ -3,9 +3,9 @@
   "branch_language": "french",
   "historical_period": "Anglo-Norman",
   "source": "local_text_files",
-  "ingest_date": "2026-05-04",
+  "ingest_date": "2026-06-12",
   "input_dir": "C:\\Code\\Project RBT\\project_rbt\\data\\raw\\historical\\anglo_norman",
-  "file_count": 11,
+  "file_count": 12,
   "input_files": [
     "C:\\Code\\Project RBT\\project_rbt\\data\\raw\\historical\\anglo_norman\\bisclavret.txt",
     "C:\\Code\\Project RBT\\project_rbt\\data\\raw\\historical\\anglo_norman\\chaitivel.txt",
@@ -17,12 +17,13 @@
     "C:\\Code\\Project RBT\\project_rbt\\data\\raw\\historical\\anglo_norman\\laustic.txt",
     "C:\\Code\\Project RBT\\project_rbt\\data\\raw\\historical\\anglo_norman\\marie_de_france_prolog.txt",
     "C:\\Code\\Project RBT\\project_rbt\\data\\raw\\historical\\anglo_norman\\milun.txt",
+    "C:\\Code\\Project RBT\\project_rbt\\data\\raw\\historical\\anglo_norman\\voyage_saint_brandan.txt",
     "C:\\Code\\Project RBT\\project_rbt\\data\\raw\\historical\\anglo_norman\\yonec.txt"
   ],
-  "total_tokens": 27612,
-  "sequence_count": 5440,
-  "unique_types": 4000,
-  "type_token_ratio": 0.14486455164421266,
-  "mean_seq_length": 5.0757352941176475,
+  "total_tokens": 37434,
+  "sequence_count": 7220,
+  "unique_types": 5693,
+  "type_token_ratio": 0.15208099588609286,
+  "mean_seq_length": 5.184764542936288,
   "notes": ""
 }

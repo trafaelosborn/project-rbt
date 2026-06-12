@@ -62,6 +62,9 @@ def _to_long_run_config(config: RunConfig, output_dir: Path) -> LongRunConfig:
         transparency_weight=config.transparency_weight,
         validator_set=list(config.validator_set),
         validator_snapshot_every_blocks=config.validator_snapshot_every_blocks,
+        features_freeze_commit=config.features_freeze_commit,
+        features_freeze_sha256=config.features_freeze_sha256,
+        corpus_budget=config.corpus_budget,
         live_event_mode=config.live_event_mode,
         live_event_buffer_size=config.live_event_buffer_size,
     )

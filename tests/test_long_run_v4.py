@@ -102,6 +102,9 @@ class TestLongRunV4:
                 output_dir=root / "run",
                 total_target_proposals=10,
                 block_proposals=4,
+                features_freeze_commit="abc123",
+                features_freeze_sha256="c" * 64,
+                corpus_budget=20_000,
             )
             manifest = run_long_continuation(cfg, engine_class=_FakeBlockEngine)
 
@@ -115,6 +118,9 @@ class TestLongRunV4:
                 "seeds_match": True,
             }
             assert manifest["blocks"][0]["started_from_corpus"] == str(start_corpus)
+            assert manifest["config"]["features_freeze_commit"] == "abc123"
+            assert manifest["config"]["features_freeze_sha256"] == "c" * 64
+            assert manifest["config"]["corpus_budget"] == 20_000
             assert manifest["blocks"][-1]["proposals_attempted"] == 2
             assert manifest["blocks"][0]["seed_audit"] == {
                 "requested_seed": 42,
@@ -212,6 +218,31 @@ class TestLongRunV4:
             assert result["cumulative_proposals"] == 12
             assert len(result["blocks"]) == 2
             assert result["blocks"][-1]["started_from_corpus"] == str(resumed_corpus)
+        finally:
+            shutil.rmtree(root, ignore_errors=True)
+
+    def test_run_long_continuation_honors_stop_sentinel_before_next_block(self):
+        root = (Path.cwd() / "data" / "retrodiction" / "_test_long_run_v4_stop").resolve()
+        start_corpus = root / "seed" / "seed_tokens.json"
+        run_dir = root / "run"
+        try:
+            shutil.rmtree(root, ignore_errors=True)
+            _write_corpus(start_corpus, [["de", "la"]])
+            run_dir.mkdir(parents=True)
+            (run_dir / "stop_requested").touch()
+
+            cfg = LongRunConfig(
+                language="french",
+                start_corpus=start_corpus,
+                output_dir=run_dir,
+                total_target_proposals=12,
+                block_proposals=4,
+            )
+            result = run_long_continuation(cfg, engine_class=_FakeBlockEngine)
+
+            assert result["status"] == "stopped_manual"
+            assert result["completed_block_proposals"] == 0
+            assert result["blocks"] == []
         finally:
             shutil.rmtree(root, ignore_errors=True)
 

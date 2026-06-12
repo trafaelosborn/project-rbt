@@ -105,6 +105,11 @@ class RunConfig:
     validator_set: list[str] = field(default_factory=list)
     validator_snapshot_every_blocks: int = 0
 
+    # --- preregistration freeze provenance ---
+    features_freeze_commit: str = ""
+    features_freeze_sha256: str = ""
+    corpus_budget: int = 20_000
+
     # --- live stream / logging ---
     live_event_mode: str = "all"
     live_event_buffer_size: int = 64
@@ -193,6 +198,12 @@ class RunConfig:
         if self.validator_snapshot_every_blocks < 0:
             errors.append("validator_snapshot_every_blocks must be >= 0")
 
+        if self.features_freeze_sha256 and len(self.features_freeze_sha256) != 64:
+            errors.append("features_freeze_sha256 must be a 64-character SHA-256 hex digest")
+
+        if self.corpus_budget <= 0:
+            errors.append("corpus_budget must be positive")
+
         if self.live_event_buffer_size < 1:
             errors.append("live_event_buffer_size must be >= 1")
 
@@ -272,6 +283,9 @@ class RunConfig:
             "transparency_weight": self.transparency_weight,
             "validator_set": list(self.validator_set),
             "validator_snapshot_every_blocks": self.validator_snapshot_every_blocks,
+            "features_freeze_commit": self.features_freeze_commit,
+            "features_freeze_sha256": self.features_freeze_sha256,
+            "corpus_budget": self.corpus_budget,
             "live_event_mode": self.live_event_mode,
             "live_event_buffer_size": self.live_event_buffer_size,
         }

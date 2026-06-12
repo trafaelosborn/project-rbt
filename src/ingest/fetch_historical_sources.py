@@ -20,6 +20,7 @@ import csv
 import json
 import logging
 import re
+import time
 from dataclasses import dataclass
 from html import unescape
 from html.parser import HTMLParser
@@ -196,6 +197,7 @@ def fetch_all(
     manifest_path: Path = DEFAULT_SOURCE_MANIFEST,
     corpus_ids: set[str] | None = None,
     include_statuses: set[str] | None = None,
+    sleep_seconds: float = 1.0,
 ) -> list[Path]:
     rows = _load_rows(manifest_path)
     selected = []
@@ -206,7 +208,9 @@ def fetch_all(
             continue
         selected.append(row)
     outputs = []
-    for row in selected:
+    for idx, row in enumerate(selected):
+        if idx > 0 and sleep_seconds > 0.0:
+            time.sleep(sleep_seconds)
         outputs.append(fetch_source(row))
     return outputs
 
@@ -222,10 +226,21 @@ def main() -> None:
         default=["ready"],
         help="Limit to one or more source statuses (default: ready)",
     )
+    parser.add_argument(
+        "--sleep-seconds",
+        type=float,
+        default=1.0,
+        help="Pause between source fetches to be gentle to Wikisource (default: 1.0)",
+    )
     args = parser.parse_args()
     corpus_ids = set(args.corpus) if args.corpus else None
     statuses = set(args.status) if args.status else None
-    outputs = fetch_all(args.manifest, corpus_ids=corpus_ids, include_statuses=statuses)
+    outputs = fetch_all(
+        args.manifest,
+        corpus_ids=corpus_ids,
+        include_statuses=statuses,
+        sleep_seconds=args.sleep_seconds,
+    )
     for path in outputs:
         print(path)
 

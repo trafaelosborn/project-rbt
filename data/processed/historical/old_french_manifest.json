@@ -3,7 +3,7 @@
   "branch_language": "french",
   "historical_period": "Old French",
   "source": "local_text_files",
-  "ingest_date": "2026-04-10",
+  "ingest_date": "2026-06-12",
   "input_dir": "C:\\Code\\Project RBT\\project_rbt\\data\\raw\\historical\\old_french",
   "file_count": 8,
   "input_files": [
@@ -16,10 +16,10 @@
     "C:\\Code\\Project RBT\\project_rbt\\data\\raw\\historical\\old_french\\serments_de_strasbourg.txt",
     "C:\\Code\\Project RBT\\project_rbt\\data\\raw\\historical\\old_french\\vie_de_saint_leger.txt"
   ],
-  "total_tokens": 80049,
-  "sequence_count": 12756,
-  "unique_types": 10674,
-  "type_token_ratio": 0.1333433272120826,
-  "mean_seq_length": 6.275399811853245,
+  "total_tokens": 106535,
+  "sequence_count": 17127,
+  "unique_types": 13630,
+  "type_token_ratio": 0.1279391749190407,
+  "mean_seq_length": 6.220295439948619,
   "notes": ""
 }

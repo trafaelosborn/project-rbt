@@ -21,6 +21,7 @@ import numpy as np
 from src.retrodiction.engine_reinforced import LatinReference
 from src.retrodiction.engine_reinforced_v2 import LatinFormReference, ReinforcedV2StageRecord
 from src.retrodiction.engine_reinforced_v4 import (
+    MutationPayload,
     RETRODICTION_DIR,
     ReinforcedV4Config,
     RelationalReinforcedRetrodictionEngineV4,
@@ -230,7 +231,11 @@ class RelationalReinforcedRetrodictionEngineV5(RelationalReinforcedRetrodictionE
                 mutated, operator, details, mutation_cost = self._mutate_candidate(current.sequences, rng)
                 if mutated is None:
                     continue
-                candidate = self._evaluate_sequences(mutated, mutation_cost=mutation_cost)
+                if isinstance(mutated, MutationPayload):
+                    mutated_sequences = mutated.materialize(current.sequences)
+                else:
+                    mutated_sequences = mutated
+                candidate = self._evaluate_sequences(mutated_sequences, mutation_cost=mutation_cost)
                 candidate = self._amplify_reward(current, candidate)
                 candidate.operator = operator
                 candidate.details = details
