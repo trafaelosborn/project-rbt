@@ -38,6 +38,7 @@ PAUSE_SENTINEL = "pause_requested"
 STOP_SENTINEL = "stop_requested"
 
 DEFAULT_SOURCE_LANGUAGES = ("french", "spanish", "italian", "portuguese", "romanian")
+REGISTERED_H1_SEEDS = (42, 1729, 8675309)
 SUCCESS_STATUSES = {"complete", "joint_hit", "plateau_hit"}
 TERMINAL_STATUSES = SUCCESS_STATUSES | {"stopped_manual", "failed"}
 
@@ -51,6 +52,13 @@ class SupervisorProfile:
     priority: str
     thread_count: int
     live_event_mode: str
+    daytime_max_parallel: int | None = None
+    night_start_hour: int = 23
+    night_end_hour: int = 8
+
+    @property
+    def is_clocked(self) -> bool:
+        return self.daytime_max_parallel is not None
 
 
 PROFILES: dict[str, SupervisorProfile] = {
@@ -67,6 +75,16 @@ PROFILES: dict[str, SupervisorProfile] = {
         priority="below_normal",
         thread_count=1,
         live_event_mode="accepted_only",
+    ),
+    "adaptive": SupervisorProfile(
+        name="adaptive",
+        max_parallel=6,
+        priority="below_normal",
+        thread_count=1,
+        live_event_mode="accepted_only",
+        daytime_max_parallel=3,
+        night_start_hour=23,
+        night_end_hour=8,
     ),
     "full": SupervisorProfile(
         name="full",
@@ -294,6 +312,33 @@ def utc_now_iso() -> str:
     return datetime.now(timezone.utc).isoformat()
 
 
+def _in_hour_window(hour: int, start_hour: int, end_hour: int) -> bool:
+    """Return whether a wall-clock hour is inside a possibly overnight window."""
+    if start_hour == end_hour:
+        return True
+    if start_hour < end_hour:
+        return start_hour <= hour < end_hour
+    return hour >= start_hour or hour < end_hour
+
+
+def effective_max_parallel(
+    profile: SupervisorProfile,
+    *,
+    max_parallel: int | None = None,
+    now: datetime | None = None,
+) -> int:
+    """Return the current worker cap for a profile under local wall-clock rules."""
+    night_cap = max(1, int(max_parallel if max_parallel is not None else profile.max_parallel))
+    if not profile.is_clocked:
+        return night_cap
+
+    day_cap = max(1, min(int(profile.daytime_max_parallel or night_cap), night_cap))
+    local_now = now or datetime.now()
+    if _in_hour_window(local_now.hour, profile.night_start_hour, profile.night_end_hour):
+        return night_cap
+    return day_cap
+
+
 def default_start_corpus(language: str) -> Path:
     """Return the repo-local default token corpus for a source language."""
     processed = PROJECT_ROOT / "data" / "processed" / "romance" / f"{language}_tokens.json"
@@ -379,6 +424,10 @@ def write_supervisor_manifest(
         "updated_utc": utc_now_iso(),
         "profile": profile.name,
         "max_parallel": max_parallel,
+        "effective_max_parallel": effective_max_parallel(profile, max_parallel=max_parallel),
+        "daytime_max_parallel": profile.daytime_max_parallel,
+        "night_start_hour": profile.night_start_hour if profile.is_clocked else None,
+        "night_end_hour": profile.night_end_hour if profile.is_clocked else None,
         "priority": profile.priority,
         "thread_count": profile.thread_count,
         "job_count": len(jobs),
@@ -521,6 +570,19 @@ def _start_job(job: SupervisorJob, *, profile: SupervisorProfile) -> RunningJob:
     return RunningJob(job=job, process=process, stdout=stdout, stderr=stderr)
 
 
+def request_over_limit_stops(running: list[RunningJob], max_parallel: int) -> list[Path]:
+    """Ask over-limit jobs to stop cleanly at their next block boundary."""
+    if len(running) <= max_parallel:
+        return []
+    requested: list[Path] = []
+    for item in running[max_parallel:]:
+        sentinel = item.job.stop_sentinel
+        if not sentinel.exists():
+            sentinel.touch()
+            requested.append(sentinel)
+    return requested
+
+
 def should_launch(
     status: JobStatus,
     *,
@@ -606,7 +668,15 @@ def run_supervisor(
 
     try:
         while pending or running:
-            while pending and len(running) < actual_parallel and not pause_requested(output_root):
+            current_parallel = effective_max_parallel(profile, max_parallel=actual_parallel)
+            requested_stops = request_over_limit_stops(running, current_parallel)
+            if requested_stops:
+                print(
+                    f"clocked profile requested stop for {len(requested_stops)} over-limit jobs",
+                    flush=True,
+                )
+
+            while pending and len(running) < current_parallel and not pause_requested(output_root):
                 job = pending.pop(0)
                 if job.stop_sentinel.exists():
                     job.stop_sentinel.unlink()
@@ -632,6 +702,12 @@ def run_supervisor(
                     flush=True,
                 )
                 item.close_logs()
+                if (
+                    profile.is_clocked
+                    and status.status == "stopped_manual"
+                    and not pause_requested(output_root)
+                ):
+                    pending.append(item.job)
 
             running = still_running
 
@@ -664,12 +740,30 @@ def _profile_from_args(args: argparse.Namespace) -> SupervisorProfile:
     priority = args.priority if args.priority is not None else base.priority
     thread_count = args.thread_count if args.thread_count is not None else base.thread_count
     live_event_mode = args.live_event_mode if args.live_event_mode is not None else base.live_event_mode
+    daytime_max_parallel = (
+        args.daytime_max_parallel
+        if getattr(args, "daytime_max_parallel", None) is not None
+        else base.daytime_max_parallel
+    )
+    night_start_hour = (
+        args.night_start_hour
+        if getattr(args, "night_start_hour", None) is not None
+        else base.night_start_hour
+    )
+    night_end_hour = (
+        args.night_end_hour
+        if getattr(args, "night_end_hour", None) is not None
+        else base.night_end_hour
+    )
     return SupervisorProfile(
         name=base.name,
         max_parallel=max_parallel,
         priority=priority,
         thread_count=thread_count,
         live_event_mode=live_event_mode,
+        daytime_max_parallel=daytime_max_parallel,
+        night_start_hour=night_start_hour,
+        night_end_hour=night_end_hour,
     )
 
 
@@ -691,12 +785,27 @@ def _jobs_from_args(args: argparse.Namespace, profile: SupervisorProfile) -> lis
     )
 
 
+def _hour_of_day(value: str) -> int:
+    hour = int(value)
+    if not 0 <= hour <= 23:
+        raise argparse.ArgumentTypeError("hour must be between 0 and 23")
+    return hour
+
+
 def _add_matrix_args(parser: argparse.ArgumentParser) -> None:
     parser.add_argument("--output-root", type=Path, default=DEFAULT_OUTPUT_ROOT)
     parser.add_argument("--languages", nargs="+", default=list(DEFAULT_SOURCE_LANGUAGES))
-    parser.add_argument("--seeds", nargs="+", type=int, default=[42])
+    parser.add_argument("--seeds", nargs="+", type=int, default=list(REGISTERED_H1_SEEDS))
     parser.add_argument("--profile", choices=sorted(PROFILES), default="polite")
     parser.add_argument("--max-parallel", type=int, default=None)
+    parser.add_argument(
+        "--daytime-max-parallel",
+        type=int,
+        default=None,
+        help="Daytime worker cap for clocked profiles; default is profile-specific",
+    )
+    parser.add_argument("--night-start-hour", type=_hour_of_day, default=None)
+    parser.add_argument("--night-end-hour", type=_hour_of_day, default=None)
     parser.add_argument("--priority", choices=["idle", "below_normal", "normal"], default=None)
     parser.add_argument("--thread-count", type=int, default=None)
     parser.add_argument("--target-proposals", type=int, default=1000)
@@ -812,6 +921,9 @@ def build_parser() -> argparse.ArgumentParser:
     p_resume.add_argument("--output-root", type=Path, default=DEFAULT_OUTPUT_ROOT)
     p_resume.add_argument("--profile", choices=sorted(PROFILES), default="polite")
     p_resume.add_argument("--max-parallel", type=int, default=None)
+    p_resume.add_argument("--daytime-max-parallel", type=int, default=None)
+    p_resume.add_argument("--night-start-hour", type=_hour_of_day, default=None)
+    p_resume.add_argument("--night-end-hour", type=_hour_of_day, default=None)
     p_resume.add_argument("--priority", choices=["idle", "below_normal", "normal"], default=None)
     p_resume.add_argument("--thread-count", type=int, default=None)
     p_resume.add_argument("--live-event-mode", choices=list(LIVE_EVENT_MODES), default=None)

@@ -1,6 +1,7 @@
 """Tests for src.control.multi_run_supervisor."""
 
 import json
+from datetime import datetime
 from pathlib import Path
 
 from src.control import multi_run_supervisor as supervisor
@@ -31,6 +32,50 @@ def test_build_jobs_expands_language_seed_matrix_and_uses_repo_corpora(tmp_path)
     assert jobs[2].start_corpus.name == "portuguese_tokens.json"
     assert "sequestered" in str(jobs[2].start_corpus)
     assert jobs[0].output_dir == tmp_path / "french" / "seed_42"
+
+
+def test_registered_h1_seeds_are_the_cli_default(tmp_path):
+    parser = supervisor.build_parser()
+
+    args = parser.parse_args(["plan", "--output-root", str(tmp_path)])
+
+    assert args.seeds == list(supervisor.REGISTERED_H1_SEEDS)
+
+
+def test_adaptive_profile_uses_night_and_day_worker_caps():
+    profile = supervisor.PROFILES["adaptive"]
+
+    assert supervisor.effective_max_parallel(
+        profile,
+        now=datetime(2026, 6, 13, 23, 0),
+    ) == 6
+    assert supervisor.effective_max_parallel(
+        profile,
+        now=datetime(2026, 6, 14, 7, 59),
+    ) == 6
+    assert supervisor.effective_max_parallel(
+        profile,
+        now=datetime(2026, 6, 14, 8, 0),
+    ) == 3
+    assert supervisor.effective_max_parallel(
+        profile,
+        now=datetime(2026, 6, 14, 22, 59),
+    ) == 3
+
+
+def test_adaptive_profile_honors_lower_explicit_night_cap():
+    profile = supervisor.PROFILES["adaptive"]
+
+    assert supervisor.effective_max_parallel(
+        profile,
+        max_parallel=2,
+        now=datetime(2026, 6, 13, 23, 0),
+    ) == 2
+    assert supervisor.effective_max_parallel(
+        profile,
+        max_parallel=2,
+        now=datetime(2026, 6, 14, 12, 0),
+    ) == 2
 
 
 def test_job_command_launches_long_run_v5_with_resource_light_logging(tmp_path):
@@ -90,6 +135,32 @@ def test_write_and_load_supervisor_manifest_roundtrip(tmp_path):
     assert payload["job_count"] == 1
     assert payload["max_parallel"] == 3
     assert loaded_jobs == [job]
+
+
+def test_clocked_manifest_records_schedule_metadata(tmp_path):
+    corpus = tmp_path / "french_tokens.json"
+    _write_corpus(corpus)
+    job = supervisor.SupervisorJob(
+        language="french",
+        seed=42,
+        start_corpus=corpus,
+        output_dir=tmp_path / "french" / "seed_42",
+        total_target_proposals=1000,
+    )
+
+    path = supervisor.write_supervisor_manifest(
+        tmp_path,
+        jobs=[job],
+        profile=supervisor.PROFILES["adaptive"],
+        max_parallel=6,
+    )
+    payload = json.loads(path.read_text(encoding="utf-8"))
+
+    assert payload["profile"] == "adaptive"
+    assert payload["max_parallel"] == 6
+    assert payload["daytime_max_parallel"] == 3
+    assert payload["night_start_hour"] == 23
+    assert payload["night_end_hour"] == 8
 
 
 def test_pause_jobs_writes_global_and_per_job_sentinels(tmp_path):
