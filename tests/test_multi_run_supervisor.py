@@ -78,6 +78,69 @@ def test_adaptive_profile_honors_lower_explicit_night_cap():
     ) == 2
 
 
+def test_pending_selection_prefers_least_active_language(tmp_path):
+    corpus = tmp_path / "tokens.json"
+    _write_corpus(corpus)
+    pending = [
+        supervisor.SupervisorJob(
+            language="french",
+            seed=1729,
+            start_corpus=corpus,
+            output_dir=tmp_path / "french" / "seed_1729",
+            total_target_proposals=1000,
+        ),
+        supervisor.SupervisorJob(
+            language="spanish",
+            seed=42,
+            start_corpus=corpus,
+            output_dir=tmp_path / "spanish" / "seed_42",
+            total_target_proposals=1000,
+        ),
+        supervisor.SupervisorJob(
+            language="italian",
+            seed=42,
+            start_corpus=corpus,
+            output_dir=tmp_path / "italian" / "seed_42",
+            total_target_proposals=1000,
+        ),
+    ]
+
+    index = supervisor.select_next_pending_index(
+        pending,
+        active_counts={"french": 1},
+    )
+
+    assert pending[index].job_id == "spanish_seed_42"
+
+
+def test_pending_selection_round_robins_language_major_manifest_order(tmp_path):
+    jobs = supervisor.build_jobs(
+        languages=["french", "spanish", "italian"],
+        seeds=[42, 1729],
+        output_root=tmp_path,
+        total_target_proposals=1000,
+    )
+    pending = list(jobs)
+    active_counts: dict[str, int] = {}
+    selected: list[str] = []
+
+    for _ in range(4):
+        index = supervisor.select_next_pending_index(
+            pending,
+            active_counts=active_counts,
+        )
+        job = pending.pop(index)
+        selected.append(job.job_id)
+        active_counts[job.language] = active_counts.get(job.language, 0) + 1
+
+    assert selected == [
+        "french_seed_42",
+        "spanish_seed_42",
+        "italian_seed_42",
+        "french_seed_1729",
+    ]
+
+
 def test_job_command_launches_long_run_v5_with_resource_light_logging(tmp_path):
     corpus = tmp_path / "french_tokens.json"
     _write_corpus(corpus)

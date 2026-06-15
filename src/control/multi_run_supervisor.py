@@ -583,6 +583,40 @@ def request_over_limit_stops(running: list[RunningJob], max_parallel: int) -> li
     return requested
 
 
+def active_language_counts(running: list[RunningJob]) -> dict[str, int]:
+    counts: dict[str, int] = {}
+    for item in running:
+        counts[item.job.language] = counts.get(item.job.language, 0) + 1
+    return counts
+
+
+def select_next_pending_index(
+    pending: list[SupervisorJob],
+    *,
+    active_counts: dict[str, int],
+) -> int:
+    """Choose the pending job whose language is least represented in active jobs."""
+    if not pending:
+        raise ValueError("Cannot select from an empty pending queue")
+
+    best_index = 0
+    best_count = active_counts.get(pending[0].language, 0)
+    for index, job in enumerate(pending[1:], start=1):
+        count = active_counts.get(job.language, 0)
+        if count < best_count:
+            best_index = index
+            best_count = count
+    return best_index
+
+
+def pop_next_pending_job(pending: list[SupervisorJob], running: list[RunningJob]) -> SupervisorJob:
+    index = select_next_pending_index(
+        pending,
+        active_counts=active_language_counts(running),
+    )
+    return pending.pop(index)
+
+
 def should_launch(
     status: JobStatus,
     *,
@@ -677,7 +711,7 @@ def run_supervisor(
                 )
 
             while pending and len(running) < current_parallel and not pause_requested(output_root):
-                job = pending.pop(0)
+                job = pop_next_pending_job(pending, running)
                 if job.stop_sentinel.exists():
                     job.stop_sentinel.unlink()
                 started = _start_job(job, profile=profile)
