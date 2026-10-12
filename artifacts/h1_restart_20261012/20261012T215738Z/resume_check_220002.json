@@ -1,0 +1,31 @@
+{
+  "checked_utc": "2026-10-12T22:00:02.851691+00:00",
+  "runner_id": "20261012T215910Z_2642d88e",
+  "runner_pid": 42312,
+  "runner_status": "running",
+  "prior_committed_proposals": 8497,
+  "committed_proposals_now": 8515,
+  "active": [
+    {
+      "job_id": "french__corpus_42__search_42__disabled",
+      "pid": 43368,
+      "resumed_from": 200,
+      "committed_now": 209,
+      "advanced_since_restart": true,
+      "checkpoint_sha256": "95c61c2e301b85735a9d0f47086cc6c78a5e9b7cf3fd5086ba756c7f7e737f89",
+      "measured_tokens": 20000
+    },
+    {
+      "job_id": "french__corpus_42__search_42__full",
+      "pid": 43352,
+      "resumed_from": 200,
+      "committed_now": 209,
+      "advanced_since_restart": true,
+      "checkpoint_sha256": "f3f516e6857f57753038ceb26033e16ef3523f586902e1fdd70a5d9c33035b21",
+      "measured_tokens": 20000
+    }
+  ],
+  "all_active_advanced": true,
+  "registration_sha256": "012560628d8d5f7c54f74560a711804cf40d962192cf6f79c08b2d987f60eeb0",
+  "same_registered_experiment": true
+}

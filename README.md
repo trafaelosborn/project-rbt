@@ -10,6 +10,50 @@ Project RBT projects modern-language corpora onto a low-dimensional structural f
 
 The headline finding is interpretive rather than reconstructive: the structural metric used here functions as a **typological proximity detector** (sensitive to morphological richness, suffix-profile entropy, and inflectional vocabulary breadth) rather than a chronological one. Sumerian, a non-Indo-European agglutinative language with no historical relationship to Romance, lands at fourth-rank structural proximity to Latin under an expanded 15-feature analysis — diagnostic evidence that the metric is not lineage-tracking.
 
+## Corrected H1 execution and active experiment (2026-10-12)
+
+The later H1 experiment recorded the new registration while continuing to
+optimize the legacy reward. The corrected implementation now binds the frozen
+six-feature score and 20,000-token measurement budget to candidate acceptance,
+audits saved scores, and rejects incompatible resumes. Bounded French/Finnish
+pilots passed. The registered form-reward ablation is now running; no completed
+production result is available yet.
+
+See the [repair audit](docs/reports/2026-10-01_h1_repair_audit.md),
+[execution decisions](docs/decisions/044_h1_objective_execution_repair.md),
+[E1 readout clarifications](docs/decisions/045_h1_readout_operational_clarifications.md), and
+[dependence/scope amendment](docs/decisions/046_h1_e1_dependence_and_claim_scope.md)
+for reproduction commands, evidence and limitations. The original paper and
+historical outputs remain available below.
+
+The current E1 readout has withdrawn the dependent-pair significance gate.
+It reports effects for the selected panel, whole-language label-reference
+fractions conditional on exchangeability, leave-one-language-out sensitivity,
+and feature/control diagnostics. It cannot declare unconditional H1 confirmation.
+Production requires a fresh registration sidecar; pilots and benchmarks remain
+excluded. The [corrected study outline](docs/manuscript/corrected_e1_study_outline.md)
+states the question and reporting limits. That natural-termination E1 design
+is separate from the fixed-budget experiment currently running.
+
+The [Decision 047 extension](docs/decisions/047_h1_continuous_search_and_form_reward_ablation.md)
+adds separate corpus/search seeds, continuous checkpoints, resource pauses,
+diversity/reward diagnostics, and a full-versus-disabled form-reward comparison.
+It asks how those rewards affect the selected panel at an equal proposal budget;
+its readout is separate from E1's structural-progress AUC. The
+[extension audit and runbook](docs/reports/2026-10-01_h1_extension_audit.md)
+records 129 passing tests and finite real-corpus resume validation.
+Production [launched on October 1](docs/reports/2026-10-01_h1_production_launch.md)
+and [resumed after a computer restart on October 12](docs/reports/2026-10-12_h1_production_resume.md).
+It comprises 66 jobs at 1,000 proposals each. Latin-informed proposal guidance
+remains in both arms. The question is: **How does disabling explicit Latin-form
+rewards change fixed-budget convergence and diversity in the selected corpus panel?**
+
+The [publication audit](docs/reports/2026-10-12_h1_github_publication.md) describes
+this code release, dependency setup, validation, and the evidence included on
+GitHub. The live checkpoint/state corpus and bulk local validation artifacts
+remain outside Git; the production registration and selected audit receipts
+are included. Updating Git history does not change the registered experiment.
+
 ## Paper
 
 The manuscript source is at `docs/manuscript/french_to_latin_retrodiction.tex`. The compiled PDF is built locally with the standard LaTeX toolchain:

@@ -34,6 +34,20 @@ def test_build_jobs_expands_language_seed_matrix_and_uses_repo_corpora(tmp_path)
     assert jobs[0].output_dir == tmp_path / "french" / "seed_42"
 
 
+def test_build_jobs_resolves_h1_control_corpus_from_v2_manifest(tmp_path):
+    jobs = supervisor.build_jobs(
+        languages=["finnish", "sumerian", "klingon"],
+        seeds=[42],
+        output_root=tmp_path,
+        total_target_proposals=1000,
+    )
+
+    assert jobs[0].start_corpus.name == "finnish_news_2022_100k_tokens.json"
+    assert jobs[1].start_corpus.name == "sumerian_tokens.json"
+    assert jobs[2].start_corpus.name == "klingon_tatoeba_tlh_tokens.json"
+    assert supervisor.validate_jobs(jobs) == []
+
+
 def test_registered_h1_seeds_are_the_cli_default(tmp_path):
     parser = supervisor.build_parser()
 
@@ -107,7 +121,8 @@ def test_pending_selection_prefers_least_active_language(tmp_path):
 
     index = supervisor.select_next_pending_index(
         pending,
-        active_counts={"french": 1},
+        progress_by_job={job.job_id: 0 for job in pending},
+        started_by_language={"french": 1},
     )
 
     assert pending[index].job_id == "spanish_seed_42"
@@ -121,17 +136,18 @@ def test_pending_selection_round_robins_language_major_manifest_order(tmp_path):
         total_target_proposals=1000,
     )
     pending = list(jobs)
-    active_counts: dict[str, int] = {}
+    started: dict[str, int] = {}
     selected: list[str] = []
 
     for _ in range(4):
         index = supervisor.select_next_pending_index(
             pending,
-            active_counts=active_counts,
+            progress_by_job={job.job_id: 0 for job in pending},
+            started_by_language=started,
         )
         job = pending.pop(index)
         selected.append(job.job_id)
-        active_counts[job.language] = active_counts.get(job.language, 0) + 1
+        started[job.language] = started.get(job.language, 0) + 1
 
     assert selected == [
         "french_seed_42",
@@ -139,6 +155,40 @@ def test_pending_selection_round_robins_language_major_manifest_order(tmp_path):
         "italian_seed_42",
         "french_seed_1729",
     ]
+
+
+def test_incumbent_does_not_starve_its_own_unstarted_seeds(tmp_path):
+    """A deep, long-running seed must not block its language's other seeds.
+
+    Regression for decision 043: italian_seed_42 had run for hundreds of
+    blocks while italian_seed_1729 / _8675309 never launched, because the old
+    selection keyed on currently-running language counts. Keying on completed
+    work means a never-started seed (0 blocks) is always scheduled ahead of a
+    progressed job in another language.
+    """
+    jobs = supervisor.build_jobs(
+        languages=["french", "italian"],
+        seeds=[42, 1729],
+        output_root=tmp_path,
+        total_target_proposals=1000,
+    )
+    pending = [job for job in jobs if job.job_id != "italian_seed_42"]  # 42 is "running"
+    # french is deep on both seeds; italian's surviving seed never started.
+    progress_by_job = {
+        "french_seed_42": 300,
+        "french_seed_1729": 250,
+        "italian_seed_1729": 0,
+    }
+    # italian already has one started job (seed_42); french has two.
+    started_by_language = {"french": 2, "italian": 1}
+
+    index = supervisor.select_next_pending_index(
+        pending,
+        progress_by_job=progress_by_job,
+        started_by_language=started_by_language,
+    )
+
+    assert pending[index].job_id == "italian_seed_1729"
 
 
 def test_job_command_launches_long_run_v5_with_resource_light_logging(tmp_path):

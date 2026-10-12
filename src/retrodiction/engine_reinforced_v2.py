@@ -76,6 +76,12 @@ class ReinforcedV2Config:
     coherence_weight: float = 0.05
     mutation_cost_weight: float = 0.005
 
+    # The experiment named H1/v2 is separate from the historical engine version.
+    features_freeze_commit: str = ""
+    features_freeze_sha256: str = ""
+    corpus_budget: int = 20_000
+    preserve_initial_corpus: bool = False
+
     operator_weights: tuple[float, float, float, float, float, float] = (
         0.30,
         0.22,
@@ -103,6 +109,10 @@ class ReinforcedV2Config:
             "form_weight": self.form_weight,
             "coherence_weight": self.coherence_weight,
             "mutation_cost_weight": self.mutation_cost_weight,
+            "features_freeze_commit": self.features_freeze_commit,
+            "features_freeze_sha256": self.features_freeze_sha256,
+            "corpus_budget": self.corpus_budget,
+            "preserve_initial_corpus": self.preserve_initial_corpus,
             "operator_weights": list(self.operator_weights),
         }
 
@@ -430,6 +440,10 @@ class RelationalReinforcedRetrodictionEngine:
         self.latin_structural_ref = latin_structural_ref
         self.latin_form_ref = latin_form_ref
         self.config = config or ReinforcedV2Config()
+        from src.retrodiction.h1_objective import H1Objective
+        self._h1_objective = H1Objective.from_config(self.config)
+        self._h1_budget_rejections = 0
+        self._h1_proposal_index = 0
         self.lang_code = LANG_CODES.get(language, language[:3].upper())
         self._references = references or ReferenceSet()
 
@@ -449,6 +463,15 @@ class RelationalReinforcedRetrodictionEngine:
         return f"{self.lang_code}_v2_{iteration:03d}"
 
     def _sample_initial_corpus(self, rng: np.random.Generator) -> list[list[str]]:
+        if self._h1_objective is not None:
+            if self.config.preserve_initial_corpus:
+                self._h1_objective.measure(self.source_sequences)  # assert budget
+                return self._clone_sequences(self.source_sequences)
+            from src.validation.static_feature_matrix import subsample_sequences
+            return subsample_sequences(
+                self.source_sequences, token_budget=self.config.corpus_budget,
+                seed=self.config.seed, corpus_id=self.language,
+            )
         n = min(self.config.num_sequences, len(self.source_sequences))
         idx = rng.choice(len(self.source_sequences), size=n, replace=False)
         return [list(self.source_sequences[int(i)]) for i in idx]
@@ -928,16 +951,24 @@ class RelationalReinforcedRetrodictionEngine:
     ) -> CandidateState:
         from src.ingest.tokenize import corpus_stats
 
+        state_sequences = sequences
+        if self._h1_objective is not None:
+            sequences = self._h1_objective.measure(sequences)
         bg_counts = extract_ngrams(sequences, 2)
         tg_counts = extract_ngrams(sequences, 3)
         bg_profile = build_profile(bg_counts, 5000)
         tg_profile = build_profile(tg_counts, 5000)
         vec = structural_vector(sequences, bg_profile, tg_profile)
-        structural_score = self.latin_structural_ref.score(vec)
+        structural_score = self.latin_structural_ref.score(vec) if self._h1_objective is None else None
         form_details = self.latin_form_ref.score(sequences)
         form_score = form_details["latin_form_score"]
         scores = self._references.score(sequences, bg_profile, tg_profile)
         diagnostics = self._references.coherence_from_vector(vec)
+        if self._h1_objective is not None:
+            h1 = self._h1_objective.evaluate(state_sequences)
+            structural_score = h1["structural_score"]
+            diagnostics["h1"] = h1
+            diagnostics["structural_vector_role"] = "legacy_coherence_diagnostic_only"
         stats = corpus_stats(sequences)
 
         total_score = (
@@ -946,9 +977,17 @@ class RelationalReinforcedRetrodictionEngine:
             + self.config.coherence_weight * diagnostics["language_likeness_margin"]
             - self.config.mutation_cost_weight * mutation_cost
         )
+        if self._h1_objective is not None:
+            diagnostics["h1"]["base_total_score"] = float(total_score)
+            diagnostics["h1"]["score_components"] = {
+                "structural": structural_score,
+                "form": self.config.form_weight * form_score,
+                "coherence": self.config.coherence_weight * diagnostics["language_likeness_margin"],
+                "mutation_cost": -self.config.mutation_cost_weight * mutation_cost,
+            }
 
         return CandidateState(
-            sequences=sequences,
+            sequences=state_sequences,
             operator="",
             details="",
             mutation_cost=mutation_cost,

@@ -212,7 +212,7 @@ class RelationalReinforcedRetrodictionEngineV4(RelationalReinforcedRetrodictionE
 
         # Fortran cosine scorer — built here so it is ready before run()
         self._fortran_cosine_scorer = None
-        if (cfg.use_fortran_cosine or cfg.use_fortran_batch) and _FortranCosineScorer is not None:
+        if self._h1_objective is None and (cfg.use_fortran_cosine or cfg.use_fortran_batch) and _FortranCosineScorer is not None:
             try:
                 self._fortran_cosine_scorer = _FortranCosineScorer.build(latin_form_ref)
                 log.info(
@@ -1511,6 +1511,8 @@ class RelationalReinforcedRetrodictionEngineV4(RelationalReinforcedRetrodictionE
         if score_delta is not None:
             event["score_delta"] = float(score_delta)
         if candidate is not None:
+            if "h1" in candidate.diagnostics:
+                event["h1"] = candidate.diagnostics["h1"]
             event.update(
                 {
                     "total_score": float(candidate.total_score),
@@ -1546,6 +1548,31 @@ class RelationalReinforcedRetrodictionEngineV4(RelationalReinforcedRetrodictionE
         """
         cfg = self.config
         scored: list[tuple[CandidateState, str, str, float, MutationPayload]] = []
+        if self._h1_objective is not None:
+            # The legacy sparse/batch implementation reconstructs a 4D vector.
+            # Every H1 candidate, for every requested backend, goes through the
+            # same materialized reference scorer until acceleration is validated.
+            from src.retrodiction.h1_objective import BudgetError
+            for payload, operator, details, cost in mutation_pool:
+                materialized = payload.materialize(current.sequences)
+                try:
+                    candidate = self._evaluate_sequences(materialized, cost)
+                except BudgetError as exc:
+                    self._h1_budget_rejections += 1
+                    self._emit_live_event(
+                        proposal_index=self._h1_proposal_index, candidate_index=0,
+                        outcome="invalid_token_budget", operator=operator,
+                        details=str(exc), mutation_cost=cost, backend="h1_python_reference",
+                    )
+                    continue
+                candidate = self._amplify_reward(current, candidate)
+                candidate.operator, candidate.details = operator, details
+                candidate.diagnostics.update({
+                    "candidate_scoring_backend": "h1_python_reference",
+                    "candidate_payload_mode": "materialized",
+                })
+                scored.append((candidate, operator, details, cost, payload))
+            return scored
         use_batch = bool(cfg.use_fortran_batch and self._scoring_state is not None and self._fortran_cosine_scorer is not None)
         backend = self._batch_scoring_backend()
 
@@ -1687,6 +1714,8 @@ class RelationalReinforcedRetrodictionEngineV4(RelationalReinforcedRetrodictionE
         cfg = self.config
         rng = np.random.default_rng(cfg.seed)
         self._reset_live_events()
+        self._h1_budget_rejections = 0
+        self._h1_proposal_index = 0
 
         log.info(
             "Relational reinforced v4: language=%s, num_sequences=%d, proposals=%d, candidates=%d",
@@ -1715,7 +1744,7 @@ class RelationalReinforcedRetrodictionEngineV4(RelationalReinforcedRetrodictionE
             }
 
         # --- Incremental scoring state ---
-        if cfg.use_incremental_scoring:
+        if cfg.use_incremental_scoring and self._h1_objective is None:
             self._scoring_state = IncrementalScoringState.from_sequences(
                 current_sequences,
                 self.latin_form_ref,
@@ -1753,6 +1782,7 @@ class RelationalReinforcedRetrodictionEngineV4(RelationalReinforcedRetrodictionE
 
         for proposal_index in range(1, cfg.max_proposals + 1):
             proposals_attempted = proposal_index
+            self._h1_proposal_index = proposal_index
             best_candidate = None
             best_payload = None
             best_operator = "none"
@@ -1801,6 +1831,12 @@ class RelationalReinforcedRetrodictionEngineV4(RelationalReinforcedRetrodictionE
                 mutation_pool=mutation_pool,
                 proposal_guidance=proposal_guidance,
             )
+            if not scored_pool:
+                stagnation += 1
+                if stagnation >= cfg.patience:
+                    halt_reason = "no_valid_mutations"
+                    break
+                continue
 
             best_index = -1
             for idx, (candidate, operator, details, _, payload) in enumerate(scored_pool, start=1):

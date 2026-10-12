@@ -191,3 +191,11 @@ desktop.ini
 venv/
 env/
 ENV/
+
+# Active H1 experiment: publish the immutable registration, keep live states local.
+/data/h1_ablation_production_20261001/*
+!/data/h1_ablation_production_20261001/ablation_registration.json
+
+# Validation archives and scratch evidence; selected immutable receipts are
+# explicitly tracked and listed in the October 12 H1 publication audit.
+/artifacts/

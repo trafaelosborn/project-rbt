@@ -38,6 +38,7 @@ PAUSE_SENTINEL = "pause_requested"
 STOP_SENTINEL = "stop_requested"
 
 DEFAULT_SOURCE_LANGUAGES = ("french", "spanish", "italian", "portuguese", "romanian")
+V2_CORPORA_MANIFEST = PROJECT_ROOT / "data" / "v2" / "corpora_manifest.json"
 REGISTERED_H1_SEEDS = (42, 1729, 8675309)
 SUCCESS_STATUSES = {"complete", "joint_hit", "plateau_hit"}
 TERMINAL_STATUSES = SUCCESS_STATUSES | {"stopped_manual", "failed"}
@@ -345,6 +346,24 @@ def default_start_corpus(language: str) -> Path:
     if processed.exists():
         return processed
     sequestered = PROJECT_ROOT / "data" / "sequestered" / language / f"{language}_tokens.json"
+    if sequestered.exists():
+        return sequestered
+
+    # H1 typological controls live in several corpus families. Resolve them
+    # through the frozen v2 corpus manifest rather than duplicating paths here.
+    try:
+        manifest = json.loads(V2_CORPORA_MANIFEST.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        return sequestered
+    matches = [
+        entry
+        for entry in manifest.get("corpora", [])
+        if entry.get("language") == language
+        and entry.get("status") == "ready"
+        and entry.get("tokens_path")
+    ]
+    if len(matches) == 1:
+        return PROJECT_ROOT / matches[0]["tokens_path"]
     return sequestered
 
 
@@ -593,26 +612,59 @@ def active_language_counts(running: list[RunningJob]) -> dict[str, int]:
 def select_next_pending_index(
     pending: list[SupervisorJob],
     *,
-    active_counts: dict[str, int],
+    progress_by_job: dict[str, int],
+    started_by_language: dict[str, int],
 ) -> int:
-    """Choose the pending job whose language is least represented in active jobs."""
+    """Choose the pending job that is furthest behind.
+
+    Ranking key (lowest wins):
+      1. blocks already completed  -> never-started jobs (0) are scheduled first
+      2. jobs already started in this language -> spreads coverage so a
+         long-running incumbent (e.g. italian_seed_42) cannot starve its own
+         siblings, which is the bug this replaces
+      3. original manifest order   -> stable tiebreak
+
+    Previously this keyed on *currently-running* language counts, so a permanent
+    incumbent kept its language perpetually "represented" and its other seeds
+    were never launched. Keying on completed work + jobs-ever-started fixes that
+    without evicting running jobs. See decision 043.
+    """
     if not pending:
         raise ValueError("Cannot select from an empty pending queue")
 
     best_index = 0
-    best_count = active_counts.get(pending[0].language, 0)
-    for index, job in enumerate(pending[1:], start=1):
-        count = active_counts.get(job.language, 0)
-        if count < best_count:
+    best_key: tuple[int, int, int] | None = None
+    for index, job in enumerate(pending):
+        key = (
+            progress_by_job.get(job.job_id, 0),
+            started_by_language.get(job.language, 0),
+            index,
+        )
+        if best_key is None or key < best_key:
             best_index = index
-            best_count = count
+            best_key = key
     return best_index
 
 
-def pop_next_pending_job(pending: list[SupervisorJob], running: list[RunningJob]) -> SupervisorJob:
+def started_language_counts(all_jobs: list[SupervisorJob]) -> dict[str, int]:
+    """Count jobs per language that have ever started (have a real manifest)."""
+    counts: dict[str, int] = {}
+    for job in all_jobs:
+        if read_job_status(job).status != "not_found":
+            counts[job.language] = counts.get(job.language, 0) + 1
+    return counts
+
+
+def pop_next_pending_job(
+    pending: list[SupervisorJob],
+    *,
+    all_jobs: list[SupervisorJob],
+) -> SupervisorJob:
+    progress_by_job = {job.job_id: read_job_status(job).blocks_completed for job in pending}
     index = select_next_pending_index(
         pending,
-        active_counts=active_language_counts(running),
+        progress_by_job=progress_by_job,
+        started_by_language=started_language_counts(all_jobs),
     )
     return pending.pop(index)
 
@@ -711,7 +763,7 @@ def run_supervisor(
                 )
 
             while pending and len(running) < current_parallel and not pause_requested(output_root):
-                job = pop_next_pending_job(pending, running)
+                job = pop_next_pending_job(pending, all_jobs=jobs)
                 if job.stop_sentinel.exists():
                     job.stop_sentinel.unlink()
                 started = _start_job(job, profile=profile)

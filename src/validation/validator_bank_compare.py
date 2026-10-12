@@ -110,6 +110,10 @@ def compare_run_manifest_to_validator_bank(
     with run_manifest_path.open(encoding="utf-8") as fh:
         manifest = json.load(fh)
 
+    if manifest.get("h1_execution"):
+        from src.retrodiction.h1_execution import compare_saved_run
+        return compare_saved_run(run_manifest_path, output_prefix, validator_ids, output_dir, block_ids)
+
     run_id = run_manifest_path.parent.name
     blocks = manifest.get("blocks", [])
     if block_ids is not None:

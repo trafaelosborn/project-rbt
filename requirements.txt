@@ -1,4 +1,6 @@
 numpy>=2.0
+scipy>=1.17.1  # alignment and registered H1 runtime identity
+threadpoolctl>=3.6.0  # one numerical-library thread per H1 worker
 requests>=2.28
 pytest>=7.4   # test runner only
 textual>=0.60  # TUI (src/control/tui.py); optional — CLI works without it

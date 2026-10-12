@@ -1,0 +1,20 @@
+{
+  "checked_utc": "2026-10-01T20:41:24.168046+00:00",
+  "registration_sha256": "012560628d8d5f7c54f74560a711804cf40d962192cf6f79c08b2d987f60eeb0",
+  "runner_status": "running",
+  "checks": [
+    {
+      "job_id": "french__corpus_42__search_42__disabled",
+      "proposals_committed": 35,
+      "checkpoint_sha256": "87594cf2a47fac3069cbff5cf226f6b77755a9b78d383f4d09a9c7cec8daacfd",
+      "measured_tokens": 20000
+    },
+    {
+      "job_id": "french__corpus_42__search_42__full",
+      "proposals_committed": 35,
+      "checkpoint_sha256": "cacb962be6f3864f27fa0a0cebcf72ac5d2b86a474a5e25f2088aa9991ccd7b6",
+      "measured_tokens": 20000
+    }
+  ],
+  "production_launched": true
+}

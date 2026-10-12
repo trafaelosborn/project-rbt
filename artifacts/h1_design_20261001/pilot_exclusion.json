@@ -1,0 +1,8 @@
+{
+  "schema": "h1_e1_fixed_panel_v2",
+  "status": "not_evaluable",
+  "gate": "NOT_EVALUABLE",
+  "h1_inference_status": "not_evaluable",
+  "error": "Missing required H1 trajectory: C:\\Code\\Project RBT\\project_rbt\\artifacts\\h1_repair_20261001\\pilot_01\\french\\seed_1729\\manifest.json",
+  "interpretation": "Analysis/collection failure, not a negative scientific result"
+}

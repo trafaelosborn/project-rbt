@@ -207,6 +207,11 @@ def cmd_validate(args: argparse.Namespace) -> int:
     controller = RunController()
     try:
         result = controller.validate_run(args.output_dir, output_path=args.output)
+        if "objective" in result:
+            print("H1 comparison: frozen six-feature structural distances; no convergence verdict.")
+            print(f"JSON -> {result['json_path']}")
+            print(f"CSV -> {result['csv_path']}")
+            return 0
         summary = result.get("summary", {})
         nearest_structural = (summary.get("nearest_structural_by_block") or [{}])[-1]
         nearest_form = (summary.get("nearest_form_by_block") or [{}])[-1]

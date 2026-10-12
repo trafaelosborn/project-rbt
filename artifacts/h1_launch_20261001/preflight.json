@@ -1,0 +1,8 @@
+{
+  "validated_source_files_unchanged": true,
+  "validated_production_plan_unchanged": true,
+  "plan_sha256": "3eef59426e208f3aefdd032677d549a7dbfc73558fa2be93396c7dc056a5b93c",
+  "job_count": 66,
+  "total_proposals": 66000,
+  "max_candidate_slots": 1056000
+}

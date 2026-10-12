@@ -102,8 +102,6 @@ class TestLongRunV4:
                 output_dir=root / "run",
                 total_target_proposals=10,
                 block_proposals=4,
-                features_freeze_commit="abc123",
-                features_freeze_sha256="c" * 64,
                 corpus_budget=20_000,
             )
             manifest = run_long_continuation(cfg, engine_class=_FakeBlockEngine)
@@ -118,8 +116,8 @@ class TestLongRunV4:
                 "seeds_match": True,
             }
             assert manifest["blocks"][0]["started_from_corpus"] == str(start_corpus)
-            assert manifest["config"]["features_freeze_commit"] == "abc123"
-            assert manifest["config"]["features_freeze_sha256"] == "c" * 64
+            assert manifest["config"]["features_freeze_commit"] == ""
+            assert manifest["config"]["features_freeze_sha256"] == ""
             assert manifest["config"]["corpus_budget"] == 20_000
             assert manifest["blocks"][-1]["proposals_attempted"] == 2
             assert manifest["blocks"][0]["seed_audit"] == {

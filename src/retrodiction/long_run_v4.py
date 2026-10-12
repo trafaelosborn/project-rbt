@@ -242,6 +242,18 @@ def _maybe_write_validator_snapshot(
     if block_num % every != 0:
         return None
 
+    if cfg.features_freeze_commit or cfg.features_freeze_sha256:
+        # Every H1 block already writes distances in the fixed calibration
+        # geometry. Never invoke the legacy validator metric for an H1 run.
+        path = cfg.output_dir / "blocks" / block_name / "h1_reference_distances.json"
+        data = json.loads(path.read_text(encoding="utf-8"))
+        if cfg.validator_set:
+            data["distances"] = [r for r in data["distances"] if r["corpus_id"] in cfg.validator_set]
+        output = cfg.output_dir / "validator_snapshots" / f"{block_name}_h1.json"
+        output.parent.mkdir(parents=True, exist_ok=True)
+        output.write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding="utf-8")
+        return {"json_path": str(output), "validator_count": len(data["distances"]), "block_count": 1}
+
     snapshot_dir = cfg.output_dir / "validator_snapshots"
     snapshot_dir.mkdir(parents=True, exist_ok=True)
     output_prefix = f"{cfg.output_dir.name}_{block_name}"
@@ -268,6 +280,9 @@ def _default_v4_config(cfg: LongRunConfig, max_proposals: int) -> ReinforcedV4Co
         max_accepted_stages=cfg.max_accepted_stages,
         patience=max_proposals,
         seed=cfg.seed,
+        features_freeze_commit=cfg.features_freeze_commit,
+        features_freeze_sha256=cfg.features_freeze_sha256,
+        corpus_budget=cfg.corpus_budget,
         n_candidates=cfg.n_candidates,
         min_improvement=cfg.min_improvement,
         token_edit_attempts=6,
@@ -334,9 +349,14 @@ def run_long_continuation(
     config_builder=None,
 ) -> dict[str, Any]:
     manifest_path = cfg.output_dir / "manifest.json"
+    from src.retrodiction.h1_execution import prepare_execution, audit_block
+    existing_manifest = _load_manifest(manifest_path)
+    h1_objective, execution = prepare_execution(cfg, existing_manifest)
     cfg.output_dir.mkdir(parents=True, exist_ok=True)
     (cfg.output_dir / "blocks").mkdir(parents=True, exist_ok=True)
-    manifest = _load_manifest(manifest_path) or _initial_manifest(cfg)
+    manifest = existing_manifest or _initial_manifest(cfg)
+    if execution is not None:
+        manifest["h1_execution"] = execution
 
     if manifest.get("status") in {"complete", "joint_hit", "plateau_hit"}:
         return manifest
@@ -388,6 +408,10 @@ def run_long_continuation(
             block_input_corpus = current_corpus
             sequences = _load_sequences(block_input_corpus)
             engine_cfg = config_builder(cfg, max_proposals=next_size)
+            if h1_objective is not None:
+                # Resume the exact evolving state; never reselect 800 sequences
+                # or reshuffle a checkpoint at a block boundary.
+                engine_cfg.preserve_initial_corpus = bool(manifest["blocks"])
             engine = engine_class(
                 language=cfg.language,
                 source_sequences=sequences,
@@ -402,6 +426,8 @@ def run_long_continuation(
             summary_path = block_dir / "run_summary.json"
             with summary_path.open(encoding="utf-8") as fh:
                 summary = json.load(fh)
+            if h1_objective is not None:
+                summary = audit_block(h1_objective, engine_cfg, summary, summary_path, engine)
             summary = _apply_seed_audit_to_summary(
                 summary_path,
                 summary,
@@ -432,6 +458,7 @@ def run_long_continuation(
                     "final_family_alignment_score": summary.get("final_family_alignment_score"),
                     "final_coherence_label": summary.get("final_coherence_label"),
                     "seed_audit": summary.get("seed_audit"),
+                    **({"h1_audit": summary["h1_audit"]} if "h1_audit" in summary else {}),
                     "ended_at_corpus": str(current_corpus),
                 }
             )

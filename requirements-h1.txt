@@ -1,0 +1,6 @@
+# Numerical package versions recorded by the October 1, 2026 H1 registration.
+# The registered interpreter is CPython 3.14.3 on Windows AMD64; see the audit.
+-r requirements.txt
+numpy==2.4.3
+scipy==1.17.1
+threadpoolctl==3.6.0

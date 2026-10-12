@@ -1,0 +1,50 @@
+{
+  "schema": "project_rbt_v2_h1_endpoint_control_analysis_v1",
+  "run_root": "C:\\Code\\Project RBT\\project_rbt\\data\\v2_h1_production_20260613",
+  "manifest_path": "C:\\Code\\Project RBT\\project_rbt\\data\\v2\\corpora_manifest.json",
+  "token_budget": 9000,
+  "sample_seed": 1729,
+  "reference_scaling_policy": "mean/std from frozen attested reference bank only; generated rows excluded",
+  "feature_6d": [
+    "f02_top100_bigram_coverage",
+    "f09_word_length_mean",
+    "f15_suffix_entropy",
+    "f17_conditional_char_entropy",
+    "f18_dislegomena_to_hapax",
+    "f19_word_edge_entropy_asymmetry"
+  ],
+  "feature_21d": [
+    "f01_ttr",
+    "f02_top100_bigram_coverage",
+    "f03_top100_trigram_coverage",
+    "f04_log_mean_seq_len",
+    "f05_top500_bigram_coverage",
+    "f06_top500_trigram_coverage",
+    "f07_top1000_unigram_coverage",
+    "f08_seq_length_variance",
+    "f09_word_length_mean",
+    "f10_word_length_variance",
+    "f11_hapax_ratio",
+    "f12_zipf_slope_10_1000",
+    "f13_bigram_entropy",
+    "f14_trigram_entropy",
+    "f15_suffix_entropy",
+    "f16_heaps_beta",
+    "f17_conditional_char_entropy",
+    "f18_dislegomena_to_hapax",
+    "f19_word_edge_entropy_asymmetry",
+    "f20_consonant_vowel_ratio",
+    "f21_sentence_length_skewness"
+  ],
+  "production_state_count": 30,
+  "reference_count": 22,
+  "control_languages": [
+    "latin",
+    "markov_null",
+    "finnish",
+    "turkish",
+    "vietnamese",
+    "sumerian",
+    "klingon"
+  ]
+}

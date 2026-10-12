@@ -1,0 +1,14 @@
+{
+  "runner_pid": 42312,
+  "launched_utc": "2026-10-12T21:59:06.6120342Z",
+  "executable": "C:\\Python314\\python.exe",
+  "script": "C:\\Code\\Project RBT\\project_rbt\\scripts\\run_h1_ablation_matrix.py",
+  "output_root": "C:\\Code\\Project RBT\\project_rbt\\data\\h1_ablation_production_20261001",
+  "evidence_dir": "C:\\Code\\Project RBT\\project_rbt\\artifacts\\h1_restart_20261012\\20261012T215738Z",
+  "workers": 2,
+  "session_proposals": 100,
+  "session_seconds": 1800,
+  "priority": "BelowNormal",
+  "hidden": true,
+  "action": "resume_existing_registered_matrix"
+}

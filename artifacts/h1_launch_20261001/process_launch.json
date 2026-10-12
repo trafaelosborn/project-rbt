@@ -1,0 +1,12 @@
+{
+  "runner_pid": 8176,
+  "launched_utc": "2026-10-01T20:39:00.5498800Z",
+  "executable": "C:\\Python314\\python.exe",
+  "script": "C:\\Code\\Project RBT\\project_rbt\\scripts\\run_h1_ablation_matrix.py",
+  "output_root": "C:\\Code\\Project RBT\\project_rbt\\data\\h1_ablation_production_20261001",
+  "workers": 2,
+  "session_proposals": 100,
+  "session_seconds": 1800,
+  "priority": "BelowNormal",
+  "hidden": true
+}
