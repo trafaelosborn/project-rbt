@@ -1,0 +1,42 @@
+WARNING SEQUESTRATION FIREWALL LIFTED. Reason: Phase 3 reinforcement retrodiction: Latin is the reward signal and gradient target. Loading Latin structural reference data for scoring and transition guidance. Latin sequences are never copied token-for-token into the generated intermediate corpora.
+INFO Loading Latin reference corpus...
+INFO Latin reference vector: TTR=0.1290 bg_cov=0.1620 tg_cov=0.1244 log_seq=2.2258
+INFO Latin reward subspace: TTR=0.1290 bg_cov=0.1620 tg_cov=0.1244 (log_seq excluded; source lengths are fixed during generation)
+INFO Building Latin bigram model (for gradient engine)...
+INFO BigramModel: V=5000, non-zero bigrams=145369, seq_lengths mean=8.3
+INFO Latin bigram model: V=5000
+INFO Sequestration firewall re-engaged.
+WARNING SEQUESTRATION FIREWALL LIFTED. Reason: Phase 3 reinforcement retrodiction v2: Latin is the reward signal for structural and orthographic bridge search. Latin is used for scoring and proposal shaping but is never copied token-for-token into generated corpora.
+INFO Latin form reference loaded: 1018 char bigrams, 2500 char trigrams, 800 suffixes
+INFO Sequestration firewall re-engaged.
+WARNING SEQUESTRATION FIREWALL LIFTED. Reason: Phase 3 reinforcement retrodiction v4: Latin family inventory is loaded for alignment-driven operator scheduling in a target-conditioned search.
+INFO Loading sequestered corpus 'latin' from C:\Code\Project RBT\project_rbt\data\sequestered\latin\latin_tokens.json
+INFO Sequestration firewall re-engaged.
+INFO Markov reference vector: [0.005      0.03515726 0.02584493 2.39789527]
+INFO Sumerian reference vector: [0.22255508 0.11113317 0.09271758 3.97767432]
+INFO Loaded 7 real-language reference vectors
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Code\Project RBT\project_rbt\src\control\h1_ablation.py", line 180, in <module>
+    main()
+    ~~~~^^
+  File "C:\Code\Project RBT\project_rbt\src\control\h1_ablation.py", line 169, in main
+    print(json.dumps(run_job(root, args.job_id, max_session_proposals=args.max_session_proposals,
+                     ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                             max_session_seconds=args.max_session_seconds), indent=2))
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Code\Project RBT\project_rbt\src\control\h1_ablation.py", line 142, in run_job
+    return run_search(engine, config, output, job_contract(registration, job), sample,
+                      max_session_proposals=max_session_proposals,
+                      max_session_seconds=max_session_seconds)
+  File "C:\Code\Project RBT\project_rbt\src\retrodiction\h1_checkpointed.py", line 330, in run_search
+    return _run_locked(engine, config, root, contract_hash, initial_sequences,
+                       max_session_proposals, max_session_seconds)
+  File "C:\Code\Project RBT\project_rbt\src\retrodiction\h1_checkpointed.py", line 420, in _run_locked
+    atomic_json(root / "checkpoint.json", checkpoint)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Code\Project RBT\project_rbt\src\retrodiction\h1_checkpointed.py", line 99, in atomic_json
+    os.replace(temp, path)
+    ~~~~~~~~~~^^^^^^^^^^^^
+PermissionError: [WinError 5] Access is denied: 'C:\\Code\\Project RBT\\project_rbt\\artifacts\\h1_io_repair_20261022\\real_windows_pilot_01\\contended\\french__corpus_42__search_42__full\\checkpoint.json.8df6a3953c1948d699b89e9ed19873d3.tmp' -> 'C:\\Code\\Project RBT\\project_rbt\\artifacts\\h1_io_repair_20261022\\real_windows_pilot_01\\contended\\french__corpus_42__search_42__full\\checkpoint.json'

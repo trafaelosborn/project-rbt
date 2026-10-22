@@ -1,0 +1,25 @@
+{
+  "runner_pid": 33716,
+  "launched_utc": "2026-10-19T15:29:00.7351780Z",
+  "executable": "C:\\Python314\\python.exe",
+  "arguments": [
+    "-u",
+    "scripts/run_h1_ablation_matrix.py",
+    "--output-root",
+    "data/h1_ablation_production_20261001",
+    "--workers",
+    "2",
+    "--session-proposals",
+    "100",
+    "--session-seconds",
+    "1800"
+  ],
+  "working_directory": "C:\\Code\\Project RBT\\project_rbt",
+  "evidence_dir": "C:\\Code\\Project RBT\\project_rbt\\artifacts\\h1_restart_20261019\\20261019T152515Z",
+  "workers": 2,
+  "session_proposals": 100,
+  "session_seconds": 1800,
+  "priority": "BelowNormal",
+  "hidden": true,
+  "action": "resume_existing_registered_matrix_after_checkpoint_write_failure"
+}

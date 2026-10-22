@@ -1,0 +1,28 @@
+{
+  "observed_utc": "2026-10-22T15:58:37.140122+00:00",
+  "status": "running",
+  "runner_pid": 13428,
+  "runner_id": "20261022T155725Z_5d97298b",
+  "last_heartbeat_utc": "2026-10-22T15:58:36.636532+00:00",
+  "matrix_lock_held": true,
+  "registration_valid_and_unchanged": true,
+  "registration_sha256": "012560628d8d5f7c54f74560a711804cf40d962192cf6f79c08b2d987f60eeb0",
+  "last_exited_session_total": 17672,
+  "active": [
+    {
+      "job_id": "french__corpus_42__search_42__disabled",
+      "pid": 15544,
+      "starting_proposal": 462,
+      "latest_immutable_proposal_record": 471
+    },
+    {
+      "job_id": "french__corpus_42__search_42__full",
+      "pid": 31676,
+      "starting_proposal": 462,
+      "latest_immutable_proposal_record": 471
+    }
+  ],
+  "active_pointer_files_were_not_opened": true,
+  "io_retries": 0,
+  "worker_recoveries": 0
+}

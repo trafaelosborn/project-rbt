@@ -1,0 +1,25 @@
+{
+  "requested_utc": "2026-10-22T15:56:55.612305+00:00",
+  "verified_utc": "2026-10-22T15:57:01.433385+00:00",
+  "status_progress_matches_all_saved_checkpoints": true,
+  "global_pause_content": "Decision 048 controlled verification pause, 2026-10-22; resume after verifying final checkpoint totals.\n",
+  "runner_created_pauses": [
+    {
+      "path": "C:\\Code\\Project RBT\\project_rbt\\data\\h1_ablation_production_20261001\\french__corpus_42__search_42__full\\PAUSE",
+      "content": "Matrix runner 20261022T155107Z_33db3698: global_pause_file\n",
+      "sha256": "d71dcc0d194dd2c383abf6f4f5c66f731f53a25c706307fdff5b19b0d32fba39"
+    },
+    {
+      "path": "C:\\Code\\Project RBT\\project_rbt\\data\\h1_ablation_production_20261001\\french__corpus_42__search_42__disabled\\PAUSE",
+      "content": "Matrix runner 20261022T155107Z_33db3698: global_pause_file\n",
+      "sha256": "d71dcc0d194dd2c383abf6f4f5c66f731f53a25c706307fdff5b19b0d32fba39"
+    }
+  ],
+  "committed_proposals": 17672,
+  "first_workers": {
+    "french__corpus_42__search_42__full": 462,
+    "french__corpus_42__search_42__disabled": 462
+  },
+  "io_retry_count": 0,
+  "worker_recoveries": 0
+}

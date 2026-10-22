@@ -1,0 +1,176 @@
+{
+  "created_utc": "2026-10-22T15:59:58.062255+00:00",
+  "scope": "Exact staged files except this self-referential manifest. Text hashes normalize CRLF/CR to LF. ZIP hash is raw bytes.",
+  "registration_unchanged": true,
+  "tests_passed": 163,
+  "files": {
+    "README.md": {
+      "sha256_lf": "00da2071f2193dbba3f1355a29870574ca09bc825481699c39e44b761e006f6d"
+    },
+    "artifacts/h1_io_repair_20261022/continuation_check.json": {
+      "sha256_lf": "d6ded24b7a00f3c3e15eefd32a7bd3216f5d5be3fb042c11c4a5dc50e5e49b14"
+    },
+    "artifacts/h1_io_repair_20261022/matrix_status_before.json": {
+      "sha256_lf": "fc3e15201bd7e7967e699b2b03dab4e0e4541348ee29ec88ed73bf2a2ae4a120"
+    },
+    "artifacts/h1_io_repair_20261022/pilot_checkpoint_failure.log": {
+      "sha256_lf": "bfc33fa7796bbf14c778cde6398d2b670ab581a66992242bc215068480ff7d17"
+    },
+    "artifacts/h1_io_repair_20261022/preflight_identity.json": {
+      "sha256_lf": "ea9ac5320486a0b58d71802d85a22dcdd53f3a97c0180195aaae41b7d0f3a5b7"
+    },
+    "artifacts/h1_io_repair_20261022/prior_runner_stderr.log": {
+      "sha256_lf": "9c76ad187c656bf36f655fbedb457be40dcce181d0adb0b98dddf3d907b5d9a5"
+    },
+    "artifacts/h1_io_repair_20261022/process_launch.json": {
+      "sha256_lf": "7a4cce3472ec239c4225ccad7e05d637ea8bdca6f745217ee8de193cfe6f54b3"
+    },
+    "artifacts/h1_io_repair_20261022/process_launch_continuation.json": {
+      "sha256_lf": "185a33ac4d4b9eaccf2917d4e2f95a203cbaab1b51b50edd26893a069044e163"
+    },
+    "artifacts/h1_io_repair_20261022/production_preflight.json": {
+      "sha256_lf": "ac071c8a3806f718c2d3e30a6bbfe7ac7c4caa9d268a911f48c42e979d7ed632"
+    },
+    "artifacts/h1_io_repair_20261022/real_windows_pilot_01/verification_results.json": {
+      "sha256_lf": "c26324ac4dab3cb110df10055ca9a67e0ab81643a6a9cc77585a061836bf53b2"
+    },
+    "artifacts/h1_io_repair_20261022/resume_authorization_checks.json": {
+      "sha256_lf": "050554d8b37e13422a2a32f6265cbab4ceb04cae4a1e9962ab0933c2970b7c5d"
+    },
+    "artifacts/h1_io_repair_20261022/runner_stderr.log": {
+      "sha256_lf": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "artifacts/h1_io_repair_20261022/runner_stdout.log": {
+      "sha256_lf": "edbe863c608f1a7a7e2978b17717b0c2dca41d805a7938283fb8392932634c6c"
+    },
+    "artifacts/h1_io_repair_20261022/source_inventory.json": {
+      "sha256_lf": "08c528aad60c58a415734447f94f211e32ce78310c258e981b150816feb863d3"
+    },
+    "artifacts/h1_io_repair_20261022/tests_01.xml": {
+      "sha256_lf": "a5b704b246901984f46625a63e802d4999d2c57bb8f4007ce1b47899d06df5f1"
+    },
+    "artifacts/h1_io_repair_20261022/tests_02.xml": {
+      "sha256_lf": "9f8f7b170a86023a972728177623a0687d53562082c8ffda224e33e1901e41ac"
+    },
+    "artifacts/h1_io_repair_20261022/tests_03.xml": {
+      "sha256_lf": "515450cefe653f6c2eb88163da7a0fd0858826a2f5a24ebc2a82a43280549335"
+    },
+    "artifacts/h1_io_repair_20261022/turkish__corpus_42__search_1729__disabled_PAUSE_before.txt": {
+      "sha256_lf": "23002762e69c3d6eeb839ac7221a51e619d606a30c81de535002e4d81c4840b1"
+    },
+    "artifacts/h1_io_repair_20261022/turkish__corpus_42__search_1729__full_PAUSE_before.txt": {
+      "sha256_lf": "23002762e69c3d6eeb839ac7221a51e619d606a30c81de535002e4d81c4840b1"
+    },
+    "artifacts/h1_io_repair_20261022/validated_operational_source.zip": {
+      "sha256_bytes": "a1a2679e3da19d3c418c95aecb2144e4c270a28f787533b69d52de07d1e007bd"
+    },
+    "artifacts/h1_io_repair_20261022/verified_boundary_pause.json": {
+      "sha256_lf": "8e478c56085bb08fb654deb15c9c4a8827291e5185965b380ce72eacef413b7e"
+    },
+    "artifacts/h1_io_repair_20261022/verified_boundary_pause_status.json": {
+      "sha256_lf": "5ce12ca3e0596b45bc034897062536f5910f99636a0d4e3c878fde3077a28933"
+    },
+    "artifacts/h1_restart_20261019/20261019T152515Z/00099_sumerian__corpus_42__search_1729__full.log": {
+      "sha256_lf": "b3a871e84a15e61e3d435601093bece697e3fe741049152ac3e4eaf60d87d6e7"
+    },
+    "artifacts/h1_restart_20261019/20261019T152515Z/00101_sumerian__corpus_42__search_1729__disabled.log": {
+      "sha256_lf": "a1eff8d71e259ad0166894abef9683469838796af79ae13b3c659d83810b2574"
+    },
+    "artifacts/h1_restart_20261019/20261019T152515Z/completion_receipt.json": {
+      "sha256_lf": "3823ac3a29886820e70f60a2e5516477e5337067345dc7b507fe67e376617377"
+    },
+    "artifacts/h1_restart_20261019/20261019T152515Z/failed_job_checkpoint_before.json": {
+      "sha256_lf": "05ff5f389ce436fa43127657653c50cc96230919616470bf59fc50b868f36a2f"
+    },
+    "artifacts/h1_restart_20261019/20261019T152515Z/failed_job_resume.log": {
+      "sha256_lf": "714edccd38ff037e213ef45117589d6b81128809334fadc9c325b0d46c79a580"
+    },
+    "artifacts/h1_restart_20261019/20261019T152515Z/failed_job_resume_command.json": {
+      "sha256_lf": "db4e6aaa070b3554edf1c1ae53800cbab6b142207aa773e8bcbd0a1869be297c"
+    },
+    "artifacts/h1_restart_20261019/20261019T152515Z/failed_job_resume_result.json": {
+      "sha256_lf": "21ae120ffbc2a4a36d4ffab04d89d59798813299b40160b6178862c74fe0d864"
+    },
+    "artifacts/h1_restart_20261019/20261019T152515Z/failed_job_uncommitted_000000157.json": {
+      "sha256_lf": "1b31daaccf940f95bf2bb060ea791b2754a193e1da069364c9b1c89bcbdde152"
+    },
+    "artifacts/h1_restart_20261019/20261019T152515Z/matrix_status_before.json": {
+      "sha256_lf": "09e492e8f445ec2af785732814a6dd56052969dbd7f2cb6baa2b9479e4b96ff9"
+    },
+    "artifacts/h1_restart_20261019/20261019T152515Z/preflight.json": {
+      "sha256_lf": "d93a10b7379c7a5bb8237b7026e21a7be6699dba07996324b27998067fca41cf"
+    },
+    "artifacts/h1_restart_20261019/20261019T152515Z/process_launch.json": {
+      "sha256_lf": "8bdbe0a49f5bee0030fe3524735a6e8c7f4c0434ce315ff8715e535b940a8d5d"
+    },
+    "artifacts/h1_restart_20261019/20261019T152515Z/process_launch_attempt_01.json": {
+      "sha256_lf": "c2be25490971e1fff802bcf69b05bd24e42fbdf798e02fd5389e79254e605dfd"
+    },
+    "artifacts/h1_restart_20261019/20261019T152515Z/queue_resume_preparation.json": {
+      "sha256_lf": "99433f4e5269ea85d5b450e672556314a7b4675ea7dfcb8f6b15d31cf260abaa"
+    },
+    "artifacts/h1_restart_20261019/20261019T152515Z/resume_check.json": {
+      "sha256_lf": "4352d7c26b47a29be80770e37a5795d59f84bf9d015ec53d09f43d88959474a0"
+    },
+    "artifacts/h1_restart_20261019/20261019T152515Z/runner_stderr.log": {
+      "sha256_lf": "9c76ad187c656bf36f655fbedb457be40dcce181d0adb0b98dddf3d907b5d9a5"
+    },
+    "artifacts/h1_restart_20261019/20261019T152515Z/runner_stderr_attempt_01.log": {
+      "sha256_lf": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "artifacts/h1_restart_20261019/20261019T152515Z/runner_stdout.log": {
+      "sha256_lf": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "artifacts/h1_restart_20261019/20261019T152515Z/runner_stdout_attempt_01.log": {
+      "sha256_lf": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "artifacts/h1_restart_20261019/20261019T152515Z/sumerian__corpus_42__search_1729__disabled_PAUSE_before.txt": {
+      "sha256_lf": "810e38d8fa4d25b8e76923a68b781d3cb2bde51ddd6094a30965be1ad026bc4c"
+    },
+    "artifacts/h1_status_20261021/20261021T232546Z/matrix_status.json": {
+      "sha256_lf": "fc3e15201bd7e7967e699b2b03dab4e0e4541348ee29ec88ed73bf2a2ae4a120"
+    },
+    "artifacts/h1_status_20261021/20261021T232546Z/runner_stderr.log": {
+      "sha256_lf": "9c76ad187c656bf36f655fbedb457be40dcce181d0adb0b98dddf3d907b5d9a5"
+    },
+    "artifacts/h1_status_20261021/20261021T232546Z/status_check.json": {
+      "sha256_lf": "1d8f0ca2f84a9cb47a9b4a7887f4e80078ee08e4a43415de7227d55856763f42"
+    },
+    "artifacts/h1_status_20261021/20261021T232546Z/turkish_disabled_worker.log": {
+      "sha256_lf": "228674773f0600f3e730eea00ac22ce6692bbf6e3a3e413a17dcbcb60f2b0471"
+    },
+    "artifacts/h1_status_20261021/20261021T232546Z/turkish_full_worker.log": {
+      "sha256_lf": "1f2771d6e02522b377915d0d1f547132996b7182086bfaff9b4723672552b7d0"
+    },
+    "docs/decisions/048_windows_checkpoint_access_recovery.md": {
+      "sha256_lf": "de0e883500026e62d8ce4b94de8a89f77001d712125846f34ff8d68cce4560e0"
+    },
+    "docs/reports/2026-10-19_h1_production_resume.md": {
+      "sha256_lf": "c29c71c6c4ff21379f9f8fba973f371ab0de48bff7c76cefdcb3ef5c73196ced"
+    },
+    "docs/reports/2026-10-21_h1_status_and_checkpoint_access_failure.md": {
+      "sha256_lf": "23691a17a721eb76282c1e2020e13de10b3fe80373404eadcd59461638b219d2"
+    },
+    "docs/reports/2026-10-22_h1_checkpoint_io_repair.md": {
+      "sha256_lf": "a585eff5b09d4ab61ef9aa015cd2b2b5424ceb5f703823e72a495cb86939c361"
+    },
+    "scripts/run_h1_ablation_matrix.py": {
+      "sha256_lf": "9565366e561ffdb6e944b231b08aa01b3a6a4bfb93d69be4d6ff6d2ec0e08f95"
+    },
+    "scripts/verify_h1_io_recovery.py": {
+      "sha256_lf": "5c83ba438be3c3e5a5fa571d83d1b2a855c5f95ac8478ae62d1db3afbe3eb54c"
+    },
+    "src/control/h1_io.py": {
+      "sha256_lf": "f3d9e91f3e7ba85ef30afff79a0b80842af8d8dc1f9363f6b78a0409d0c6fa47"
+    },
+    "tests/test_h1_io.py": {
+      "sha256_lf": "ee0c607dfb840d2123ff8686206a0a2eff6fe1bfbaa815c0104ec3d58e79dbda"
+    },
+    "tests/test_h1_io_recovery.py": {
+      "sha256_lf": "22ad108ca0bf9c11c0974dbf54f6f515cafecd4a34113071f9373abb0ec03889"
+    },
+    "tests/test_h1_matrix_runner.py": {
+      "sha256_lf": "b296ab7e8f5032e93e8535c288d75291161a4994e817f6f3fb05140f66074dad"
+    }
+  }
+}

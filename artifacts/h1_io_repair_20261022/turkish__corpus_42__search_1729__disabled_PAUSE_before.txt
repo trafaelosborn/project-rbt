@@ -1,0 +1,1 @@
+Matrix runner 20261019T153027Z_6bcf0729: runner_exception:PermissionError:[Errno 13] Permission denied: 'C:\\Code\\Project RBT\\project_rbt\\data\\h1_ablation_production_20261001\\turkish__corpus_42__search_1729__full\\checkpoint.json'

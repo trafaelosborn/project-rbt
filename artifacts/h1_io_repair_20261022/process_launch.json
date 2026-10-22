@@ -1,0 +1,22 @@
+{
+  "runner_pid": 51696,
+  "launched_utc": "2026-10-22T15:51:02.7228078Z",
+  "executable": "C:\\Python314\\python.exe",
+  "arguments": [
+    "-u",
+    "scripts/run_h1_ablation_matrix.py",
+    "--output-root",
+    "data/h1_ablation_production_20261001",
+    "--workers",
+    "2",
+    "--session-proposals",
+    "100",
+    "--session-seconds",
+    "1800"
+  ],
+  "priority": "BelowNormal",
+  "hidden": true,
+  "parent_waits_for_runner": true,
+  "action": "resume_existing_matrix_with_decision_048_operational_io_repair",
+  "starting_committed_proposals": 17548
+}

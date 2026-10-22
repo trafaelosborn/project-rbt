@@ -1,0 +1,33 @@
+{
+  "observed_utc": "2026-10-19T15:31:19.516914+00:00",
+  "status": "running",
+  "runner_pid": 24108,
+  "runner_id": "20261019T153027Z_6bcf0729",
+  "runner_updated_utc": "2026-10-19T15:31:18.560285+00:00",
+  "matrix_lock_held": true,
+  "registration_valid_after_resume": true,
+  "registration_sha256": "012560628d8d5f7c54f74560a711804cf40d962192cf6f79c08b2d987f60eeb0",
+  "active_workers": [
+    {
+      "job_id": "french__corpus_42__search_42__disabled",
+      "pid": 38524,
+      "starting_proposal": 300,
+      "current_proposal": 310,
+      "advanced": true,
+      "checkpoint_sha256": "6aab6431d3d730cfaf61aa9d1011e217220168589d1aa38458eb0a259a268173",
+      "measured_token_count": 20000
+    },
+    {
+      "job_id": "french__corpus_42__search_42__full",
+      "pid": 49292,
+      "starting_proposal": 300,
+      "current_proposal": 310,
+      "advanced": true,
+      "checkpoint_sha256": "810e8083c9595888467f1d4f3d6b9dd5f82c3fbc6c611890e88615c5f3ed58db",
+      "measured_token_count": 20000
+    }
+  ],
+  "committed_proposals_from_status": 13627,
+  "completed_jobs": 0,
+  "runner_stderr_bytes": 0
+}

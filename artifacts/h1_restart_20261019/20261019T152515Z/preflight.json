@@ -1,0 +1,627 @@
+{
+  "created_utc": "2026-10-19T15:26:56.534970+00:00",
+  "git_head": "5fc3e9d940a72a3b70664202f2970d2f5fc083bf",
+  "registration_valid": true,
+  "registration_sha256": "012560628d8d5f7c54f74560a711804cf40d962192cf6f79c08b2d987f60eeb0",
+  "all_67_os_locks_available": true,
+  "runner_sha256_lf": "2c9d72cb497595b4faf87fecfc0f4d764fb1fa048b5a2547719c22442c4d8ed8",
+  "previous_status": "failed",
+  "previous_reason": "child_failed:sumerian__corpus_42__search_1729__full:exit_1",
+  "previous_updated_utc": "2026-10-13T02:14:16.750552+00:00",
+  "jobs": [
+    {
+      "job_id": "french__corpus_42__search_42__full",
+      "proposal_index": 300,
+      "checkpoint_sha256": "0218cefaf26231d2f91387ef8a6a5ede77b06b14ac88951c74942458679f2139",
+      "state_sha256": "fa9579aa2c272c7124580d401cac9d183bf87901eb3a9893901b552dec94f58a",
+      "objective_identity": "a155a8d78d20c53b156a14107d845c035d4a916ee404a3df5399fedca0d5baa2",
+      "measured_token_count": 20000,
+      "uncommitted_proposal_records": []
+    },
+    {
+      "job_id": "french__corpus_42__search_42__disabled",
+      "proposal_index": 300,
+      "checkpoint_sha256": "c4b6a2fe8ff90ed47a0b05ed5d8ed5ff7a08de30dfdfba94b46d4789f4584f9f",
+      "state_sha256": "49e95076d1ecf89862376cc16c94aa1d70988d1f2408e0e7a75b190f456e7140",
+      "objective_identity": "a155a8d78d20c53b156a14107d845c035d4a916ee404a3df5399fedca0d5baa2",
+      "measured_token_count": 20000,
+      "uncommitted_proposal_records": []
+    },
+    {
+      "job_id": "french__corpus_42__search_1729__full",
+      "proposal_index": 300,
+      "checkpoint_sha256": "b5b4ac27bb55c71e9d787971712a0f71b7c7afc10f321440bbb1fbeeaafd838a",
+      "state_sha256": "afc0a7123f6f88ecc0cc220da96604a214b0c779c6ca85c39d355faead9afdc6",
+      "objective_identity": "a155a8d78d20c53b156a14107d845c035d4a916ee404a3df5399fedca0d5baa2",
+      "measured_token_count": 20000,
+      "uncommitted_proposal_records": []
+    },
+    {
+      "job_id": "french__corpus_42__search_1729__disabled",
+      "proposal_index": 300,
+      "checkpoint_sha256": "5b8366d6fd4315ff340239a1f725a5afd7f010430da360c2bcfbee08ca36a8ef",
+      "state_sha256": "c2b6757d9fd6a0cedec813bec9187b74752aac33ff31a56e30d6f516a1110e1d",
+      "objective_identity": "a155a8d78d20c53b156a14107d845c035d4a916ee404a3df5399fedca0d5baa2",
+      "measured_token_count": 20000,
+      "uncommitted_proposal_records": []
+    },
+    {
+      "job_id": "french__corpus_42__search_8675309__full",
+      "proposal_index": 300,
+      "checkpoint_sha256": "5a9108cacd358485530750cf77cfef4c975d883ef46ea815872b6d596746da12",
+      "state_sha256": "a2b8ecd97246a430bc2c2eddf8f424e4c7d0c91b1ba592f04f18b9dd0d8598f6",
+      "objective_identity": "a155a8d78d20c53b156a14107d845c035d4a916ee404a3df5399fedca0d5baa2",
+      "measured_token_count": 20000,
+      "uncommitted_proposal_records": []
+    },
+    {
+      "job_id": "french__corpus_42__search_8675309__disabled",
+      "proposal_index": 300,
+      "checkpoint_sha256": "ec2d7deae548f0df2af1f5ebd97c2bc3a26e9525d3aa03c261345f297739ef20",
+      "state_sha256": "06f9ebd82e7c2fd1a1f3aeaf5c35547b8a9d5a082dd9afc72aad3628498cc362",
+      "objective_identity": "a155a8d78d20c53b156a14107d845c035d4a916ee404a3df5399fedca0d5baa2",
+      "measured_token_count": 20000,
+      "uncommitted_proposal_records": []
+    },
+    {
+      "job_id": "spanish__corpus_42__search_42__full",
+      "proposal_index": 300,
+      "checkpoint_sha256": "60b270a269aea746b254bcf91426a0951d67b49a2f7b4a51ef56b46473d1da6e",
+      "state_sha256": "28d4c70d24deb0d61cfd9bbcdd1e7fedbad68a2d7eed332c65afe48e5deb6ac8",
+      "objective_identity": "a155a8d78d20c53b156a14107d845c035d4a916ee404a3df5399fedca0d5baa2",
+      "measured_token_count": 20000,
+      "uncommitted_proposal_records": []
+    },
+    {
+      "job_id": "spanish__corpus_42__search_42__disabled",
+      "proposal_index": 300,
+      "checkpoint_sha256": "2ee3c16015e9c3e67c96d84de806b651ee8ffde5d772804e329cec5f0d1340f7",
+      "state_sha256": "ab297430a18a6a8026bb044409c70d3c03f3cca8b6d766c6cad7b9d592d1b69b",
+      "objective_identity": "a155a8d78d20c53b156a14107d845c035d4a916ee404a3df5399fedca0d5baa2",
+      "measured_token_count": 20000,
+      "uncommitted_proposal_records": []
+    },
+    {
+      "job_id": "spanish__corpus_42__search_1729__full",
+      "proposal_index": 300,
+      "checkpoint_sha256": "7f1fd089d5342489339d31cfff8b6f6cbbde4aa1bd160abf3f92e4eca901954a",
+      "state_sha256": "aa99afae5304c80c8778322ded1855647dff375e5fecc7f5502bc0dff21a7a87",
+      "objective_identity": "a155a8d78d20c53b156a14107d845c035d4a916ee404a3df5399fedca0d5baa2",
+      "measured_token_count": 20000,
+      "uncommitted_proposal_records": []
+    },
+    {
+      "job_id": "spanish__corpus_42__search_1729__disabled",
+      "proposal_index": 300,
+      "checkpoint_sha256": "948ae4093e844b3735a4df68863d551b45833b26e2342317622be9723d61a336",
+      "state_sha256": "7efc8825f56e1a5aab30abc91518a3c81099f4ae1e3e47b564984c26e40d5d51",
+      "objective_identity": "a155a8d78d20c53b156a14107d845c035d4a916ee404a3df5399fedca0d5baa2",
+      "measured_token_count": 20000,
+      "uncommitted_proposal_records": []
+    },
+    {
+      "job_id": "spanish__corpus_42__search_8675309__full",
+      "proposal_index": 300,
+      "checkpoint_sha256": "9c6075a4fd22efc5128bc223c8099d453f150e4825f49a1a9d4ad51ae9b06652",
+      "state_sha256": "ed0aa33f4bfc09efe0569743b076c867488a70d4bf26e8c236acc04f997ad482",
+      "objective_identity": "a155a8d78d20c53b156a14107d845c035d4a916ee404a3df5399fedca0d5baa2",
+      "measured_token_count": 20000,
+      "uncommitted_proposal_records": []
+    },
+    {
+      "job_id": "spanish__corpus_42__search_8675309__disabled",
+      "proposal_index": 300,
+      "checkpoint_sha256": "5b1e62f2e08e8cdf2455fa14fde06a51b5e8958ea31c9b345cbf4ee657056f2b",
+      "state_sha256": "041cf3b085ddcb95d07dee69221db7460130bc293626c2f078ec6d4c4d4f1667",
+      "objective_identity": "a155a8d78d20c53b156a14107d845c035d4a916ee404a3df5399fedca0d5baa2",
+      "measured_token_count": 20000,
+      "uncommitted_proposal_records": []
+    },
+    {
+      "job_id": "italian__corpus_42__search_42__full",
+      "proposal_index": 300,
+      "checkpoint_sha256": "548b280ba6acf9cf9f670c9f128ebc273885efc729e837b8d01e3b70dc1f8ade",
+      "state_sha256": "f002a26de77bba3faec2147039a911fc4dd6361d6a6bda5264bf7e555a68ce64",
+      "objective_identity": "a155a8d78d20c53b156a14107d845c035d4a916ee404a3df5399fedca0d5baa2",
+      "measured_token_count": 20000,
+      "uncommitted_proposal_records": []
+    },
+    {
+      "job_id": "italian__corpus_42__search_42__disabled",
+      "proposal_index": 300,
+      "checkpoint_sha256": "2f84f3a1420e4fa703c27bb5deffca42e4b25925289253a8543d95b33394a9b4",
+      "state_sha256": "80ce8117217368a12e4ef8992afa6102da04d023635cf17ce5d285a53c4c56e0",
+      "objective_identity": "a155a8d78d20c53b156a14107d845c035d4a916ee404a3df5399fedca0d5baa2",
+      "measured_token_count": 20000,
+      "uncommitted_proposal_records": []
+    },
+    {
+      "job_id": "italian__corpus_42__search_1729__full",
+      "proposal_index": 300,
+      "checkpoint_sha256": "347f95a335208b5cc1212487855a8a7a57ee07a94478fbda47850f985ea57699",
+      "state_sha256": "d4c212269dee3d8f208bcc98c6c7a23ff99d6e6e9cb33ac853d43c96bfc82cd4",
+      "objective_identity": "a155a8d78d20c53b156a14107d845c035d4a916ee404a3df5399fedca0d5baa2",
+      "measured_token_count": 20000,
+      "uncommitted_proposal_records": []
+    },
+    {
+      "job_id": "italian__corpus_42__search_1729__disabled",
+      "proposal_index": 300,
+      "checkpoint_sha256": "256b963f5f5ca3fb39e045ddc06db675f53d272c205ad7ac3a31ad3c4ccd15a1",
+      "state_sha256": "1d31030daa7519e4ebe9ec18d4e12aaab17a0cd0e9f977981ee2148b1f43fb44",
+      "objective_identity": "a155a8d78d20c53b156a14107d845c035d4a916ee404a3df5399fedca0d5baa2",
+      "measured_token_count": 20000,
+      "uncommitted_proposal_records": []
+    },
+    {
+      "job_id": "italian__corpus_42__search_8675309__full",
+      "proposal_index": 300,
+      "checkpoint_sha256": "a4ac6b680585059440d67b2c5ce5f8da0650182372bdb467a41bbfb3b2edd3fc",
+      "state_sha256": "449e331a71ca9855008e09d916c49d29416aadac9c3fa8e607b60d3e52eb4874",
+      "objective_identity": "a155a8d78d20c53b156a14107d845c035d4a916ee404a3df5399fedca0d5baa2",
+      "measured_token_count": 20000,
+      "uncommitted_proposal_records": []
+    },
+    {
+      "job_id": "italian__corpus_42__search_8675309__disabled",
+      "proposal_index": 300,
+      "checkpoint_sha256": "f79200c6a3aba0ba1dcc38b176079c5021eea72ec18221a0db0adfe4a650a12c",
+      "state_sha256": "15087f5ea86caee60ec9d9c1ed698362d63b0e0c2d252a6b0905c8b62b765936",
+      "objective_identity": "a155a8d78d20c53b156a14107d845c035d4a916ee404a3df5399fedca0d5baa2",
+      "measured_token_count": 20000,
+      "uncommitted_proposal_records": []
+    },
+    {
+      "job_id": "portuguese__corpus_42__search_42__full",
+      "proposal_index": 252,
+      "checkpoint_sha256": "cc1835356528887699a5a4d35c86b8414426b634c33b763682495d2b44cba0d3",
+      "state_sha256": "2112dfbe81e50e2b04c6ec9d7dfba43f27d95886c9eefdfc1c111cc362ce2214",
+      "objective_identity": "a155a8d78d20c53b156a14107d845c035d4a916ee404a3df5399fedca0d5baa2",
+      "measured_token_count": 20000,
+      "uncommitted_proposal_records": []
+    },
+    {
+      "job_id": "portuguese__corpus_42__search_42__disabled",
+      "proposal_index": 245,
+      "checkpoint_sha256": "59bfa078bfd8f04b88553c6a6761868e158bc13054e0f0cd2dbfa4655a8a52ae",
+      "state_sha256": "0c7ac49f2b3421126e586fb9dfd16c55812143ed835207a84c1b518ab8bdea48",
+      "objective_identity": "a155a8d78d20c53b156a14107d845c035d4a916ee404a3df5399fedca0d5baa2",
+      "measured_token_count": 20000,
+      "uncommitted_proposal_records": []
+    },
+    {
+      "job_id": "portuguese__corpus_42__search_1729__full",
+      "proposal_index": 200,
+      "checkpoint_sha256": "5fe1e6e0df035f7a83230dc10a2dc89700acd24bc333519928f09cdfc5dd4d1b",
+      "state_sha256": "b7aadcf0c8776387c5d77a0f2d19cf05cbdcd3f63cc1dbe1b9eb314f52a3576c",
+      "objective_identity": "a155a8d78d20c53b156a14107d845c035d4a916ee404a3df5399fedca0d5baa2",
+      "measured_token_count": 20000,
+      "uncommitted_proposal_records": []
+    },
+    {
+      "job_id": "portuguese__corpus_42__search_1729__disabled",
+      "proposal_index": 200,
+      "checkpoint_sha256": "58fb561cf654cc3ef9cfb04fbc880f7703356a8aeb2459cfb2a4f42657891f3d",
+      "state_sha256": "637a1399884d7ccd4b4be5cdc3879fd17b51a81849a283ec245c03db65752752",
+      "objective_identity": "a155a8d78d20c53b156a14107d845c035d4a916ee404a3df5399fedca0d5baa2",
+      "measured_token_count": 20000,
+      "uncommitted_proposal_records": []
+    },
+    {
+      "job_id": "portuguese__corpus_42__search_8675309__full",
+      "proposal_index": 200,
+      "checkpoint_sha256": "036737548d2cfc3f94d3944563b900504957a2f2982c126e2b51e9331bde8c08",
+      "state_sha256": "aa5934bd5f663531714ab11ea6b1cc4ce786862e662c3c31ff4abdb01a1d24e2",
+      "objective_identity": "a155a8d78d20c53b156a14107d845c035d4a916ee404a3df5399fedca0d5baa2",
+      "measured_token_count": 20000,
+      "uncommitted_proposal_records": []
+    },
+    {
+      "job_id": "portuguese__corpus_42__search_8675309__disabled",
+      "proposal_index": 200,
+      "checkpoint_sha256": "2831e7b5b1a0109b63c1aaf56e60da1e2db45000bb90d135555e5e297540e4ba",
+      "state_sha256": "924f49b348a9b2f8636717c963145a11d992ca64ed050d6c83ffdd62da5c6e1e",
+      "objective_identity": "a155a8d78d20c53b156a14107d845c035d4a916ee404a3df5399fedca0d5baa2",
+      "measured_token_count": 20000,
+      "uncommitted_proposal_records": []
+    },
+    {
+      "job_id": "romanian__corpus_42__search_42__full",
+      "proposal_index": 200,
+      "checkpoint_sha256": "448c2299a3f0343c0ed47da08ec1fc3943725134668ad0f9564b1e672aef1769",
+      "state_sha256": "160a4c3e840a768d60ea5959c984781c4a95719fbb165dc12a0d32270dbb8528",
+      "objective_identity": "a155a8d78d20c53b156a14107d845c035d4a916ee404a3df5399fedca0d5baa2",
+      "measured_token_count": 20000,
+      "uncommitted_proposal_records": []
+    },
+    {
+      "job_id": "romanian__corpus_42__search_42__disabled",
+      "proposal_index": 200,
+      "checkpoint_sha256": "d9511c2d3dacb6f66d2671e7f5a28fb63e7c8de2a05aaf8560ae30c92f72b098",
+      "state_sha256": "741e515f19f3f6948d8c3f9ef7d8440698bcda5e6dc47030a06c185a874f482c",
+      "objective_identity": "a155a8d78d20c53b156a14107d845c035d4a916ee404a3df5399fedca0d5baa2",
+      "measured_token_count": 20000,
+      "uncommitted_proposal_records": []
+    },
+    {
+      "job_id": "romanian__corpus_42__search_1729__full",
+      "proposal_index": 200,
+      "checkpoint_sha256": "b66a35bc53a41ee11f13792d0f8d33118fa66afcebf53dd3defac9ce798cd195",
+      "state_sha256": "12b08c90bdb7ab40527d4fb885a60e233c1d9fcf9e71b4ea6b088a73391be577",
+      "objective_identity": "a155a8d78d20c53b156a14107d845c035d4a916ee404a3df5399fedca0d5baa2",
+      "measured_token_count": 20000,
+      "uncommitted_proposal_records": []
+    },
+    {
+      "job_id": "romanian__corpus_42__search_1729__disabled",
+      "proposal_index": 200,
+      "checkpoint_sha256": "f9b172e4f3c729431071a916d3615c202c31b34f6a33fe1a3b188ec401232851",
+      "state_sha256": "691670f42c4033a35889e1e1569f773e869102e9323ad2e931e6bd2d7a5ef92a",
+      "objective_identity": "a155a8d78d20c53b156a14107d845c035d4a916ee404a3df5399fedca0d5baa2",
+      "measured_token_count": 20000,
+      "uncommitted_proposal_records": []
+    },
+    {
+      "job_id": "romanian__corpus_42__search_8675309__full",
+      "proposal_index": 200,
+      "checkpoint_sha256": "4baf6909853eb2cffe649aa360730e65ddaccf845fcc44753311de710aa11228",
+      "state_sha256": "9b13a846d185b6a9da0fefc949899c88045ff93a21219fb48a4ba545f55e10d8",
+      "objective_identity": "a155a8d78d20c53b156a14107d845c035d4a916ee404a3df5399fedca0d5baa2",
+      "measured_token_count": 20000,
+      "uncommitted_proposal_records": []
+    },
+    {
+      "job_id": "romanian__corpus_42__search_8675309__disabled",
+      "proposal_index": 200,
+      "checkpoint_sha256": "2d1e3dca421800c7bf069f8e5882e3b92f96a479c6259b6c188b21697df2c217",
+      "state_sha256": "ed7f56f1462508efabebecd44afd8ae87a60a94cbcf75d77691a446ec3caa2bd",
+      "objective_identity": "a155a8d78d20c53b156a14107d845c035d4a916ee404a3df5399fedca0d5baa2",
+      "measured_token_count": 20000,
+      "uncommitted_proposal_records": []
+    },
+    {
+      "job_id": "finnish__corpus_42__search_42__full",
+      "proposal_index": 200,
+      "checkpoint_sha256": "aa42ef4fd6a96183078673f34b35d080fde7093b5a82efec120216064bf74528",
+      "state_sha256": "8ab9690a93f4ebf1b2850e05afaede076f89571e707f119e27ab2687c941ccf8",
+      "objective_identity": "a155a8d78d20c53b156a14107d845c035d4a916ee404a3df5399fedca0d5baa2",
+      "measured_token_count": 20000,
+      "uncommitted_proposal_records": []
+    },
+    {
+      "job_id": "finnish__corpus_42__search_42__disabled",
+      "proposal_index": 200,
+      "checkpoint_sha256": "1f45f6d72ba24c948ff6ac6b6f750dbfeb809c3ce14213909775c362800bf951",
+      "state_sha256": "0283e2842af333b4a273301f2c5fd38df81ccc9d59d18f5cf3b0633d771edaf4",
+      "objective_identity": "a155a8d78d20c53b156a14107d845c035d4a916ee404a3df5399fedca0d5baa2",
+      "measured_token_count": 20000,
+      "uncommitted_proposal_records": []
+    },
+    {
+      "job_id": "finnish__corpus_42__search_1729__full",
+      "proposal_index": 200,
+      "checkpoint_sha256": "c8a5ea9143c9c69e964f1cb8824048290ea12dbf5590fc9e2229053776562f17",
+      "state_sha256": "82c93e52f4bf1eaeb6c71cdfc7971f17c50786a34804a68dd80634e8695ac4fc",
+      "objective_identity": "a155a8d78d20c53b156a14107d845c035d4a916ee404a3df5399fedca0d5baa2",
+      "measured_token_count": 20000,
+      "uncommitted_proposal_records": []
+    },
+    {
+      "job_id": "finnish__corpus_42__search_1729__disabled",
+      "proposal_index": 200,
+      "checkpoint_sha256": "8e77bc6ef09aa1eee91e05622806c13815191b474579cf7ae75f59e1e16e52e4",
+      "state_sha256": "59eba991f7b2f6ed1336469f0531fd25de25ab8a4ad478255e159300ec1f30e2",
+      "objective_identity": "a155a8d78d20c53b156a14107d845c035d4a916ee404a3df5399fedca0d5baa2",
+      "measured_token_count": 20000,
+      "uncommitted_proposal_records": []
+    },
+    {
+      "job_id": "finnish__corpus_42__search_8675309__full",
+      "proposal_index": 200,
+      "checkpoint_sha256": "d66e4ac927bcb380f7e1b9270856ce0a9059b63a29bd20c876f0a463692209ac",
+      "state_sha256": "c1fa5ed440726b0a9ef5f3015f98b743ed21b4c2b8d0ee7fdbd7472068603215",
+      "objective_identity": "a155a8d78d20c53b156a14107d845c035d4a916ee404a3df5399fedca0d5baa2",
+      "measured_token_count": 20000,
+      "uncommitted_proposal_records": []
+    },
+    {
+      "job_id": "finnish__corpus_42__search_8675309__disabled",
+      "proposal_index": 200,
+      "checkpoint_sha256": "fd6d6020e082cd0272c71c1a0844fa8da8335349e535e8b36f095f09f4fe5532",
+      "state_sha256": "c4e56a9f66c6ffa54ec4ce2c3135188209e5bdb553488e3cc380c668af47c059",
+      "objective_identity": "a155a8d78d20c53b156a14107d845c035d4a916ee404a3df5399fedca0d5baa2",
+      "measured_token_count": 20000,
+      "uncommitted_proposal_records": []
+    },
+    {
+      "job_id": "turkish__corpus_42__search_42__full",
+      "proposal_index": 200,
+      "checkpoint_sha256": "d94d140aa2945a5766af07fca7bae53fb9c46e05a0dd6a8c6fab48a4740d3515",
+      "state_sha256": "a7216afec8df7eb60415c61de4d2bf90d0aac9b856d77232d3838fda1e9efc30",
+      "objective_identity": "a155a8d78d20c53b156a14107d845c035d4a916ee404a3df5399fedca0d5baa2",
+      "measured_token_count": 20000,
+      "uncommitted_proposal_records": []
+    },
+    {
+      "job_id": "turkish__corpus_42__search_42__disabled",
+      "proposal_index": 200,
+      "checkpoint_sha256": "89b932244f6c225ea2a8dd7d7d79aaca560a042addee330594f9c32c070e0fbb",
+      "state_sha256": "d6396a3bec4b423b06500f63c575a6714f6f91871bf2ed81a2f7f27f29f016a1",
+      "objective_identity": "a155a8d78d20c53b156a14107d845c035d4a916ee404a3df5399fedca0d5baa2",
+      "measured_token_count": 20000,
+      "uncommitted_proposal_records": []
+    },
+    {
+      "job_id": "turkish__corpus_42__search_1729__full",
+      "proposal_index": 200,
+      "checkpoint_sha256": "069a1f633ba65cd9f2c0428a572fbf56b83c58dfacf8514f7bc431e3ec3ea71e",
+      "state_sha256": "ad2040669e625561cc4dbb028fd4a7c26b929e5fecae4d764a12d288195eaf4b",
+      "objective_identity": "a155a8d78d20c53b156a14107d845c035d4a916ee404a3df5399fedca0d5baa2",
+      "measured_token_count": 20000,
+      "uncommitted_proposal_records": []
+    },
+    {
+      "job_id": "turkish__corpus_42__search_1729__disabled",
+      "proposal_index": 200,
+      "checkpoint_sha256": "93061ed97549770d0915deb04e471f00c3982ed05146b0fb1882bbb7dc6975c6",
+      "state_sha256": "f9c54494d112ef02658d95dd44df565f4a7b00852e7941e440e26ddee388f870",
+      "objective_identity": "a155a8d78d20c53b156a14107d845c035d4a916ee404a3df5399fedca0d5baa2",
+      "measured_token_count": 20000,
+      "uncommitted_proposal_records": []
+    },
+    {
+      "job_id": "turkish__corpus_42__search_8675309__full",
+      "proposal_index": 200,
+      "checkpoint_sha256": "7f6e73df3e6b9331f163f9705007b4650b848bf3cab760c751f7a4e45e59e830",
+      "state_sha256": "cb5379a1751733b13083c0c8d5dffc212641c2f44e4c08850f6e7e526d089119",
+      "objective_identity": "a155a8d78d20c53b156a14107d845c035d4a916ee404a3df5399fedca0d5baa2",
+      "measured_token_count": 20000,
+      "uncommitted_proposal_records": []
+    },
+    {
+      "job_id": "turkish__corpus_42__search_8675309__disabled",
+      "proposal_index": 200,
+      "checkpoint_sha256": "3ac7aa9866f587578a0420af2150e802b6e51912cd0b9a45113c73a008351a6b",
+      "state_sha256": "6d808e07101989216a87c4671edb374b1c8bec45b0c3e7ceaadf498c33539a2c",
+      "objective_identity": "a155a8d78d20c53b156a14107d845c035d4a916ee404a3df5399fedca0d5baa2",
+      "measured_token_count": 20000,
+      "uncommitted_proposal_records": []
+    },
+    {
+      "job_id": "vietnamese__corpus_42__search_42__full",
+      "proposal_index": 200,
+      "checkpoint_sha256": "0162d3fd6d865e6ebcb193a450698ecf17ba91d3a6549fdb832ba6ffc1b2e66b",
+      "state_sha256": "3f4004a8d2e41b7447263568510403747f870abed3e0d72d14eabeef12e378d8",
+      "objective_identity": "a155a8d78d20c53b156a14107d845c035d4a916ee404a3df5399fedca0d5baa2",
+      "measured_token_count": 20000,
+      "uncommitted_proposal_records": []
+    },
+    {
+      "job_id": "vietnamese__corpus_42__search_42__disabled",
+      "proposal_index": 200,
+      "checkpoint_sha256": "ae51ad45a82d6818a8070dbc7b8c46fa674e28eb9d94358adeeae88d942b49e6",
+      "state_sha256": "157003659ffb6594f3a4a4c426977ec8fac2eafdd6da22373465f620b26f8683",
+      "objective_identity": "a155a8d78d20c53b156a14107d845c035d4a916ee404a3df5399fedca0d5baa2",
+      "measured_token_count": 20000,
+      "uncommitted_proposal_records": []
+    },
+    {
+      "job_id": "vietnamese__corpus_42__search_1729__full",
+      "proposal_index": 200,
+      "checkpoint_sha256": "d27f7136287212f9c11b28763eb50fe12a1568517d08b9f2f35cead3f0cc0002",
+      "state_sha256": "1318c35bd1bc5dec89db5b94d4560e59f334a53fa4732e7984957eae7d76dc33",
+      "objective_identity": "a155a8d78d20c53b156a14107d845c035d4a916ee404a3df5399fedca0d5baa2",
+      "measured_token_count": 20000,
+      "uncommitted_proposal_records": []
+    },
+    {
+      "job_id": "vietnamese__corpus_42__search_1729__disabled",
+      "proposal_index": 200,
+      "checkpoint_sha256": "787953d971cdcb5f1712ac0c3dce33de079225ec0623d5e6038ff127ef991097",
+      "state_sha256": "281fe96d357d4b462e568217b79801bb20806407045cde7cef99c8955e2d11ab",
+      "objective_identity": "a155a8d78d20c53b156a14107d845c035d4a916ee404a3df5399fedca0d5baa2",
+      "measured_token_count": 20000,
+      "uncommitted_proposal_records": []
+    },
+    {
+      "job_id": "vietnamese__corpus_42__search_8675309__full",
+      "proposal_index": 200,
+      "checkpoint_sha256": "5ddccdf0d347694f0092ff385b37a48d46b3a61fed3a1b04b4169d446c37552f",
+      "state_sha256": "e561c450305235559c9f13ccfe09960eb973a520502b88af80b46390849a5770",
+      "objective_identity": "a155a8d78d20c53b156a14107d845c035d4a916ee404a3df5399fedca0d5baa2",
+      "measured_token_count": 20000,
+      "uncommitted_proposal_records": []
+    },
+    {
+      "job_id": "vietnamese__corpus_42__search_8675309__disabled",
+      "proposal_index": 200,
+      "checkpoint_sha256": "8ce5d989c4b104b756cbf3904bbd3e1c0a1fd9a71dc52c5a83dd373a86d60381",
+      "state_sha256": "a1a68d30e3dccf7199802e36e9d36a5e8754709eb6b1541c68a1a58cf69daa87",
+      "objective_identity": "a155a8d78d20c53b156a14107d845c035d4a916ee404a3df5399fedca0d5baa2",
+      "measured_token_count": 20000,
+      "uncommitted_proposal_records": []
+    },
+    {
+      "job_id": "sumerian__corpus_42__search_42__full",
+      "proposal_index": 200,
+      "checkpoint_sha256": "caff0c2c91beaf58b6142bddbc777fa20e903a4d4a62ad5c3c5023997c101801",
+      "state_sha256": "aff30fc3e9228bf25440607ef1b2bf5af33250bcf06a8f4f6f29a8b7a73e8bff",
+      "objective_identity": "a155a8d78d20c53b156a14107d845c035d4a916ee404a3df5399fedca0d5baa2",
+      "measured_token_count": 20000,
+      "uncommitted_proposal_records": []
+    },
+    {
+      "job_id": "sumerian__corpus_42__search_42__disabled",
+      "proposal_index": 200,
+      "checkpoint_sha256": "c5f62714b57b2f361c4a5554698b467a4710af8e53603c8d267bdcfa7fc16492",
+      "state_sha256": "94db44f8f4ef2f5c10e665eeec87a10e527bf2f547eda8bf4be0240fd324a6b8",
+      "objective_identity": "a155a8d78d20c53b156a14107d845c035d4a916ee404a3df5399fedca0d5baa2",
+      "measured_token_count": 20000,
+      "uncommitted_proposal_records": []
+    },
+    {
+      "job_id": "sumerian__corpus_42__search_1729__full",
+      "proposal_index": 156,
+      "checkpoint_sha256": "bae2184481bef3555efc502bcaf654131751591890d1aa85d561c038b4831728",
+      "state_sha256": "1f3b7b1d98e19c42a2a82d339453a8161847651b5350496a1be2aeeeceb72626",
+      "objective_identity": "a155a8d78d20c53b156a14107d845c035d4a916ee404a3df5399fedca0d5baa2",
+      "measured_token_count": 20000,
+      "uncommitted_proposal_records": [
+        {
+          "path": "sumerian__corpus_42__search_1729__full\\proposals\\000000157.json",
+          "sha256": "97f3d98a990ad7fdf6642d295e83cab202dddbe99a629581edeb016beb6b0eb5",
+          "proposal_index": 157,
+          "previous_sha256": "3dd0b5bc85bddb384aa24642d09299271280e8b8c531f8e8ba41771f43119c16"
+        }
+      ]
+    },
+    {
+      "job_id": "sumerian__corpus_42__search_1729__disabled",
+      "proposal_index": 152,
+      "checkpoint_sha256": "6a774a9615cd390862cc8d4d6027e842d328f990efaf164d513e5add98d6e307",
+      "state_sha256": "30b0bafcd13b5a58d313e5c42c5e0d41f198a54bc3b34367fcee6d9ce1721a67",
+      "objective_identity": "a155a8d78d20c53b156a14107d845c035d4a916ee404a3df5399fedca0d5baa2",
+      "measured_token_count": 20000,
+      "uncommitted_proposal_records": []
+    },
+    {
+      "job_id": "sumerian__corpus_42__search_8675309__full",
+      "proposal_index": 100,
+      "checkpoint_sha256": "bb43826ff773b5d8767cfcdeb310d9abaa3582a1cabece63f1f0250daf0d6e9a",
+      "state_sha256": "03265043fac10615c7145053d0fbb04743940d9d43bcb62bc6ac37cdfe75b5b1",
+      "objective_identity": "a155a8d78d20c53b156a14107d845c035d4a916ee404a3df5399fedca0d5baa2",
+      "measured_token_count": 20000,
+      "uncommitted_proposal_records": []
+    },
+    {
+      "job_id": "sumerian__corpus_42__search_8675309__disabled",
+      "proposal_index": 100,
+      "checkpoint_sha256": "4fb393a2b64485e641c9cfb1cb3a1794075b6ab1dbc6945c69368732509611f9",
+      "state_sha256": "1cc51f07ed76813439dbad8f91bd89a3d935cbef5fd7c9133b7d3bb91d38ac9e",
+      "objective_identity": "a155a8d78d20c53b156a14107d845c035d4a916ee404a3df5399fedca0d5baa2",
+      "measured_token_count": 20000,
+      "uncommitted_proposal_records": []
+    },
+    {
+      "job_id": "markov_null__corpus_42__search_42__full",
+      "proposal_index": 100,
+      "checkpoint_sha256": "1e202f427943284c16f49f80fab6c8a92b061eb10ba3f69ab001d2e53d409b49",
+      "state_sha256": "1f9cee012a478b43011d8b344e3bfa8ad5c37d9df15ca9bcd56e481ebc5e8a8b",
+      "objective_identity": "a155a8d78d20c53b156a14107d845c035d4a916ee404a3df5399fedca0d5baa2",
+      "measured_token_count": 20000,
+      "uncommitted_proposal_records": []
+    },
+    {
+      "job_id": "markov_null__corpus_42__search_42__disabled",
+      "proposal_index": 100,
+      "checkpoint_sha256": "737c142263dc1c118b19f9fe43d583395c378fcded58af3c234de758e40e931c",
+      "state_sha256": "d9b5527bae40aa1c2fe5044595837eb5b29fc4b7c7ab32c4b02c12c4bb7658c3",
+      "objective_identity": "a155a8d78d20c53b156a14107d845c035d4a916ee404a3df5399fedca0d5baa2",
+      "measured_token_count": 20000,
+      "uncommitted_proposal_records": []
+    },
+    {
+      "job_id": "markov_null__corpus_42__search_1729__full",
+      "proposal_index": 100,
+      "checkpoint_sha256": "49f1179136cb5aa3d5a7cd3aeb0e9465fa619a09bee0534328c3a92967dec03d",
+      "state_sha256": "e7f9f389e474739607db2c143e8e28182a189aac1f229bc783f33a427a4bfa4d",
+      "objective_identity": "a155a8d78d20c53b156a14107d845c035d4a916ee404a3df5399fedca0d5baa2",
+      "measured_token_count": 20000,
+      "uncommitted_proposal_records": []
+    },
+    {
+      "job_id": "markov_null__corpus_42__search_1729__disabled",
+      "proposal_index": 100,
+      "checkpoint_sha256": "cde0dcaaae61d4bee0701e32006909fdaa7761ba8bb4e01f24ced86687682778",
+      "state_sha256": "3b5cfc4b740d0c67b8c1a9d329790d910401ad21e28b9fe3b64a8d23729bc745",
+      "objective_identity": "a155a8d78d20c53b156a14107d845c035d4a916ee404a3df5399fedca0d5baa2",
+      "measured_token_count": 20000,
+      "uncommitted_proposal_records": []
+    },
+    {
+      "job_id": "markov_null__corpus_42__search_8675309__full",
+      "proposal_index": 100,
+      "checkpoint_sha256": "9ac3f6fc2fdb4de5fa68142f862f95529b6357309aa07ba122bd91971f0bf4c6",
+      "state_sha256": "9614271765e8e8863da17d0b9c92b4d9435d37bf13c1f35a38b13e0a1c871bf8",
+      "objective_identity": "a155a8d78d20c53b156a14107d845c035d4a916ee404a3df5399fedca0d5baa2",
+      "measured_token_count": 20000,
+      "uncommitted_proposal_records": []
+    },
+    {
+      "job_id": "markov_null__corpus_42__search_8675309__disabled",
+      "proposal_index": 100,
+      "checkpoint_sha256": "f7608543a0d39f736c39477fe7fa2d5efdeb52fd3c0870df601e42bd10a48200",
+      "state_sha256": "60eb144612ba53df2c6c90d2a9af759f44bc7932f5e0f4cc3e87100bc22f5d68",
+      "objective_identity": "a155a8d78d20c53b156a14107d845c035d4a916ee404a3df5399fedca0d5baa2",
+      "measured_token_count": 20000,
+      "uncommitted_proposal_records": []
+    },
+    {
+      "job_id": "klingon__corpus_42__search_42__full",
+      "proposal_index": 100,
+      "checkpoint_sha256": "ff2b8ee96446be14a83cb43faa164ec1583e8ce1626c9799def0cc16dbde5fb2",
+      "state_sha256": "4fb4ef29d5c4d8f832bff2955bb5bec5a337f052fe5b25ebbee622fbf7fb0d10",
+      "objective_identity": "a155a8d78d20c53b156a14107d845c035d4a916ee404a3df5399fedca0d5baa2",
+      "measured_token_count": 20000,
+      "uncommitted_proposal_records": []
+    },
+    {
+      "job_id": "klingon__corpus_42__search_42__disabled",
+      "proposal_index": 100,
+      "checkpoint_sha256": "f1b5f44d426b81fd259e322f5558f08199886a0499cf484c550df6f47a480b67",
+      "state_sha256": "34df5ac2c9a4c33ca739c4d40c390189ec3e1dc68fed34eefa40eea412d802b3",
+      "objective_identity": "a155a8d78d20c53b156a14107d845c035d4a916ee404a3df5399fedca0d5baa2",
+      "measured_token_count": 20000,
+      "uncommitted_proposal_records": []
+    },
+    {
+      "job_id": "klingon__corpus_42__search_1729__full",
+      "proposal_index": 100,
+      "checkpoint_sha256": "72e5bd13134e3403145b3145c1859aa101ad400f5089cdc6af15205b9ccf8811",
+      "state_sha256": "521bbaefa102737f6c50e9db242639ca382d4ea26a122c073eabbfa4deb1ce56",
+      "objective_identity": "a155a8d78d20c53b156a14107d845c035d4a916ee404a3df5399fedca0d5baa2",
+      "measured_token_count": 20000,
+      "uncommitted_proposal_records": []
+    },
+    {
+      "job_id": "klingon__corpus_42__search_1729__disabled",
+      "proposal_index": 100,
+      "checkpoint_sha256": "9e8f6e7a84211b368ca68a72223e2fc7910a297db10314221e9c953117b065aa",
+      "state_sha256": "a92bdd3e8a646d1a4a244d0ff9c4e217fe809e7caa3b9810396f977230645510",
+      "objective_identity": "a155a8d78d20c53b156a14107d845c035d4a916ee404a3df5399fedca0d5baa2",
+      "measured_token_count": 20000,
+      "uncommitted_proposal_records": []
+    },
+    {
+      "job_id": "klingon__corpus_42__search_8675309__full",
+      "proposal_index": 100,
+      "checkpoint_sha256": "d43b6988eda494b3bc3d0b3a854210979db513e8b63cdfb57d0be24f1cfcb63b",
+      "state_sha256": "7cfc8d618a31f8dfe1f120fffe491a77e542649b4cd37de3a6eeab5eca44552a",
+      "objective_identity": "a155a8d78d20c53b156a14107d845c035d4a916ee404a3df5399fedca0d5baa2",
+      "measured_token_count": 20000,
+      "uncommitted_proposal_records": []
+    },
+    {
+      "job_id": "klingon__corpus_42__search_8675309__disabled",
+      "proposal_index": 100,
+      "checkpoint_sha256": "ee2724831fe62dc158272e786f984bb305151992d53e12937a044ea42b92f846",
+      "state_sha256": "156ec4d434a6aa6a7371d32284f079794191703803694ac93b882845cafc19a7",
+      "objective_identity": "a155a8d78d20c53b156a14107d845c035d4a916ee404a3df5399fedca0d5baa2",
+      "measured_token_count": 20000,
+      "uncommitted_proposal_records": []
+    }
+  ],
+  "total_committed_proposals": 13605,
+  "completed_jobs": 0,
+  "pause_files": [
+    {
+      "path": "C:\\Code\\Project RBT\\project_rbt\\data\\h1_ablation_production_20261001\\sumerian__corpus_42__search_1729__disabled\\PAUSE",
+      "content": "Matrix runner 20261012T215910Z_2642d88e: child_failed:sumerian__corpus_42__search_1729__full:exit_1\n",
+      "sha256": "498521ede4bbd1ec8d99add484b8229c5d46f656059c68ad70f4964d95b98c68",
+      "runner_created": true
+    }
+  ],
+  "free_gib": 362.9593391418457,
+  "evidence_dir": "C:\\Code\\Project RBT\\project_rbt\\artifacts\\h1_restart_20261019\\20261019T152515Z",
+  "all_current_state_objective_identities_verified": true
+}

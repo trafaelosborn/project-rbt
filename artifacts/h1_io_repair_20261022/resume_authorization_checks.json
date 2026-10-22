@@ -1,0 +1,18 @@
+{
+  "created_utc": "2026-10-22T15:51:01.880841+00:00",
+  "passing_tests": 163,
+  "real_contention_pilot_complete": true,
+  "removed_verified_runner_pauses": [
+    {
+      "path": "C:\\Code\\Project RBT\\project_rbt\\data\\h1_ablation_production_20261001\\turkish__corpus_42__search_1729__disabled\\PAUSE",
+      "text": "Matrix runner 20261019T153027Z_6bcf0729: runner_exception:PermissionError:[Errno 13] Permission denied: 'C:\\\\Code\\\\Project RBT\\\\project_rbt\\\\data\\\\h1_ablation_production_20261001\\\\turkish__corpus_42__search_1729__full\\\\checkpoint.json'\n",
+      "sha256": "82a2d7e3ebaeec48939a8a661ea17a7e0754f1edae30319fe371df7b62bb7248"
+    },
+    {
+      "path": "C:\\Code\\Project RBT\\project_rbt\\data\\h1_ablation_production_20261001\\turkish__corpus_42__search_1729__full\\PAUSE",
+      "text": "Matrix runner 20261019T153027Z_6bcf0729: runner_exception:PermissionError:[Errno 13] Permission denied: 'C:\\\\Code\\\\Project RBT\\\\project_rbt\\\\data\\\\h1_ablation_production_20261001\\\\turkish__corpus_42__search_1729__full\\\\checkpoint.json'\n",
+      "sha256": "82a2d7e3ebaeec48939a8a661ea17a7e0754f1edae30319fe371df7b62bb7248"
+    }
+  ],
+  "retained_proposals": 17548
+}

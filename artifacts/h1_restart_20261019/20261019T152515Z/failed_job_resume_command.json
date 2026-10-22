@@ -1,0 +1,21 @@
+{
+  "started_utc": "2026-10-19T15:27:54.094367+00:00",
+  "command": [
+    "C:\\Python314\\python.exe",
+    "-u",
+    "-m",
+    "src.control.h1_ablation",
+    "run",
+    "--output-root",
+    "C:\\Code\\Project RBT\\project_rbt\\data\\h1_ablation_production_20261001",
+    "--job-id",
+    "sumerian__corpus_42__search_1729__full",
+    "--max-session-proposals",
+    "2",
+    "--max-session-seconds",
+    "1800"
+  ],
+  "job_id": "sumerian__corpus_42__search_1729__full",
+  "before_proposal": 156,
+  "matrix_lock_held_by_recovery_check": true
+}

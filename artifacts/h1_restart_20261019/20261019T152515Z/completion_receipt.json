@@ -1,0 +1,36 @@
+{
+  "observed_utc": "2026-10-19T15:32:47.006813+00:00",
+  "runner_pid": 24108,
+  "runner_id": "20261019T153027Z_6bcf0729",
+  "status": "running",
+  "updated_utc": "2026-10-19T15:32:45.546847+00:00",
+  "committed_proposals": 13677,
+  "registered_proposal_budget": 66000,
+  "completed_jobs": 0,
+  "active_workers": 2,
+  "scientific_files_match_published_commit": true,
+  "report": "docs\\reports\\2026-10-19_h1_production_resume.md",
+  "report_sha256": "c29c71c6c4ff21379f9f8fba973f371ab0de48bff7c76cefdcb3ef5c73196ced",
+  "immutable_evidence_sha256": {
+    "00099_sumerian__corpus_42__search_1729__full.log": "7f09ad29b345e06dfb0964b4acb6087a636ae6b9f2366b07270db228e8a38e0a",
+    "00101_sumerian__corpus_42__search_1729__disabled.log": "7bbe72918ce12e5045ea54bb7f9848c912857af103a236c5bb7f81e997266a54",
+    "failed_job_checkpoint_before.json": "05ff5f389ce436fa43127657653c50cc96230919616470bf59fc50b868f36a2f",
+    "failed_job_resume.log": "22d9989b53a73a8294f6a9f0cd5acd91be7b2a1e621a603e2512951296ab962c",
+    "failed_job_resume_command.json": "8e8a69342a9fe41eeea0466b3bc501beb369883ec2283b550a70b1b57769c5bd",
+    "failed_job_resume_result.json": "a238f09c8a26438b68258ab03449877f502f03353b7a087a69e938285d2bc15f",
+    "failed_job_uncommitted_000000157.json": "1b31daaccf940f95bf2bb060ea791b2754a193e1da069364c9b1c89bcbdde152",
+    "matrix_status_before.json": "09e492e8f445ec2af785732814a6dd56052969dbd7f2cb6baa2b9479e4b96ff9",
+    "preflight.json": "5b1c0477fd38f870196403d19010ffdbc9d2e17dfc7cf5b45b50620efe4a4746",
+    "process_launch.json": "490762284bed1df00d5cb0fea09c3c8e93be110cdd781fa5a665d42cfbfc55e6",
+    "process_launch_attempt_01.json": "3b474eeccecae1085b04d0a681655119c256aa83ad63f3d674e3b995634b6f28",
+    "queue_resume_preparation.json": "6c1b3798607ade27f6b58e79a26b309260f9d5816fed42e3eb92c2ae102bf07f",
+    "resume_check.json": "ceb53915238429f6536271d470d94f393df99592e633cd44e63f9cbd28be9bb7",
+    "runner_stderr_attempt_01.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "runner_stdout_attempt_01.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "sumerian__corpus_42__search_1729__disabled_PAUSE_before.txt": "498521ede4bbd1ec8d99add484b8229c5d46f656059c68ad70f4964d95b98c68"
+  },
+  "ongoing_logs_excluded_from_hash_inventory": [
+    "runner_stdout.log",
+    "runner_stderr.log"
+  ]
+}

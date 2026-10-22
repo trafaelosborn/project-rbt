@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="1" skipped="0" tests="27" time="1.750" timestamp="2026-10-22T09:38:31.418569-06:00" hostname="DESKTOP-BKUBR6S"><testcase classname="tests.test_h1_io" name="test_access_retry_is_bounded_and_reports_each_retry" time="0.002" /><testcase classname="tests.test_h1_io" name="test_other_errors_are_not_retried[error0]" time="0.001" /><testcase classname="tests.test_h1_io" name="test_other_errors_are_not_retried[error1]" time="0.000" /><testcase classname="tests.test_h1_io" name="test_other_errors_are_not_retried[error2]" time="0.000" /><testcase classname="tests.test_h1_io" name="test_non_windows_permission_failure_is_not_retried" time="0.000" /><testcase classname="tests.test_h1_io" name="test_invalid_json_is_not_hidden" time="0.010" /><testcase classname="tests.test_h1_io" name="test_shared_reader_allows_unchanged_scientific_writer_to_replace" time="0.018"><failure message="PermissionError: [WinError 5] Access is denied: 'C:\\Code\\Project RBT\\project_rbt\\data\\tmp\\h1_io_repair_01\\test_shared_reader_allows_unch0\\checkpoint.json.45e5d801a5e14087a8dc7ee9b4f766bf.tmp' -&gt; 'C:\\Code\\Project RBT\\project_rbt\\data\\tmp\\h1_io_repair_01\\test_shared_reader_allows_unch0\\checkpoint.json'">tmp_path = WindowsPath('C:/Code/Project RBT/project_rbt/data/tmp/h1_io_repair_01/test_shared_reader_allows_unch0')
+
+    @pytest.mark.skipif(os.name != "nt", reason="Real Windows sharing semantics")
+    def test_shared_reader_allows_unchanged_scientific_writer_to_replace(tmp_path):
+        path = tmp_path / "checkpoint.json"
+        atomic_json(path, {"proposal": 1})
+        with path.open(encoding="utf-8"):
+            with pytest.raises(PermissionError):
+                atomic_json(path, {"proposal": 2})
+        assert json.loads(path.read_text()) == {"proposal": 1}
+        with io.shared_text(path) as old:
+&gt;           atomic_json(path, {"proposal": 2})
+
+tests\test_h1_io.py:67: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+path = WindowsPath('C:/Code/Project RBT/project_rbt/data/tmp/h1_io_repair_01/test_shared_reader_allows_unch0/checkpoint.json')
+value = {'proposal': 2}
+
+    def atomic_json(path, value):
+        """Publish one complete JSON file; interruption preserves the older pointer."""
+        path = Path(path)
+        path.parent.mkdir(parents=True, exist_ok=True)
+        temp = path.with_name(path.name + "." + uuid.uuid4().hex + ".tmp")
+        try:
+            with temp.open("x", encoding="utf-8", newline="\n") as stream:
+                json.dump(value, stream, ensure_ascii=False, sort_keys=True, allow_nan=False)
+                stream.write("\n")
+                stream.flush()
+                os.fsync(stream.fileno())
+&gt;           os.replace(temp, path)
+E           PermissionError: [WinError 5] Access is denied: 'C:\\Code\\Project RBT\\project_rbt\\data\\tmp\\h1_io_repair_01\\test_shared_reader_allows_unch0\\checkpoint.json.45e5d801a5e14087a8dc7ee9b4f766bf.tmp' -&gt; 'C:\\Code\\Project RBT\\project_rbt\\data\\tmp\\h1_io_repair_01\\test_shared_reader_allows_unch0\\checkpoint.json'
+
+src\retrodiction\h1_checkpointed.py:99: PermissionError</failure></testcase><testcase classname="tests.test_h1_io" name="test_exclusive_handle_read_retries_then_succeeds" time="0.020" /><testcase classname="tests.test_h1_io" name="test_status_write_retry_preserves_old_file_until_reader_releases" time="0.023" /><testcase classname="tests.test_h1_io" name="test_worker_recovery_requires_exact_terminal_error_and_path[PermissionError: [Errno 13] Permission denied: {path}-True]" time="0.010" /><testcase classname="tests.test_h1_io" name="test_worker_recovery_requires_exact_terminal_error_and_path[PermissionError: [WinError 5] Access denied: 'temp' -&gt; {path}-True]" time="0.010" /><testcase classname="tests.test_h1_io" name="test_worker_recovery_requires_exact_terminal_error_and_path[PermissionError: [WinError 32] Sharing violation: {path}-True]" time="0.010" /><testcase classname="tests.test_h1_io" name="test_worker_recovery_requires_exact_terminal_error_and_path[ValueError: checkpoint integrity failure: {path}-False]" time="0.010" /><testcase classname="tests.test_h1_io" name="test_worker_recovery_requires_exact_terminal_error_and_path[PermissionError: [Errno 13] Permission denied: 'other/checkpoint.json'-False]" time="0.011" /><testcase classname="tests.test_h1_io" name="test_worker_recovery_requires_exact_terminal_error_and_path[PermissionError: [Errno 13] Permission denied: {path}\nValueError: corrupt-False]" time="0.011" /><testcase classname="tests.test_h1_io" name="test_worker_recovery_requires_exact_terminal_error_and_path[PermissionError: [WinError 19] Write protected: {path}-False]" time="0.010" /><testcase classname="tests.test_h1_matrix_runner" name="test_rotation_completes_all_jobs_without_changing_settings" time="0.140" /><testcase classname="tests.test_h1_matrix_runner" name="test_failure_stops_queue_and_preserves_other_checkpoint" time="0.050" /><testcase classname="tests.test_h1_matrix_runner" name="test_global_pause_launches_nothing" time="0.029" /><testcase classname="tests.test_h1_matrix_runner" name="test_production_runs_analysis_after_all_jobs_complete" time="0.143" /><testcase classname="tests.test_h1_matrix_runner" name="test_low_disk_pauses_before_launch" time="0.025" /><testcase classname="tests.test_h1_matrix_runner" name="test_already_completed_queue_does_not_relaunch" time="0.119" /><testcase classname="tests.test_h1_matrix_runner" name="test_access_failure_is_audited_before_retry_and_log_is_retained" time="0.122" /><testcase classname="tests.test_h1_matrix_runner" name="test_persistent_worker_access_failure_has_a_fixed_recovery_cap" time="0.127" /><testcase classname="tests.test_h1_matrix_runner" name="test_failed_recovery_audit_never_relaunches_worker" time="0.057" /><testcase classname="tests.test_h1_matrix_runner" name="test_exception_drain_refreshes_final_committed_progress" time="0.061" /><testcase classname="tests.test_h1_matrix_runner" name="test_status_write_failure_still_drains_started_worker" time="0.032" /></testsuite></testsuites>

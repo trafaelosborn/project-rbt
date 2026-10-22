@@ -1,0 +1,17 @@
+{
+  "created_utc": "2026-10-22T15:54:52.549091+00:00",
+  "scope": "Validated operational implementation, tests, reproduction harness and decision; frozen scientific implementation remains at the original registration identity.",
+  "source_hashes_lf": {
+    "scripts/run_h1_ablation_matrix.py": "9565366e561ffdb6e944b231b08aa01b3a6a4bfb93d69be4d6ff6d2ec0e08f95",
+    "scripts/verify_h1_io_recovery.py": "5c83ba438be3c3e5a5fa571d83d1b2a855c5f95ac8478ae62d1db3afbe3eb54c",
+    "src/control/h1_io.py": "f3d9e91f3e7ba85ef30afff79a0b80842af8d8dc1f9363f6b78a0409d0c6fa47",
+    "tests/test_h1_io.py": "ee0c607dfb840d2123ff8686206a0a2eff6fe1bfbaa815c0104ec3d58e79dbda",
+    "tests/test_h1_io_recovery.py": "22ad108ca0bf9c11c0974dbf54f6f515cafecd4a34113071f9373abb0ec03889",
+    "tests/test_h1_matrix_runner.py": "b296ab7e8f5032e93e8535c288d75291161a4994e817f6f3fb05140f66074dad",
+    "docs/decisions/048_windows_checkpoint_access_recovery.md": "de0e883500026e62d8ce4b94de8a89f77001d712125846f34ff8d68cce4560e0"
+  },
+  "snapshot_sha256": "a1a2679e3da19d3c418c95aecb2144e4c270a28f787533b69d52de07d1e007bd",
+  "broad_tests_passed": 163,
+  "real_windows_contention_pilot_complete": true,
+  "registration_sha256": "012560628d8d5f7c54f74560a711804cf40d962192cf6f79c08b2d987f60eeb0"
+}
