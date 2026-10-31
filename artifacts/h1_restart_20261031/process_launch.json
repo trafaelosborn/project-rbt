@@ -1,0 +1,23 @@
+{
+  "runner_pid": 41084,
+  "launched_utc": "2026-10-31T23:36:02.3599760Z",
+  "executable": "C:\\Python314\\python.exe",
+  "arguments": [
+    "-u",
+    "scripts/run_h1_ablation_matrix.py",
+    "--output-root",
+    "data/h1_ablation_production_20261001",
+    "--workers",
+    "2",
+    "--session-proposals",
+    "100",
+    "--session-seconds",
+    "1800"
+  ],
+  "priority": "BelowNormal",
+  "hidden": true,
+  "parent_waits_for_runner": true,
+  "action": "Resume original production registration after stale heartbeat and absent processes",
+  "starting_committed_proposals": 23392,
+  "registration_sha256": "012560628d8d5f7c54f74560a711804cf40d962192cf6f79c08b2d987f60eeb0"
+}

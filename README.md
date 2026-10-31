@@ -10,7 +10,7 @@ Project RBT projects modern-language corpora onto a low-dimensional structural f
 
 The headline finding is interpretive rather than reconstructive: the structural metric used here functions as a **typological proximity detector** (sensitive to morphological richness, suffix-profile entropy, and inflectional vocabulary breadth) rather than a chronological one. Sumerian, a non-Indo-European agglutinative language with no historical relationship to Romance, lands at fourth-rank structural proximity to Latin under an expanded 15-feature analysis — diagnostic evidence that the metric is not lineage-tracking.
 
-## Corrected H1 execution and active experiment (2026-10-22)
+## Corrected H1 execution and active experiment (2026-10-31)
 
 The later H1 experiment recorded the new registration while continuing to
 optimize the legacy reward. The corrected implementation now binds the frozen
@@ -62,6 +62,12 @@ For live status, read `matrix_status.json`: its heartbeat updates during work,
 but proposal totals update when worker sessions exit and are a lower bound
 while workers are active. Avoid polling individual active checkpoint files.
 See [Decision 048](docs/decisions/048_windows_checkpoint_access_recovery.md).
+
+The queue [resumed on October 31](docs/reports/2026-10-31_h1_production_resume.md)
+after its October 22 heartbeat was found stale and no experiment processes
+remained. All 66 committed histories passed validation, retaining 23,392 of
+66,000 proposals (35.44%). Both workers produced new records after restart;
+the scientific registration and the October 22 operational repair are unchanged.
 
 ## Paper
 
