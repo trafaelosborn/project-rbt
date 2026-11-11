@@ -1,0 +1,13 @@
+{
+  "checked_utc": "2026-11-11T06:57:54.8740809Z",
+  "task_name": "ProjectRBT-H1-Pilot-1d1c4ba960",
+  "state": "Running",
+  "run_level": "Limited",
+  "logon_type": "Interactive",
+  "priority": 7,
+  "execution_time_limit": "PT0S",
+  "multiple_instances": "IgnoreNew",
+  "run_only_if_idle": false,
+  "stop_on_idle_end": true,
+  "start_when_available": true
+}

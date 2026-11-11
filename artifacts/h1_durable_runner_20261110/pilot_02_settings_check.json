@@ -1,0 +1,11 @@
+{
+  "execution_time_limit": "PT0S",
+  "multiple_instances": "IgnoreNew",
+  "logon_type": "InteractiveToken",
+  "run_level_element": null,
+  "interval": "PT5M",
+  "logon_trigger": true,
+  "stop_on_battery": "false",
+  "disallow_start_on_battery": "false",
+  "export_issue": "UTF-8 bytes with UTF-16 declaration; installer corrected to UTF-16 for subsequent exports"
+}

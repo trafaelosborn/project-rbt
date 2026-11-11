@@ -1,0 +1,16 @@
+{
+  "checked_utc": "2026-11-11T07:00:55.3655398Z",
+  "task_name": "ProjectRBT-H1-Production-20261001",
+  "scheduler_state": "Running",
+  "last_result": 267009,
+  "last_run": "2026-11-11T00:00:54.0000000-07:00",
+  "next_run": "2026-11-11T00:01:53.0000000-07:00",
+  "config": "C:\\Code\\Project RBT\\project_rbt\\data\\h1_ablation_production_20261001\\task_host\\config.json",
+  "host_state": null,
+  "host_reason": null,
+  "interruption_restarts": null,
+  "matrix_state": "running",
+  "matrix_heartbeat_age_seconds": 890524.3653962,
+  "matrix_heartbeat_fresh": false,
+  "scheduler_running": true
+}

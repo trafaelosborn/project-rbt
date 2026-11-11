@@ -1,0 +1,7 @@
+{
+  "launched_utc": "2026-11-11T06:39:08.1855193Z",
+  "task": "ProjectRBT-H1-LifetimeProbe-20261110",
+  "direct_child_pid": 27940,
+  "direct_child_uses_old_Start_Process_method": true,
+  "launching_shell_exits_without_waiting": true
+}

@@ -1,0 +1,12 @@
+{
+  "complete": true,
+  "final_xml_parses_directly": true,
+  "production_sources_match_final_pilot": true,
+  "task_settings": {
+    "runtime": "PT0S",
+    "instances": "IgnoreNew",
+    "interval": "PT5M",
+    "logon": "InteractiveToken"
+  },
+  "pilot_result": "artifacts\\h1_durable_runner_20261110\\pilot_03\\verification_results.json"
+}

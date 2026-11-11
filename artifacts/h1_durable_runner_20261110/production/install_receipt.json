@@ -1,0 +1,12 @@
+{
+  "installed_utc": "2026-11-11T07:00:53.4090146Z",
+  "task_name": "ProjectRBT-H1-Production-20261001",
+  "config": "C:\\Code\\Project RBT\\project_rbt\\data\\h1_ablation_production_20261001\\task_host\\config.json",
+  "user": "DESKTOP-BKUBR6S\\Clem",
+  "logon_type": "Interactive",
+  "run_level": "Limited",
+  "time_limit": "PT0S",
+  "restart_check_minutes": 5,
+  "restart_at_user_logon": true,
+  "single_instance": true
+}

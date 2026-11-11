@@ -1,0 +1,41 @@
+{
+  "created_utc": "2026-11-11T07:06:57.092794+00:00",
+  "files": [
+    {
+      "path": "scripts/manage_h1_task.ps1",
+      "sha256_lf": "b04158bab3e45aa45eed9add61066bedda78571c3de3d903f671c0709f9ce17b"
+    },
+    {
+      "path": "scripts/run_h1_ablation_matrix.py",
+      "sha256_lf": "9565366e561ffdb6e944b231b08aa01b3a6a4bfb93d69be4d6ff6d2ec0e08f95"
+    },
+    {
+      "path": "scripts/run_h1_scheduled.py",
+      "sha256_lf": "42c376c16a89c72c3a1f8227096b923e2eb1c21903f3345232a4bbc27c1c2bbc"
+    },
+    {
+      "path": "src/control/h1_io.py",
+      "sha256_lf": "f3d9e91f3e7ba85ef30afff79a0b80842af8d8dc1f9363f6b78a0409d0c6fa47"
+    },
+    {
+      "path": "src/control/h1_windows_host.py",
+      "sha256_lf": "2609af9a79fbc6d9670bee5d8bcc09f049af04a51c5366c04dfd86d6ec7ee637"
+    },
+    {
+      "path": "scripts/verify_h1_scheduled.py",
+      "sha256_lf": "91b284a0693a7c4d941237c2d03d147fa86dc8568343e695764a207db4de33b3"
+    },
+    {
+      "path": "tests/test_h1_scheduled.py",
+      "sha256_lf": "727ddd6bc24b70d01730181eb144cc50f89400664448b9efb21d1d6a02a05184"
+    },
+    {
+      "path": "docs/decisions/049_durable_windows_experiment_host.md",
+      "sha256_lf": "ea57ffd39b2372313de13fd15d25ebfe9892b49806a6f096bdf931ff19de93f5"
+    }
+  ],
+  "zip_sha256_bytes": "46f33b12d033af27a6d135840cb45a528adc2ce257dde0a19ec52a683164cf62",
+  "production_config_sha256": "b017991f8e8fae92a7a08af2b4ebfb1272cc1b23620aa5c6134a83dfe39d7166",
+  "production_host_session": "20261111T070055Z_bd8531e6",
+  "production_audit_total": 23480
+}

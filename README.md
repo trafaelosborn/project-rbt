@@ -10,13 +10,13 @@ Project RBT projects modern-language corpora onto a low-dimensional structural f
 
 The headline finding is interpretive rather than reconstructive: the structural metric used here functions as a **typological proximity detector** (sensitive to morphological richness, suffix-profile entropy, and inflectional vocabulary breadth) rather than a chronological one. Sumerian, a non-Indo-European agglutinative language with no historical relationship to Romance, lands at fourth-rank structural proximity to Latin under an expanded 15-feature analysis — diagnostic evidence that the metric is not lineage-tracking.
 
-## Corrected H1 execution and experiment status (2026-11-10)
+## Corrected H1 execution and experiment status (2026-11-11)
 
 The later H1 experiment recorded the new registration while continuing to
 optimize the legacy reward. The corrected implementation now binds the frozen
 six-feature score and 20,000-token measurement budget to candidate acceptance,
 audits saved scores, and rejects incompatible resumes. Bounded French/Finnish
-pilots passed. The registered form-reward ablation is currently stopped; no completed
+pilots passed. The registered form-reward ablation is running under a Windows-managed task; no completed
 production result is available yet.
 
 See the [repair audit](docs/reports/2026-10-01_h1_repair_audit.md),
@@ -76,6 +76,18 @@ processes remained. Saved progress is 23,480 / 66,000 proposals (35.58%), with
 the other checkpoints retain their previously validated hashes. The stop is
 unexplained, with no recorded checkpoint-access failure or subsequent reboot.
 The experiment has not been running continuously and has no completed readout.
+
+The [durable-host repair](docs/reports/2026-11-10_h1_durable_host_repair.md)
+identified that the old launcher inherited the chat execution environment's
+kill-on-close Windows job. The experiment now runs independently under Task
+Scheduler, with bounded automatic interruption recovery, a full checkpoint audit
+before resumption, and persistent stops for scientific errors or PAUSE requests.
+The original registration is unchanged. Native scheduled-task pilots survived
+deliberate host termination through automatic recovery and matched uninterrupted
+scientific references. Production resumed November 11 from 23,480 proposals.
+It runs while the user is signed in and resumes at sign-in after reboot.
+Use the report's task-status command to check actual scheduler state and heartbeat
+freshness; see [Decision 049](docs/decisions/049_durable_windows_experiment_host.md).
 
 ## Paper
 

@@ -1,0 +1,17 @@
+{
+  "checked_utc": "2026-11-11T06:37:38.905976+00:00",
+  "prior_session": "20261031T233606Z_1134eb6d",
+  "prior_last_heartbeat": "2026-10-31T23:38:51.438929+00:00",
+  "observed_exec_job_flags": 10240,
+  "kill_on_job_close": true,
+  "breakaway_ok": true,
+  "launch_omitted_breakaway": true,
+  "historical_log_search": {
+    "window_utc": [
+      "2026-10-31T23:35:00Z",
+      "2026-10-31T23:45:00Z"
+    ],
+    "matching_execution_shutdown_rows": 0
+  },
+  "attribution_limit": "Current inherited job and launcher defect are measured. Exact historical actor closing the job is not proven."
+}

@@ -1,0 +1,49 @@
+{
+  "checked_utc": "2026-11-11T07:14:42.453107+00:00",
+  "host_state": "running",
+  "host_pid": 37612,
+  "host_session": "20261111T070055Z_bd8531e6",
+  "host_recoveries": 0,
+  "matrix_state": "running",
+  "matrix_session": "20261111T070438Z_a7d9798b",
+  "matrix_pid": 37612,
+  "matrix_heartbeat_utc": "2026-11-11T07:14:42.161087+00:00",
+  "heartbeat_age_seconds": 0.29202,
+  "last_exited_session_total": 23680,
+  "completed_jobs": 0,
+  "io_retries": 0,
+  "worker_recoveries": 0,
+  "shutdown_errors": [],
+  "completed_worker_sessions": [
+    {
+      "event": "exited",
+      "exit_code": 0,
+      "job_id": "french__corpus_42__search_42__full",
+      "proposal_index": 706,
+      "utc": "2026-11-11T07:14:15.794900+00:00"
+    },
+    {
+      "event": "exited",
+      "exit_code": 0,
+      "job_id": "french__corpus_42__search_42__disabled",
+      "proposal_index": 706,
+      "utc": "2026-11-11T07:14:17.863182+00:00"
+    }
+  ],
+  "active": {
+    "french__corpus_42__search_1729__disabled": {
+      "log": "C:\\Code\\Project RBT\\project_rbt\\data\\h1_ablation_production_20261001\\runner_sessions\\20261111T070438Z_a7d9798b\\00005_french__corpus_42__search_1729__disabled.log",
+      "pid": 49400,
+      "starting_proposal": 500,
+      "latest_immutable_record": 500
+    },
+    "french__corpus_42__search_1729__full": {
+      "log": "C:\\Code\\Project RBT\\project_rbt\\data\\h1_ablation_production_20261001\\runner_sessions\\20261111T070438Z_a7d9798b\\00003_french__corpus_42__search_1729__full.log",
+      "pid": 30672,
+      "starting_proposal": 500,
+      "latest_immutable_record": 501
+    }
+  },
+  "operational_sources_unchanged": true,
+  "note": "Active immutable filenames demonstrate work, not independently validated checkpoint totals."
+}

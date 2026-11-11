@@ -1,0 +1,19 @@
+{
+  "checked_utc": "2026-11-11T07:01:41.9123559Z",
+  "hosts": [
+    {
+      "pid": 37612,
+      "parent_pid": 2640,
+      "created": "2026-11-11T00:00:54.7125030-07:00",
+      "command": "\"C:\\Python314\\python.exe\" -u \"C:\\Code\\Project RBT\\project_rbt\\scripts\\run_h1_scheduled.py\" run --config \"C:\\Code\\Project RBT\\project_rbt\\data\\h1_ablation_production_20261001\\task_host\\config.json\"",
+      "parent_name": "svchost.exe",
+      "parent_command": null
+    }
+  ],
+  "tasks": [
+    {
+      "TaskName": "ProjectRBT-H1-Production-20261001",
+      "State": 4
+    }
+  ]
+}

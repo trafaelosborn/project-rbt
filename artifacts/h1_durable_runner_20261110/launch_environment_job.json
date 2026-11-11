@@ -1,0 +1,10 @@
+{
+  "checked_utc": "2026-11-11T06:35:19.592037+00:00",
+  "pid": 57352,
+  "in_job": true,
+  "query_ok": true,
+  "error": 0,
+  "job_limit_flags": 10240,
+  "kill_on_job_close": true,
+  "returned_bytes": 144
+}

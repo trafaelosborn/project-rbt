@@ -1,0 +1,6 @@
+{
+  "checked_utc": "2026-11-11T06:39:02.3316684Z",
+  "logon_type": "S4U",
+  "result": "Register-ScheduledTask denied by Windows; no task created",
+  "next_attempt": "Least-privilege existing interactive user token"
+}

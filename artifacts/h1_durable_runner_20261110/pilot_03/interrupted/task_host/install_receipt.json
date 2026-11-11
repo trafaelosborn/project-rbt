@@ -1,0 +1,12 @@
+﻿{
+    "installed_utc":  "2026-11-11T06:55:53.6058947Z",
+    "task_name":  "ProjectRBT-H1-Pilot-1d1c4ba960",
+    "config":  "C:\\Code\\Project RBT\\project_rbt\\artifacts\\h1_durable_runner_20261110\\pilot_03\\interrupted\\task_host\\config.json",
+    "user":  "DESKTOP-BKUBR6S\\Clem",
+    "logon_type":  "Interactive",
+    "run_level":  "Limited",
+    "time_limit":  "PT0S",
+    "restart_check_minutes":  5,
+    "restart_at_user_logon":  true,
+    "single_instance":  true
+}

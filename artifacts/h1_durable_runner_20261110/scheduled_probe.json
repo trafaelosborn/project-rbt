@@ -1,0 +1,10 @@
+{
+  "pid": 58996,
+  "parent_pid": 2640,
+  "in_job": true,
+  "job_flags": 0,
+  "started_utc": "2026-11-11T06:39:06.062006+00:00",
+  "tick": 90,
+  "updated_utc": "2026-11-11T06:40:36.278230+00:00",
+  "complete": true
+}
