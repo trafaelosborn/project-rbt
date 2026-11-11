@@ -1,0 +1,7 @@
+{
+  "checked_utc": "2026-11-11T06:00:37.5622904Z",
+  "last_boot": "2026-10-31T00:07:51.5119890-06:00",
+  "experiment_processes": [],
+  "method": "Elevated read-only Get-CimInstance Win32_Process filtered for python h1_ablation/run_h1_ablation_matrix; Win32_OperatingSystem.LastBootUpTime",
+  "interpretation": "No matching experiment processes. Reported last boot predates the October 31 23:36 UTC launch; a subsequent computer reboot does not explain this stop. Exact termination cause is not established."
+}

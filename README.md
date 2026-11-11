@@ -10,13 +10,13 @@ Project RBT projects modern-language corpora onto a low-dimensional structural f
 
 The headline finding is interpretive rather than reconstructive: the structural metric used here functions as a **typological proximity detector** (sensitive to morphological richness, suffix-profile entropy, and inflectional vocabulary breadth) rather than a chronological one. Sumerian, a non-Indo-European agglutinative language with no historical relationship to Romance, lands at fourth-rank structural proximity to Latin under an expanded 15-feature analysis — diagnostic evidence that the metric is not lineage-tracking.
 
-## Corrected H1 execution and active experiment (2026-10-31)
+## Corrected H1 execution and experiment status (2026-11-10)
 
 The later H1 experiment recorded the new registration while continuing to
 optimize the legacy reward. The corrected implementation now binds the frozen
 six-feature score and 20,000-token measurement budget to candidate acceptance,
 audits saved scores, and rejects incompatible resumes. Bounded French/Finnish
-pilots passed. The registered form-reward ablation is now running; no completed
+pilots passed. The registered form-reward ablation is currently stopped; no completed
 production result is available yet.
 
 See the [repair audit](docs/reports/2026-10-01_h1_repair_audit.md),
@@ -33,7 +33,7 @@ and feature/control diagnostics. It cannot declare unconditional H1 confirmation
 Production requires a fresh registration sidecar; pilots and benchmarks remain
 excluded. The [corrected study outline](docs/manuscript/corrected_e1_study_outline.md)
 states the question and reporting limits. That natural-termination E1 design
-is separate from the fixed-budget experiment currently running.
+is separate from the fixed-budget experiment described below.
 
 The [Decision 047 extension](docs/decisions/047_h1_continuous_search_and_form_reward_ablation.md)
 adds separate corpus/search seeds, continuous checkpoints, resource pauses,
@@ -68,6 +68,14 @@ after its October 22 heartbeat was found stale and no experiment processes
 remained. All 66 committed histories passed validation, retaining 23,392 of
 66,000 proposals (35.44%). Both workers produced new records after restart;
 the scientific registration and the October 22 operational repair are unchanged.
+
+The [November 10 status audit](docs/reports/2026-11-10_h1_status_and_runner_interruption.md)
+found that the last heartbeat was October 31 at 23:38:51 UTC and no experiment
+processes remained. Saved progress is 23,480 / 66,000 proposals (35.58%), with
+88 additional proposals after that restart. Changed histories passed validation;
+the other checkpoints retain their previously validated hashes. The stop is
+unexplained, with no recorded checkpoint-access failure or subsequent reboot.
+The experiment has not been running continuously and has no completed readout.
 
 ## Paper
 
